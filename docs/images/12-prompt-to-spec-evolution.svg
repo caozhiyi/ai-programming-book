@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="360" rx="14" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">从提示词到规范：控制 AI 行为的演进路径</text>
+
+  <!-- Timeline arrow -->
+  <line x1="80" y1="180" x2="720" y2="180" stroke="#334155" stroke-width="2"/>
+  <polygon points="720,176 730,180 720,184" fill="#334155"/>
+
+  <!-- Stage 1: Ad-hoc prompts -->
+  <g transform="translate(80, 60)">
+    <rect width="140" height="100" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" opacity="0.9"/>
+    <text x="70" y="20" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="700">阶段一</text>
+    <text x="70" y="38" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">个人提示词</text>
+    <text x="70" y="56" text-anchor="middle" fill="#64748b" font-size="8">每次手写</text>
+    <text x="70" y="70" text-anchor="middle" fill="#64748b" font-size="8">不可复用</text>
+    <text x="70" y="84" text-anchor="middle" fill="#64748b" font-size="8">质量参差不齐</text>
+  </g>
+  <circle cx="150" cy="180" r="5" fill="#ef4444"/>
+
+  <!-- Stage 2: Shared prompts -->
+  <g transform="translate(240, 60)">
+    <rect width="140" height="100" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" opacity="0.9"/>
+    <text x="70" y="20" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700">阶段二</text>
+    <text x="70" y="38" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">共享提示词</text>
+    <text x="70" y="56" text-anchor="middle" fill="#64748b" font-size="8">团队 Wiki 共享</text>
+    <text x="70" y="70" text-anchor="middle" fill="#64748b" font-size="8">最佳实践沉淀</text>
+    <text x="70" y="84" text-anchor="middle" fill="#64748b" font-size="8">不强制 · 易过时</text>
+  </g>
+  <circle cx="310" cy="180" r="5" fill="#f59e0b"/>
+
+  <!-- Stage 3: Project config -->
+  <g transform="translate(400, 60)">
+    <rect width="140" height="100" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5" opacity="0.9"/>
+    <text x="70" y="20" text-anchor="middle" fill="#67e8f9" font-size="10" font-weight="700">阶段三</text>
+    <text x="70" y="38" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">项目配置</text>
+    <text x="70" y="56" text-anchor="middle" fill="#64748b" font-size="8">.cursorrules 等</text>
+    <text x="70" y="70" text-anchor="middle" fill="#64748b" font-size="8">自动加载 · 一致性</text>
+    <text x="70" y="84" text-anchor="middle" fill="#64748b" font-size="8">工具特定格式</text>
+  </g>
+  <circle cx="470" cy="180" r="5" fill="#06b6d4"/>
+
+  <!-- Stage 4: Structured spec -->
+  <g transform="translate(560, 60)">
+    <rect width="150" height="100" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5" opacity="0.9"/>
+    <text x="75" y="20" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="700">阶段四</text>
+    <text x="75" y="38" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">结构化规范</text>
+    <text x="75" y="56" text-anchor="middle" fill="#64748b" font-size="8">OpenSpec · 标准格式</text>
+    <text x="75" y="70" text-anchor="middle" fill="#64748b" font-size="8">跨工具 · 可验证</text>
+    <text x="75" y="84" text-anchor="middle" fill="#64748b" font-size="8">版本管理 · CI 集成</text>
+  </g>
+  <circle cx="635" cy="180" r="5" fill="#10b981"/>
+
+  <!-- Bottom: dimensions -->
+  <g transform="translate(80, 210)">
+    <text x="0" y="20" fill="#94a3b8" font-size="9" font-weight="600">持久性</text>
+    <rect x="60" y="12" width="80" height="10" rx="3" fill="#ef4444" opacity="0.3"/>
+    <rect x="60" y="12" width="20" height="10" rx="3" fill="#ef4444" opacity="0.8"/>
+    <text x="660" y="20" fill="#10b981" font-size="8">████████████</text>
+  </g>
+  <g transform="translate(80, 240)">
+    <text x="0" y="20" fill="#94a3b8" font-size="9" font-weight="600">可复用</text>
+    <rect x="60" y="12" width="600" height="10" rx="3" fill="#334155"/>
+    <rect x="60" y="12" width="100" height="10" rx="3" fill="#ef4444" opacity="0.4"/>
+    <rect x="160" y="12" width="150" height="10" rx="3" fill="#f59e0b" opacity="0.4"/>
+    <rect x="310" y="12" width="150" height="10" rx="3" fill="#06b6d4" opacity="0.4"/>
+    <rect x="460" y="12" width="200" height="10" rx="3" fill="#10b981" opacity="0.4"/>
+  </g>
+  <g transform="translate(80, 270)">
+    <text x="0" y="20" fill="#94a3b8" font-size="9" font-weight="600">可验证</text>
+    <rect x="60" y="12" width="600" height="10" rx="3" fill="#334155"/>
+    <rect x="60" y="12" width="50" height="10" rx="3" fill="#ef4444" opacity="0.3"/>
+    <rect x="110" y="12" width="100" height="10" rx="3" fill="#f59e0b" opacity="0.3"/>
+    <rect x="210" y="12" width="150" height="10" rx="3" fill="#06b6d4" opacity="0.3"/>
+    <rect x="360" y="12" width="300" height="10" rx="3" fill="#10b981" opacity="0.5"/>
+  </g>
+  <g transform="translate(80, 300)">
+    <text x="0" y="20" fill="#94a3b8" font-size="9" font-weight="600">灵活性</text>
+    <rect x="60" y="12" width="600" height="10" rx="3" fill="#334155"/>
+    <rect x="60" y="12" width="600" height="10" rx="3" fill="#ef4444" opacity="0.7"/>
+    <rect x="160" y="12" width="500" height="10" rx="3" fill="#f59e0b" opacity="0.5"/>
+    <rect x="310" y="12" width="350" height="10" rx="3" fill="#06b6d4" opacity="0.4"/>
+    <rect x="460" y="12" width="200" height="10" rx="3" fill="#10b981" opacity="0.3"/>
+    <text x="670" y="8" fill="#64748b" font-size="7">阶段一最灵活</text>
+  </g>
+
+  <!-- Labels for bar chart -->
+  <text x="80" y="340" fill="#64748b" font-size="8">低</text>
+  <text x="680" y="340" fill="#64748b" font-size="8">高</text>
+  <text x="80" y="340" fill="#64748b" font-size="8">低 ←</text>
+  <text x="650" y="340" fill="#64748b" font-size="8">→ 高</text>
+</svg>

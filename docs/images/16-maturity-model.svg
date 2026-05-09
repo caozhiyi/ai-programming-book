@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="400" y="28" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">AI 工程成熟度模型：L0 → L4</text>
+
+  <!-- L0 -->
+  <g transform="translate(40, 55)">
+    <rect width="140" height="220" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <rect x="0" y="0" width="140" height="24" rx="8" fill="#475569"/>
+    <text x="70" y="16" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="700">L0</text>
+    <text x="70" y="44" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">对话式使用</text>
+    <text x="70" y="66" text-anchor="middle" fill="#64748b" font-size="8">个人随意使用</text>
+    <text x="70" y="82" text-anchor="middle" fill="#64748b" font-size="8">手工复制粘贴</text>
+    <text x="70" y="98" text-anchor="middle" fill="#64748b" font-size="8">无规范</text>
+    <text x="70" y="114" text-anchor="middle" fill="#64748b" font-size="8">无评估</text>
+    <text x="70" y="130" text-anchor="middle" fill="#64748b" font-size="8">无记忆</text>
+    <rect x="10" y="150" width="120" height="20" rx="4" fill="#334155"/>
+    <text x="70" y="164" text-anchor="middle" fill="#94a3b8" font-size="7">瓶颈：工具接入</text>
+    <rect x="10" y="180" width="120" height="8" rx="4" fill="#334155"/>
+    <rect x="10" y="180" width="24" height="8" rx="4" fill="#64748b"/>
+  </g>
+
+  <!-- L1 -->
+  <g transform="translate(190, 55)">
+    <rect width="140" height="220" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+    <rect x="0" y="0" width="140" height="24" rx="8" fill="#0e7490"/>
+    <text x="70" y="16" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="700">L1</text>
+    <text x="70" y="44" text-anchor="middle" fill="#67e8f9" font-size="9" font-weight="600">Agent + 基础工具</text>
+    <text x="70" y="66" text-anchor="middle" fill="#64748b" font-size="8">能读代码、跑命令</text>
+    <text x="70" y="82" text-anchor="middle" fill="#64748b" font-size="8">输出风格不一致</text>
+    <text x="70" y="98" text-anchor="middle" fill="#64748b" font-size="8">每次重新解释</text>
+    <text x="70" y="114" text-anchor="middle" fill="#64748b" font-size="8">人工兜底为主</text>
+    <text x="70" y="130" text-anchor="middle" fill="#64748b" font-size="8">不知道质量如何</text>
+    <rect x="10" y="150" width="120" height="20" rx="4" fill="#334155"/>
+    <text x="70" y="164" text-anchor="middle" fill="#94a3b8" font-size="7">瓶颈：规范建设</text>
+    <rect x="10" y="180" width="120" height="8" rx="4" fill="#334155"/>
+    <rect x="10" y="180" width="48" height="8" rx="4" fill="#06b6d4"/>
+  </g>
+
+  <!-- L2 -->
+  <g transform="translate(340, 55)">
+    <rect width="140" height="220" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+    <rect x="0" y="0" width="140" height="24" rx="8" fill="#6d28d9"/>
+    <text x="70" y="16" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="700">L2</text>
+    <text x="70" y="44" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600">规范 + 知识注入</text>
+    <text x="70" y="66" text-anchor="middle" fill="#64748b" font-size="8">Skill/Spec 生效</text>
+    <text x="70" y="82" text-anchor="middle" fill="#64748b" font-size="8">输出风格一致</text>
+    <text x="70" y="98" text-anchor="middle" fill="#64748b" font-size="8">知识库接入</text>
+    <text x="70" y="114" text-anchor="middle" fill="#64748b" font-size="8">记忆系统工作</text>
+    <text x="70" y="130" text-anchor="middle" fill="#64748b" font-size="8">质量开始稳定</text>
+    <rect x="10" y="150" width="120" height="20" rx="4" fill="#334155"/>
+    <text x="70" y="164" text-anchor="middle" fill="#94a3b8" font-size="7">瓶颈：评估体系</text>
+    <rect x="10" y="180" width="120" height="8" rx="4" fill="#334155"/>
+    <rect x="10" y="180" width="72" height="8" rx="4" fill="#8b5cf6"/>
+  </g>
+
+  <!-- L3 -->
+  <g transform="translate(490, 55)">
+    <rect width="140" height="220" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <rect x="0" y="0" width="140" height="24" rx="8" fill="#d97706"/>
+    <text x="70" y="16" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="700">L3</text>
+    <text x="70" y="44" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600">评估 + 可观测性</text>
+    <text x="70" y="66" text-anchor="middle" fill="#64748b" font-size="8">评估集建立</text>
+    <text x="70" y="82" text-anchor="middle" fill="#64748b" font-size="8">线上指标监控</text>
+    <text x="70" y="98" text-anchor="middle" fill="#64748b" font-size="8">问题可追溯</text>
+    <text x="70" y="114" text-anchor="middle" fill="#64748b" font-size="8">质量可量化</text>
+    <text x="70" y="130" text-anchor="middle" fill="#64748b" font-size="8">回归测试自动化</text>
+    <rect x="10" y="150" width="120" height="20" rx="4" fill="#334155"/>
+    <text x="70" y="164" text-anchor="middle" fill="#94a3b8" font-size="7">瓶颈：组织治理</text>
+    <rect x="10" y="180" width="120" height="8" rx="4" fill="#334155"/>
+    <rect x="10" y="180" width="96" height="8" rx="4" fill="#f59e0b"/>
+  </g>
+
+  <!-- L4 -->
+  <g transform="translate(640, 55)">
+    <rect width="140" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <rect x="0" y="0" width="140" height="24" rx="8" fill="#059669"/>
+    <text x="70" y="16" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="700">L4</text>
+    <text x="70" y="44" text-anchor="middle" fill="#6ee7b7" font-size="9" font-weight="600">团队级 AI 工程</text>
+    <text x="70" y="66" text-anchor="middle" fill="#64748b" font-size="8">完整治理流程</text>
+    <text x="70" y="82" text-anchor="middle" fill="#64748b" font-size="8">模型升级管理</text>
+    <text x="70" y="98" text-anchor="middle" fill="#64748b" font-size="8">安全边界明确</text>
+    <text x="70" y="114" text-anchor="middle" fill="#64748b" font-size="8">持续演进机制</text>
+    <text x="70" y="130" text-anchor="middle" fill="#64748b" font-size="8">资产版本管理</text>
+    <rect x="10" y="150" width="120" height="20" rx="4" fill="#334155"/>
+    <text x="70" y="164" text-anchor="middle" fill="#94a3b8" font-size="7">目标状态</text>
+    <rect x="10" y="180" width="120" height="8" rx="4" fill="#10b981"/>
+  </g>
+
+  <!-- Bottom note -->
+  <g transform="translate(60, 295)">
+    <text x="340" y="14" text-anchor="middle" fill="#64748b" font-size="9">💡 大多数团队从 L0 到 L2 就能获得显著收益。不需要一步到位，先把基础做扎实。</text>
+  </g>
+</svg>

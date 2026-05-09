@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ragGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0e7490"/>
+    </linearGradient>
+    <linearGradient id="ftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="lcGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="420" rx="14" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">三种知识注入方式的选型判断</text>
+  <text x="400" y="52" text-anchor="middle" fill="#64748b" font-size="11">根据知识的更新频率、类型和信息量，选择最合适的方式</text>
+
+  <!-- Decision flow -->
+  <!-- Question 1 -->
+  <g transform="translate(280, 72)">
+    <rect width="240" height="40" rx="20" fill="#334155" stroke="#64748b" stroke-width="1"/>
+    <text x="120" y="25" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="600">❶ 知识更新频率？</text>
+  </g>
+
+  <!-- High frequency → RAG -->
+  <line x1="400" y1="112" x2="160" y2="150" stroke="#67e8f9" stroke-width="1.5" marker-end="url(#arrowCyan2)"/>
+  <text x="260" y="126" fill="#67e8f9" font-size="9">高频（每天/每周）</text>
+
+  <g transform="translate(60, 148)">
+    <rect width="200" height="50" rx="10" fill="url(#ragGrad)" opacity="0.85"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">→ RAG</text>
+    <text x="100" y="40" text-anchor="middle" fill="#e2e8f0" font-size="9" opacity="0.8">更新文档 → 重新嵌入 → 几分钟生效</text>
+  </g>
+
+  <!-- Low frequency → Question 2 -->
+  <line x1="400" y1="112" x2="400" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray2)"/>
+  <text x="440" y="136" fill="#94a3b8" font-size="9">低频/一次性</text>
+
+  <!-- Question 2 -->
+  <g transform="translate(280, 156)">
+    <rect width="240" height="40" rx="20" fill="#334155" stroke="#64748b" stroke-width="1"/>
+    <text x="120" y="25" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="600">❷ 知识类型？</text>
+  </g>
+
+  <!-- Facts → RAG -->
+  <line x1="340" y1="196" x2="160" y2="230" stroke="#67e8f9" stroke-width="1.5" marker-end="url(#arrowCyan2)"/>
+  <text x="230" y="210" fill="#67e8f9" font-size="9">事实性（API 参数、配置）</text>
+
+  <g transform="translate(60, 228)">
+    <rect width="200" height="50" rx="10" fill="url(#ragGrad)" opacity="0.85"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">→ RAG</text>
+    <text x="100" y="40" text-anchor="middle" fill="#e2e8f0" font-size="9" opacity="0.8">精确检索，按需注入</text>
+  </g>
+
+  <!-- Patterns → Fine-tuning -->
+  <line x1="400" y1="196" x2="640" y2="230" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowYellow)"/>
+  <text x="540" y="210" fill="#fbbf24" font-size="9">行为模式（风格、格式、流程）</text>
+
+  <g transform="translate(540, 228)">
+    <rect width="200" height="50" rx="10" fill="url(#ftGrad)" opacity="0.85"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">→ 微调</text>
+    <text x="100" y="40" text-anchor="middle" fill="#e2e8f0" font-size="9" opacity="0.8">内化为模型的"本能"</text>
+  </g>
+
+  <!-- Question 3 -->
+  <g transform="translate(280, 240)">
+    <rect width="240" height="40" rx="20" fill="#334155" stroke="#64748b" stroke-width="1"/>
+    <text x="120" y="25" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="600">❸ 信息量大小？</text>
+  </g>
+
+  <!-- Connection from Q2 to Q3 -->
+  <line x1="400" y1="196" x2="400" y2="240" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray2)"/>
+  <text x="440" y="222" fill="#94a3b8" font-size="9">完整上下文</text>
+
+  <!-- Small → Long context -->
+  <line x1="340" y1="280" x2="160" y2="314" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <text x="230" y="296" fill="#a78bfa" font-size="9">塞得进窗口（&lt;128K）</text>
+
+  <g transform="translate(60, 312)">
+    <rect width="200" height="50" rx="10" fill="url(#lcGrad)" opacity="0.85"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">→ 长上下文</text>
+    <text x="100" y="40" text-anchor="middle" fill="#e2e8f0" font-size="9" opacity="0.8">简单直接，适合一次性任务</text>
+  </g>
+
+  <!-- Large → RAG -->
+  <line x1="460" y1="280" x2="640" y2="314" stroke="#67e8f9" stroke-width="1.5" marker-end="url(#arrowCyan2)"/>
+  <text x="570" y="296" fill="#67e8f9" font-size="9">塞不进窗口（&gt;128K）</text>
+
+  <g transform="translate(540, 312)">
+    <rect width="200" height="50" rx="10" fill="url(#ragGrad)" opacity="0.85"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">→ RAG</text>
+    <text x="100" y="40" text-anchor="middle" fill="#e2e8f0" font-size="9" opacity="0.8">唯一能处理海量知识的方式</text>
+  </g>
+
+  <!-- Bottom summary -->
+  <g transform="translate(80, 380)">
+    <rect width="640" height="30" rx="8" fill="#1e293b" opacity="0.6"/>
+    <rect x="16" y="9" width="12" height="12" rx="2" fill="url(#ragGrad)"/>
+    <text x="34" y="19" fill="#94a3b8" font-size="10">RAG：实时知识</text>
+    <rect x="180" y="9" width="12" height="12" rx="2" fill="url(#ftGrad)"/>
+    <text x="198" y="19" fill="#94a3b8" font-size="10">微调：底层能力</text>
+    <rect x="340" y="9" width="12" height="12" rx="2" fill="url(#lcGrad)"/>
+    <text x="358" y="19" fill="#94a3b8" font-size="10">长上下文：当前上下文</text>
+    <text x="540" y="19" fill="#64748b" font-size="9">三者互补，常组合使用</text>
+  </g>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGray2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M 0 0 L 8 3 L 0 6 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M 0 0 L 8 3 L 0 6 Z" fill="#67e8f9"/>
+    </marker>
+    <marker id="arrowYellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M 0 0 L 8 3 L 0 6 Z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M 0 0 L 8 3 L 0 6 Z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+</svg>

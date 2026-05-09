@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="goGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="reviewGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="contextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" rx="16" fill="url(#bgGrad)"/>
+  <g opacity="0.03">
+    <line x1="150" y1="0" x2="150" y2="500" stroke="#fff"/>
+    <line x1="450" y1="0" x2="450" y2="500" stroke="#fff"/>
+    <line x1="750" y1="0" x2="750" y2="500" stroke="#fff"/>
+  </g>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#e2e8f0" font-size="22" font-weight="700" letter-spacing="1">Skill 动态加载</text>
+  <text x="450" y="60" text-anchor="middle" fill="#64748b" font-size="13">同一个 Agent，不同场景加载不同能力集</text>
+
+  <!-- ===== Three Scenarios ===== -->
+  <!-- Scenario 1: Go Backend -->
+  <g filter="url(#cardShadow)" transform="translate(30, 80)">
+    <rect width="270" height="180" rx="12" fill="#0a1a22" stroke="#06b6d4" stroke-width="1.5" opacity="0.95"/>
+    <rect width="270" height="4" rx="2" fill="url(#goGrad)" y="0"/>
+    <text x="135" y="28" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">🌅 上午：Go 后端开发</text>
+    <line x1="14" y1="38" x2="256" y2="38" stroke="#0a2a3a" stroke-width="0.8"/>
+    <!-- Loaded Skills -->
+    <text x="14" y="58" fill="#06b6d4" font-size="10" font-weight="600">已加载 Skill：</text>
+    <g transform="translate(14, 66)">
+      <rect width="242" height="24" rx="5" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#22d3ee" font-size="9">✓ Go 编码规范</text>
+      <text x="140" y="16" fill="#475569" font-size="8">1200 Token</text>
+    </g>
+    <g transform="translate(14, 94)">
+      <rect width="242" height="24" rx="5" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#22d3ee" font-size="9">✓ 微服务架构模式</text>
+      <text x="140" y="16" fill="#475569" font-size="8">800 Token</text>
+    </g>
+    <g transform="translate(14, 122)">
+      <rect width="242" height="24" rx="5" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#22d3ee" font-size="9">✓ 错误处理最佳实践</text>
+      <text x="140" y="16" fill="#475569" font-size="8">600 Token</text>
+    </g>
+    <!-- Unloaded -->
+    <g transform="translate(14, 152)">
+      <rect width="242" height="20" rx="4" fill="#334155" fill-opacity="0.3"/>
+      <text x="12" y="14" fill="#475569" font-size="8">✗ React 组件规范 | ✗ 代码审查清单</text>
+    </g>
+  </g>
+
+  <!-- Scenario 2: React Frontend -->
+  <g filter="url(#cardShadow)" transform="translate(315, 80)">
+    <rect width="270" height="180" rx="12" fill="#0a1028" stroke="#3b82f6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="270" height="4" rx="2" fill="url(#reactGrad)" y="0"/>
+    <text x="135" y="28" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">☀️ 下午：React 前端开发</text>
+    <line x1="14" y1="38" x2="256" y2="38" stroke="#0a1a3a" stroke-width="0.8"/>
+    <text x="14" y="58" fill="#3b82f6" font-size="10" font-weight="600">已加载 Skill：</text>
+    <g transform="translate(14, 66)">
+      <rect width="242" height="24" rx="5" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#60a5fa" font-size="9">✓ TypeScript 编码规范</text>
+      <text x="140" y="16" fill="#475569" font-size="8">1000 Token</text>
+    </g>
+    <g transform="translate(14, 94)">
+      <rect width="242" height="24" rx="5" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#60a5fa" font-size="9">✓ React 组件设计模式</text>
+      <text x="140" y="16" fill="#475569" font-size="8">900 Token</text>
+    </g>
+    <g transform="translate(14, 122)">
+      <rect width="242" height="24" rx="5" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#60a5fa" font-size="9">✓ UI 设计系统规范</text>
+      <text x="140" y="16" fill="#475569" font-size="8">700 Token</text>
+    </g>
+    <g transform="translate(14, 152)">
+      <rect width="242" height="20" rx="4" fill="#334155" fill-opacity="0.3"/>
+      <text x="12" y="14" fill="#475569" font-size="8">✗ Go 编码规范 | ✗ 微服务架构</text>
+    </g>
+  </g>
+
+  <!-- Scenario 3: Code Review -->
+  <g filter="url(#cardShadow)" transform="translate(600, 80)">
+    <rect width="270" height="180" rx="12" fill="#150f28" stroke="#8b5cf6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="270" height="4" rx="2" fill="url(#reviewGrad)" y="0"/>
+    <text x="135" y="28" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">🌙 晚上：代码审查</text>
+    <line x1="14" y1="38" x2="256" y2="38" stroke="#1a0f3a" stroke-width="0.8"/>
+    <text x="14" y="58" fill="#8b5cf6" font-size="10" font-weight="600">已加载 Skill：</text>
+    <g transform="translate(14, 66)">
+      <rect width="242" height="24" rx="5" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#a78bfa" font-size="9">✓ 代码审查清单</text>
+      <text x="140" y="16" fill="#475569" font-size="8">1500 Token</text>
+    </g>
+    <g transform="translate(14, 94)">
+      <rect width="242" height="24" rx="5" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#a78bfa" font-size="9">✓ 安全漏洞检查</text>
+      <text x="140" y="16" fill="#475569" font-size="8">800 Token</text>
+    </g>
+    <g transform="translate(14, 122)">
+      <rect width="242" height="24" rx="5" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="12" y="16" fill="#a78bfa" font-size="9">✓ 性能审查指南</text>
+      <text x="140" y="16" fill="#475569" font-size="8">600 Token</text>
+    </g>
+    <g transform="translate(14, 152)">
+      <rect width="242" height="20" rx="4" fill="#334155" fill-opacity="0.3"/>
+      <text x="12" y="14" fill="#475569" font-size="8">✗ Go 编码规范 | ✗ React 组件规范</text>
+    </g>
+  </g>
+
+  <!-- ===== Context Window Visualization ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 290)">
+    <rect width="840" height="180" rx="12" fill="#1a1508" stroke="#f59e0b" stroke-width="1.5" opacity="0.95"/>
+    <rect width="840" height="4" rx="2" fill="url(#contextGrad)" y="0"/>
+    <text x="420" y="28" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">上下文窗口空间分配</text>
+    <text x="420" y="46" text-anchor="middle" fill="#64748b" font-size="10">128K Token 总容量 — Skill 占用需要精心管理</text>
+
+    <!-- Context bar: Good case -->
+    <text x="20" y="72" fill="#10b981" font-size="10" font-weight="600">✓ 合理加载（3 个相关 Skill）</text>
+    <g transform="translate(20, 80)">
+      <!-- Total bar background -->
+      <rect width="800" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+      <!-- System Prompt -->
+      <rect width="80" height="24" rx="4" fill="#f59e0b" fill-opacity="0.3"/>
+      <text x="40" y="16" text-anchor="middle" fill="#fbbf24" font-size="7">System Prompt</text>
+      <!-- Skills -->
+      <rect x="80" width="160" height="24" rx="0" fill="#10b981" fill-opacity="0.3"/>
+      <text x="160" y="16" text-anchor="middle" fill="#34d399" font-size="7">Skill 指令 (2600 Token)</text>
+      <!-- Tools -->
+      <rect x="240" width="100" height="24" rx="0" fill="#3b82f6" fill-opacity="0.3"/>
+      <text x="290" y="16" text-anchor="middle" fill="#60a5fa" font-size="7">工具描述</text>
+      <!-- Task context -->
+      <rect x="340" width="460" height="24" rx="4" fill="#8b5cf6" fill-opacity="0.15"/>
+      <text x="570" y="16" text-anchor="middle" fill="#a78bfa" font-size="7">任务上下文 + 代码 + 对话历史（充足空间）</text>
+    </g>
+
+    <!-- Context bar: Bad case -->
+    <text x="20" y="128" fill="#ef4444" font-size="10" font-weight="600">✗ 过度加载（10 个 Skill）</text>
+    <g transform="translate(20, 136)">
+      <rect width="800" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+      <!-- System Prompt -->
+      <rect width="80" height="24" rx="4" fill="#f59e0b" fill-opacity="0.3"/>
+      <text x="40" y="16" text-anchor="middle" fill="#fbbf24" font-size="7">System Prompt</text>
+      <!-- Skills (too many) -->
+      <rect x="80" width="440" height="24" rx="0" fill="#ef4444" fill-opacity="0.3"/>
+      <text x="300" y="16" text-anchor="middle" fill="#fca5a5" font-size="7">Skill 指令 (12000 Token) — 过多！指令相互干扰</text>
+      <!-- Tools -->
+      <rect x="520" width="100" height="24" rx="0" fill="#3b82f6" fill-opacity="0.3"/>
+      <text x="570" y="16" text-anchor="middle" fill="#60a5fa" font-size="7">工具描述</text>
+      <!-- Task context (squeezed) -->
+      <rect x="620" width="180" height="24" rx="4" fill="#8b5cf6" fill-opacity="0.1" stroke="#ef4444" stroke-width="0.5" stroke-dasharray="3 2"/>
+      <text x="710" y="16" text-anchor="middle" fill="#64748b" font-size="7">任务上下文（空间不足⚠️）</text>
+    </g>
+  </g>
+
+  <!-- Key insight -->
+  <g transform="translate(30, 478)">
+    <text x="450" y="-6" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">ℹ️ Token 消耗对比：合理加载 2600 Token (2%) vs 过度加载 12000 Token (9.4%) — 差异 4.6×，且过多指令会产生冲突</text>
+    <text x="450" y="12" text-anchor="middle" fill="#94a3b8" font-size="10">关键原则：加载最相关的 Skill，而非最多的 Skill — 专注比全面更重要</text>
+  </g>
+</svg>

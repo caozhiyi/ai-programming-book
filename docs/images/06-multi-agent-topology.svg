@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="360" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">多 Agent 的三种典型拓扑结构</text>
+  <text x="450" y="56" text-anchor="middle" fill="#64748b" font-size="12">不同的任务结构，适合不同的组织方式</text>
+
+  <!-- ===== Topology 1: Star ===== -->
+  <g filter="url(#cardShadow)" transform="translate(25, 75)">
+    <rect width="270" height="260" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2" opacity="0.95"/>
+    <rect width="270" height="3" rx="1.5" fill="#f59e0b" y="0"/>
+    <text x="135" y="26" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">星型拓扑</text>
+    <text x="135" y="42" text-anchor="middle" fill="#64748b" font-size="10">Hub-and-Spoke</text>
+
+    <!-- Orchestrator (center) -->
+    <circle cx="135" cy="120" r="30" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="135" y="116" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700">主 Agent</text>
+    <text x="135" y="128" text-anchor="middle" fill="#d97706" font-size="8">协调者</text>
+
+    <!-- SubAgents -->
+    <circle cx="60" cy="80" r="20" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+    <text x="60" y="84" text-anchor="middle" fill="#3b82f6" font-size="8">Sub A</text>
+    <circle cx="210" cy="80" r="20" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+    <text x="210" y="84" text-anchor="middle" fill="#3b82f6" font-size="8">Sub B</text>
+    <circle cx="60" cy="160" r="20" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+    <text x="60" y="164" text-anchor="middle" fill="#3b82f6" font-size="8">Sub C</text>
+    <circle cx="210" cy="160" r="20" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+    <text x="210" y="164" text-anchor="middle" fill="#3b82f6" font-size="8">Sub D</text>
+
+    <!-- Lines -->
+    <line x1="110" y1="105" x2="76" y2="92" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+    <line x1="160" y1="105" x2="194" y2="92" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+    <line x1="110" y1="135" x2="76" y2="148" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+    <line x1="160" y1="135" x2="194" y2="148" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+
+    <!-- Pros/Cons -->
+    <line x1="16" y1="196" x2="254" y2="196" stroke="#334155" stroke-width="0.8"/>
+    <text x="16" y="214" fill="#10b981" font-size="9">✓ 控制集中，全局视图完整</text>
+    <text x="16" y="230" fill="#ef4444" font-size="9">✗ 主 Agent 成为信息瓶颈</text>
+    <text x="16" y="250" fill="#64748b" font-size="9" font-style="italic">最常用 — 适合子任务相对独立的场景</text>
+  </g>
+
+  <!-- ===== Topology 2: Hierarchical ===== -->
+  <g filter="url(#cardShadow)" transform="translate(315, 75)">
+    <rect width="270" height="260" rx="14" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2" opacity="0.95"/>
+    <rect width="270" height="3" rx="1.5" fill="#8b5cf6" y="0"/>
+    <text x="135" y="26" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">层级拓扑</text>
+    <text x="135" y="42" text-anchor="middle" fill="#64748b" font-size="10">Hierarchical</text>
+
+    <!-- Top level -->
+    <circle cx="135" cy="78" r="24" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="135" y="82" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700">主</text>
+
+    <!-- Mid level -->
+    <circle cx="75" cy="125" r="20" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="75" y="129" text-anchor="middle" fill="#8b5cf6" font-size="8">中层A</text>
+    <circle cx="195" cy="125" r="20" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="195" y="129" text-anchor="middle" fill="#8b5cf6" font-size="8">中层B</text>
+
+    <!-- Bottom level -->
+    <circle cx="42" cy="170" r="15" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="42" y="174" text-anchor="middle" fill="#3b82f6" font-size="7">S1</text>
+    <circle cx="108" cy="170" r="15" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="108" y="174" text-anchor="middle" fill="#3b82f6" font-size="7">S2</text>
+    <circle cx="162" cy="170" r="15" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="162" y="174" text-anchor="middle" fill="#3b82f6" font-size="7">S3</text>
+    <circle cx="228" cy="170" r="15" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="228" y="174" text-anchor="middle" fill="#3b82f6" font-size="7">S4</text>
+
+    <!-- Lines -->
+    <line x1="118" y1="95" x2="84" y2="110" stroke="#8b5cf6" stroke-width="1" opacity="0.5"/>
+    <line x1="152" y1="95" x2="186" y2="110" stroke="#8b5cf6" stroke-width="1" opacity="0.5"/>
+    <line x1="60" y1="140" x2="48" y2="158" stroke="#3b82f6" stroke-width="0.8" opacity="0.4"/>
+    <line x1="90" y1="140" x2="102" y2="158" stroke="#3b82f6" stroke-width="0.8" opacity="0.4"/>
+    <line x1="180" y1="140" x2="168" y2="158" stroke="#3b82f6" stroke-width="0.8" opacity="0.4"/>
+    <line x1="210" y1="140" x2="222" y2="158" stroke="#3b82f6" stroke-width="0.8" opacity="0.4"/>
+
+    <line x1="16" y1="196" x2="254" y2="196" stroke="#334155" stroke-width="0.8"/>
+    <text x="16" y="214" fill="#10b981" font-size="9">✓ 信息逐层压缩，缓解瓶颈</text>
+    <text x="16" y="230" fill="#ef4444" font-size="9">✗ 层级越深，信息损失越大</text>
+    <text x="16" y="250" fill="#64748b" font-size="9" font-style="italic">适合大规模、多层次的复杂任务</text>
+  </g>
+
+  <!-- ===== Topology 3: Pipeline ===== -->
+  <g filter="url(#cardShadow)" transform="translate(605, 75)">
+    <rect width="270" height="260" rx="14" fill="#0f172a" stroke="#10b981" stroke-width="1.2" opacity="0.95"/>
+    <rect width="270" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="135" y="26" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">流水线拓扑</text>
+    <text x="135" y="42" text-anchor="middle" fill="#64748b" font-size="10">Pipeline</text>
+
+    <!-- Pipeline stages - row 1 -->
+    <rect x="16" y="60" width="66" height="38" rx="8" fill="#8b5cf6" fill-opacity="0.12" stroke="#8b5cf6" stroke-width="0.8"/>
+    <text x="49" y="84" text-anchor="middle" fill="#a78bfa" font-size="9">分析</text>
+
+    <rect x="100" y="60" width="66" height="38" rx="8" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="133" y="84" text-anchor="middle" fill="#93c5fd" font-size="9">设计</text>
+
+    <rect x="184" y="60" width="66" height="38" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="0.8"/>
+    <text x="217" y="84" text-anchor="middle" fill="#6ee7b7" font-size="9">实现</text>
+
+    <!-- Pipeline stages - row 2 -->
+    <rect x="58" y="120" width="66" height="38" rx="8" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="91" y="144" text-anchor="middle" fill="#fbbf24" font-size="9">测试</text>
+
+    <rect x="142" y="120" width="66" height="38" rx="8" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="0.8"/>
+    <text x="175" y="144" text-anchor="middle" fill="#fca5a5" font-size="9">审查</text>
+
+    <!-- Arrows -->
+    <line x1="84" y1="79" x2="98" y2="79" stroke="#475569" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+    <line x1="168" y1="79" x2="182" y2="79" stroke="#475569" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+    <path d="M 230 100 Q 230 110, 126 118" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+    <line x1="126" y1="139" x2="140" y2="139" stroke="#475569" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+
+    <text x="135" y="176" text-anchor="middle" fill="#94a3b8" font-size="9">每个阶段 = 独立 Agent</text>
+    <text x="135" y="190" text-anchor="middle" fill="#94a3b8" font-size="9">上一个的输出 = 下一个的输入</text>
+
+    <line x1="16" y1="196" x2="254" y2="196" stroke="#334155" stroke-width="0.8"/>
+    <text x="16" y="214" fill="#10b981" font-size="9">✓ 职责清晰，上下文干净</text>
+    <text x="16" y="230" fill="#ef4444" font-size="9">✗ 灵活性差，信息难以逆流</text>
+    <text x="16" y="250" fill="#64748b" font-size="9" font-style="italic">适合有明确阶段划分的任务</text>
+  </g>
+</svg>

@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="480" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="450" y="28" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">从断言到评估：非确定性系统的测试思维转变</text>
+  <text x="450" y="46" text-anchor="middle" fill="#64748b" font-size="10">确定性系统有唯一正确答案，非确定性系统有"可接受的输出空间"</text>
+
+  <!-- ===== LEFT: Traditional Assertion ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 60)">
+    <rect width="380" height="200" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect width="380" height="3" rx="1.5" fill="#ef4444" y="0"/>
+    <text x="190" y="24" text-anchor="middle" fill="#fca5a5" font-size="13" font-weight="700">❌ 传统断言（确定性思维）</text>
+    <text x="190" y="40" text-anchor="middle" fill="#64748b" font-size="9">assert output == expected — 精确匹配</text>
+
+    <!-- Code example -->
+    <rect x="16" y="50" width="348" height="44" rx="6" fill="#1e293b"/>
+    <text x="26" y="66" fill="#64748b" font-size="9" font-family="monospace">// 测试 AI 生成的排序函数</text>
+    <text x="26" y="80" fill="#ef4444" font-size="9" font-family="monospace">assert generated_code == expected_code  // ❌</text>
+
+    <!-- Failure scenarios with data -->
+    <text x="16" y="108" fill="#94a3b8" font-size="9" font-weight="600">为什么失败率 &gt; 80%：</text>
+    <text x="16" y="124" fill="#64748b" font-size="8">• 变量名 i→idx → 测试失败（逻辑正确，表达不同）</text>
+    <text x="16" y="138" fill="#64748b" font-size="8">• 多一行注释 → 测试失败（信息增加，不是错误）</text>
+    <text x="16" y="152" fill="#64748b" font-size="8">• for→forEach → 测试失败（风格不同，语义等价）</text>
+    <text x="16" y="166" fill="#64748b" font-size="8">• 空行差异 → 测试失败（格式化偏好）</text>
+
+    <!-- Result -->
+    <rect x="16" y="176" width="348" height="18" rx="4" fill="#ef4444" fill-opacity="0.1"/>
+    <text x="190" y="190" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">结果：大量"假失败" — 输出正确但测试说它错了</text>
+  </g>
+
+  <!-- ===== RIGHT: Evaluation-Based ===== -->
+  <g filter="url(#cardShadow)" transform="translate(430, 60)">
+    <rect width="440" height="200" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="440" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="220" y="24" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700">✅ 基于评估（概率性思维）</text>
+    <text x="220" y="40" text-anchor="middle" fill="#64748b" font-size="9">assert satisfies(output, criteria) — 属性验证</text>
+
+    <!-- Code example -->
+    <rect x="16" y="50" width="408" height="56" rx="6" fill="#1e293b"/>
+    <text x="26" y="66" fill="#64748b" font-size="9" font-family="monospace">// 测试 AI 生成的排序函数</text>
+    <text x="26" y="80" fill="#10b981" font-size="9" font-family="monospace">assert compiles(output)           // 语法正确</text>
+    <text x="26" y="94" fill="#10b981" font-size="9" font-family="monospace">assert passes_tests(output, cases) // 功能正确</text>
+
+    <!-- Evaluation dimensions -->
+    <text x="16" y="118" fill="#94a3b8" font-size="9" font-weight="600">多维评估矩阵：</text>
+
+    <!-- Dimension table -->
+    <g transform="translate(16, 126)">
+      <!-- Headers -->
+      <text x="0" y="10" fill="#6ee7b7" font-size="8" font-weight="600">维度</text>
+      <text x="100" y="10" fill="#6ee7b7" font-size="8" font-weight="600">验证方法</text>
+      <text x="240" y="10" fill="#6ee7b7" font-size="8" font-weight="600">通过标准</text>
+      <line x1="0" y1="14" x2="408" y2="14" stroke="#334155" stroke-width="0.5"/>
+      <!-- Row 1 -->
+      <text x="0" y="28" fill="#94a3b8" font-size="8">语法正确性</text>
+      <text x="100" y="28" fill="#64748b" font-size="8">编译器/解释器</text>
+      <text x="240" y="28" fill="#64748b" font-size="8">零错误</text>
+      <!-- Row 2 -->
+      <text x="0" y="42" fill="#94a3b8" font-size="8">功能正确性</text>
+      <text x="100" y="42" fill="#64748b" font-size="8">单元测试套件</text>
+      <text x="240" y="42" fill="#64748b" font-size="8">全部通过</text>
+      <!-- Row 3 -->
+      <text x="0" y="56" fill="#94a3b8" font-size="8">代码质量</text>
+      <text x="100" y="56" fill="#64748b" font-size="8">Linter + 静态分析</text>
+      <text x="240" y="56" fill="#64748b" font-size="8">无新增 warning</text>
+      <!-- Row 4 -->
+      <text x="0" y="70" fill="#94a3b8" font-size="8">修改范围</text>
+      <text x="100" y="70" fill="#64748b" font-size="8">diff 行数统计</text>
+      <text x="240" y="70" fill="#64748b" font-size="8">只改必要部分</text>
+    </g>
+  </g>
+
+  <!-- ===== MIDDLE: The Spectrum ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 275)">
+    <rect width="840" height="90" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+    <text x="420" y="20" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="700">确定性光谱：不同任务需要不同的验证策略</text>
+    <line x1="16" y1="28" x2="824" y2="28" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Spectrum bar -->
+    <rect x="40" y="38" width="760" height="12" rx="6" fill="#1e293b"/>
+    <rect x="40" y="38" width="760" height="12" rx="6" fill="url(#bgGrad)" opacity="0.5"/>
+    <!-- Gradient overlay -->
+    <rect x="40" y="38" width="190" height="12" rx="6" fill="#10b981" opacity="0.3"/>
+    <rect x="230" y="38" width="190" height="12" fill="#3b82f6" opacity="0.2"/>
+    <rect x="420" y="38" width="190" height="12" fill="#f59e0b" opacity="0.2"/>
+    <rect x="610" y="38" width="190" height="12" rx="6" fill="#ef4444" opacity="0.2"/>
+
+    <!-- Labels -->
+    <text x="135" y="36" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">高确定性</text>
+    <text x="135" y="64" text-anchor="middle" fill="#64748b" font-size="7">格式转换 · 正则生成</text>
+    <text x="135" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ 可用精确断言</text>
+
+    <text x="325" y="36" text-anchor="middle" fill="#60a5fa" font-size="8" font-weight="600">中高确定性</text>
+    <text x="325" y="64" text-anchor="middle" fill="#64748b" font-size="7">算法实现 · Bug 修复</text>
+    <text x="325" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ 测试用例验证</text>
+
+    <text x="515" y="36" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">中低确定性</text>
+    <text x="515" y="64" text-anchor="middle" fill="#64748b" font-size="7">重构 · 架构设计</text>
+    <text x="515" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ 属性验证 + 人工审查</text>
+
+    <text x="705" y="36" text-anchor="middle" fill="#fca5a5" font-size="8" font-weight="600">低确定性</text>
+    <text x="705" y="64" text-anchor="middle" fill="#64748b" font-size="7">创意编码 · 文档撰写</text>
+    <text x="705" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ LLM-as-Judge + 人工</text>
+  </g>
+
+  <!-- ===== BOTTOM: Practical Evaluation Pipeline ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 380)">
+    <rect width="840" height="85" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="420" y="20" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="700">实践中的评估流水线（以代码生成为例）</text>
+    <line x1="16" y1="28" x2="824" y2="28" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Pipeline steps -->
+    <g transform="translate(16, 36)">
+      <rect width="120" height="38" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.6"/>
+      <text x="60" y="14" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">Gate 1: 编译</text>
+      <text x="60" y="28" text-anchor="middle" fill="#64748b" font-size="7">通过率 ~95%</text>
+      <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="6">成本：0（本地执行）</text>
+    </g>
+    <text x="142" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(152, 36)">
+      <rect width="120" height="38" rx="6" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="60" y="14" text-anchor="middle" fill="#60a5fa" font-size="8" font-weight="600">Gate 2: 测试</text>
+      <text x="60" y="28" text-anchor="middle" fill="#64748b" font-size="7">通过率 ~70%</text>
+      <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="6">成本：0（本地执行）</text>
+    </g>
+    <text x="278" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(288, 36)">
+      <rect width="120" height="38" rx="6" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="0.6"/>
+      <text x="60" y="14" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">Gate 3: Lint</text>
+      <text x="60" y="28" text-anchor="middle" fill="#64748b" font-size="7">通过率 ~85%</text>
+      <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="6">成本：0（本地执行）</text>
+    </g>
+    <text x="414" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(424, 36)">
+      <rect width="140" height="38" rx="6" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="70" y="14" text-anchor="middle" fill="#a78bfa" font-size="8" font-weight="600">Gate 4: LLM 审查</text>
+      <text x="70" y="28" text-anchor="middle" fill="#64748b" font-size="7">准确率 ~80%</text>
+      <text x="70" y="38" text-anchor="middle" fill="#64748b" font-size="6">成本：~$0.01/次</text>
+    </g>
+    <text x="570" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(580, 36)">
+      <rect width="140" height="38" rx="6" fill="#e2e8f0" fill-opacity="0.05" stroke="#e2e8f0" stroke-width="0.6"/>
+      <text x="70" y="14" text-anchor="middle" fill="#e2e8f0" font-size="8" font-weight="600">Gate 5: 人工确认</text>
+      <text x="70" y="28" text-anchor="middle" fill="#64748b" font-size="7">仅高风险操作</text>
+      <text x="70" y="38" text-anchor="middle" fill="#64748b" font-size="6">成本：人力时间</text>
+    </g>
+  </g>
+
+  <!-- Bottom insight -->
+  <text x="450" y="474" text-anchor="middle" fill="#94a3b8" font-size="9">💡 核心原则：用最便宜的 Gate 先过滤，把昂贵的验证留给少数通过前置检查的输出</text>
+</svg>

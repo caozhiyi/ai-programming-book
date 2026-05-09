@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 720" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrowRightAmber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowLeftAmber" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowRightPurple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrowLeftPurple" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrowRightCyan" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#06b6d4"/>
+    </marker>
+    <marker id="arrowLeftCyan" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#06b6d4"/>
+    </marker>
+    <marker id="arrowRightGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrowLeftGreen" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="720" rx="16" fill="url(#bgGrad)"/>
+  <g opacity="0.025">
+    <line x1="0" y1="100" x2="920" y2="100" stroke="#fff"/>
+    <line x1="0" y1="200" x2="920" y2="200" stroke="#fff"/>
+    <line x1="0" y1="300" x2="920" y2="300" stroke="#fff"/>
+    <line x1="0" y1="400" x2="920" y2="400" stroke="#fff"/>
+    <line x1="0" y1="500" x2="920" y2="500" stroke="#fff"/>
+    <line x1="0" y1="600" x2="920" y2="600" stroke="#fff"/>
+  </g>
+
+  <!-- Title -->
+  <text x="460" y="36" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">Agent ↔ LLM ↔ MCP 完整交互流程</text>
+  <text x="460" y="56" text-anchor="middle" fill="#64748b" font-size="12" letter-spacing="0.5">一次工具调用中，各角色之间的消息流转</text>
+
+  <!-- ==================== ROLE HEADERS ==================== -->
+  <!-- User -->
+  <g filter="url(#cardShadow)" transform="translate(40, 75)">
+    <rect width="120" height="50" rx="12" fill="#1a2a1a" stroke="#10b981" stroke-width="1.5"/>
+    <text x="60" y="22" text-anchor="middle" fill="#10b981" font-size="16">👤</text>
+    <text x="60" y="40" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">用户</text>
+  </g>
+
+  <!-- Agent / Orchestrator -->
+  <g filter="url(#cardShadow)" transform="translate(230, 75)">
+    <rect width="140" height="50" rx="12" fill="#1f1a0a" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="70" y="22" text-anchor="middle" fill="#f59e0b" font-size="16">⚙️</text>
+    <text x="70" y="40" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">Agent 编排层</text>
+  </g>
+
+  <!-- LLM -->
+  <g filter="url(#cardShadow)" transform="translate(440, 75)">
+    <rect width="120" height="50" rx="12" fill="#1a1533" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="60" y="22" text-anchor="middle" fill="#8b5cf6" font-size="16">🧠</text>
+    <text x="60" y="40" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">LLM</text>
+  </g>
+
+  <!-- MCP Client -->
+  <g filter="url(#cardShadow)" transform="translate(620, 75)">
+    <rect width="120" height="50" rx="12" fill="#0f1a33" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="60" y="22" text-anchor="middle" fill="#3b82f6" font-size="16">🔌</text>
+    <text x="60" y="40" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">MCP Client</text>
+  </g>
+
+  <!-- MCP Server -->
+  <g filter="url(#cardShadow)" transform="translate(800, 75)">
+    <rect width="100" height="50" rx="12" fill="#0f2a2a" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="50" y="22" text-anchor="middle" fill="#06b6d4" font-size="16">🛠️</text>
+    <text x="50" y="40" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="700">MCP Server</text>
+  </g>
+
+  <!-- ==================== LIFELINES ==================== -->
+  <line x1="100" y1="128" x2="100" y2="690" stroke="#10b981" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="300" y1="128" x2="300" y2="690" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="500" y1="128" x2="500" y2="690" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="680" y1="128" x2="680" y2="690" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="850" y1="128" x2="850" y2="690" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+
+  <!-- ==================== PHASE 0: INITIALIZATION ==================== -->
+  <g transform="translate(0, 0)">
+    <!-- Phase label -->
+    <rect x="12" y="138" width="8" height="52" rx="4" fill="#06b6d4" opacity="0.5"/>
+    <text x="16" y="168" fill="#06b6d4" font-size="8" font-weight="600" transform="rotate(-90, 16, 168)">初始化</text>
+
+    <!-- Step 0a: Client connects to Server -->
+    <line x1="685" y1="155" x2="843" y2="155" stroke="#06b6d4" stroke-width="1.5" marker-end="url(#arrowRightCyan)"/>
+    <rect x="710" y="138" width="110" height="16" rx="4" fill="#06b6d4" fill-opacity="0.08"/>
+    <text x="765" y="149" text-anchor="middle" fill="#06b6d4" font-size="9" font-weight="500">连接 &amp; 握手</text>
+
+    <!-- Step 0b: Server returns tool list -->
+    <line x1="845" y1="180" x2="687" y2="180" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowRightCyan)"/>
+    <rect x="710" y="164" width="110" height="16" rx="4" fill="#06b6d4" fill-opacity="0.06"/>
+    <text x="765" y="175" text-anchor="middle" fill="#06b6d4" font-size="9">返回工具列表</text>
+  </g>
+
+  <!-- ==================== PHASE 1: USER REQUEST ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="12" y="200" width="8" height="40" rx="4" fill="#10b981" opacity="0.5"/>
+
+    <!-- Step 1: User sends request -->
+    <line x1="107" y1="222" x2="293" y2="222" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrowRightGreen)"/>
+    <rect x="130" y="203" width="140" height="18" rx="5" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.5"/>
+    <text x="200" y="215" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">❶ "帮我重构认证模块"</text>
+  </g>
+
+  <!-- ==================== PHASE 2: AGENT ASSEMBLES CONTEXT ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="12" y="248" width="8" height="72" rx="4" fill="#f59e0b" opacity="0.5"/>
+
+    <!-- Agent self-action: assemble context -->
+    <rect x="260" y="248" width="80" height="72" rx="8" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-width="0.8" stroke-dasharray="3 2"/>
+    <text x="300" y="264" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">❷ 组装上下文</text>
+    <text x="300" y="280" text-anchor="middle" fill="#94a3b8" font-size="8">System Prompt</text>
+    <text x="300" y="293" text-anchor="middle" fill="#94a3b8" font-size="8">+ 工具描述 (来自 MCP)</text>
+    <text x="300" y="306" text-anchor="middle" fill="#94a3b8" font-size="8">+ 对话历史 + 用户消息</text>
+
+    <!-- Agent asks Client for tool descriptions -->
+    <line x1="340" y1="265" x2="673" y2="265" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrowRightAmber)" opacity="0.6"/>
+    <text x="505" y="258" text-anchor="middle" fill="#f59e0b" font-size="8" opacity="0.7">获取已注册的工具描述</text>
+  </g>
+
+  <!-- ==================== PHASE 3: CALL LLM ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="12" y="335" width="8" height="52" rx="4" fill="#8b5cf6" opacity="0.5"/>
+
+    <!-- Step 3: Agent sends to LLM -->
+    <line x1="307" y1="352" x2="493" y2="352" stroke="#8b5cf6" stroke-width="1.8" marker-end="url(#arrowRightPurple)"/>
+    <rect x="330" y="333" width="140" height="18" rx="5" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.5"/>
+    <text x="400" y="345" text-anchor="middle" fill="#8b5cf6" font-size="10" font-weight="600">❸ 发送完整上下文</text>
+
+    <!-- LLM thinks and returns function call -->
+    <rect x="470" y="360" width="60" height="22" rx="6" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="0.6"/>
+    <text x="500" y="374" text-anchor="middle" fill="#c4b5fd" font-size="9">推理中...</text>
+
+    <line x1="493" y1="385" x2="307" y2="385" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowRightPurple)"/>
+    <rect x="320" y="368" width="160" height="18" rx="5" fill="#8b5cf6" fill-opacity="0.06"/>
+    <text x="400" y="380" text-anchor="middle" fill="#a78bfa" font-size="9">❹ Function Call: search_code(...)</text>
+  </g>
+
+  <!-- ==================== PHASE 4: TOOL EXECUTION VIA MCP ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="12" y="400" width="8" height="100" rx="4" fill="#3b82f6" opacity="0.5"/>
+
+    <!-- Agent forwards to MCP Client -->
+    <line x1="307" y1="422" x2="673" y2="422" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowRight)"/>
+    <rect x="400" y="403" width="180" height="18" rx="5" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.5"/>
+    <text x="490" y="415" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="600">❺ 路由工具调用请求 (JSON-RPC)</text>
+
+    <!-- MCP Client forwards to Server -->
+    <line x1="687" y1="447" x2="843" y2="447" stroke="#06b6d4" stroke-width="1.5" marker-end="url(#arrowRightCyan)"/>
+    <rect x="710" y="428" width="110" height="18" rx="5" fill="#06b6d4" fill-opacity="0.08"/>
+    <text x="765" y="440" text-anchor="middle" fill="#06b6d4" font-size="9" font-weight="500">❻ 转发到目标 Server</text>
+
+    <!-- Server executes -->
+    <rect x="825" y="455" width="50" height="22" rx="6" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-width="0.6"/>
+    <text x="850" y="469" text-anchor="middle" fill="#67e8f9" font-size="9">执行...</text>
+
+    <!-- Server returns result -->
+    <line x1="843" y1="486" x2="687" y2="486" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowRightCyan)"/>
+    <rect x="710" y="469" width="110" height="16" rx="4" fill="#06b6d4" fill-opacity="0.06"/>
+    <text x="765" y="480" text-anchor="middle" fill="#06b6d4" font-size="9">❼ 返回执行结果</text>
+
+    <!-- MCP Client returns to Agent -->
+    <line x1="673" y1="505" x2="307" y2="505" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowRight)"/>
+    <rect x="400" y="488" width="180" height="16" rx="4" fill="#3b82f6" fill-opacity="0.06"/>
+    <text x="490" y="499" text-anchor="middle" fill="#60a5fa" font-size="9">❽ 工具结果返回 Agent</text>
+  </g>
+
+  <!-- ==================== PHASE 5: SECOND LLM CALL ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="12" y="515" width="8" height="72" rx="4" fill="#8b5cf6" opacity="0.5"/>
+
+    <!-- Agent sends result back to LLM -->
+    <line x1="307" y1="537" x2="493" y2="537" stroke="#8b5cf6" stroke-width="1.8" marker-end="url(#arrowRightPurple)"/>
+    <rect x="320" y="518" width="160" height="18" rx="5" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.5"/>
+    <text x="400" y="530" text-anchor="middle" fill="#8b5cf6" font-size="10" font-weight="600">❾ 上下文 + 工具结果</text>
+
+    <!-- LLM generates final answer -->
+    <rect x="470" y="545" width="60" height="22" rx="6" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="0.6"/>
+    <text x="500" y="559" text-anchor="middle" fill="#c4b5fd" font-size="9">推理中...</text>
+
+    <line x1="493" y1="582" x2="307" y2="582" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowRightPurple)"/>
+    <rect x="330" y="565" width="150" height="18" rx="5" fill="#8b5cf6" fill-opacity="0.06"/>
+    <text x="405" y="577" text-anchor="middle" fill="#a78bfa" font-size="9">❿ 生成最终回答 (或继续调用)</text>
+  </g>
+
+  <!-- ==================== PHASE 6: RETURN TO USER ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="12" y="598" width="8" height="30" rx="4" fill="#10b981" opacity="0.5"/>
+
+    <line x1="293" y1="615" x2="107" y2="615" stroke="#10b981" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arrowRightGreen)"/>
+    <rect x="130" y="596" width="140" height="18" rx="5" fill="#10b981" fill-opacity="0.06"/>
+    <text x="200" y="608" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">⓫ 返回结果给用户</text>
+  </g>
+
+  <!-- ==================== LOOP INDICATOR ==================== -->
+  <g transform="translate(0, 0)">
+    <rect x="255" y="332" width="440" height="270" rx="10" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="6 4" opacity="0.4"/>
+    <rect x="255" y="332" width="90" height="18" rx="4" fill="#334155" opacity="0.7"/>
+    <text x="300" y="344" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">ReAct 循环</text>
+    <text x="690" y="344" fill="#475569" font-size="8" font-style="italic">可重复多次，直到任务完成</text>
+  </g>
+
+  <!-- ==================== BOTTOM INSIGHT ==================== -->
+  <g transform="translate(30, 640)">
+    <rect width="860" height="64" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="0.8" opacity="0.7"/>
+    <text x="430" y="20" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="600">关键认知</text>
+    <text x="430" y="38" text-anchor="middle" fill="#94a3b8" font-size="10">LLM 只负责"决策"（生成 Function Call JSON），不执行任何操作。MCP Client 负责"路由"，MCP Server 负责"执行"。</text>
+    <text x="430" y="54" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">Agent 编排层是总指挥 — 组装上下文、调用 LLM、转发工具请求、把结果塞回上下文，驱动整个循环向前推进。</text>
+  </g>
+</svg>

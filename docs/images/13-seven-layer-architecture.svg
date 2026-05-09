@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowDown" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+      <polygon points="0 0, 8 0, 4 6" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowUp" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
+      <polygon points="0 6, 8 6, 4 0" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowRight" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="560" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="450" y="28" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">AI 编程系统的七层架构</text>
+  <text x="450" y="46" text-anchor="middle" fill="#64748b" font-size="10">每一层解决一个独立问题，层间通过明确的数据契约交互</text>
+
+  <!-- ===== MAIN ARCHITECTURE: 7 Layers in 3 Columns ===== -->
+
+  <!-- Column Headers -->
+  <text x="160" y="72" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">能力供给（Agent 能做什么）</text>
+  <text x="450" y="72" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">核心引擎（Agent 如何思考）</text>
+  <text x="740" y="72" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">知识供给（Agent 知道什么）</text>
+
+  <!-- ===== LEFT COLUMN: Capability Layers ===== -->
+
+  <!-- Tool Layer (MCP) -->
+  <g filter="url(#cardShadow)" transform="translate(30, 85)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect width="4" height="90" rx="2" fill="#06b6d4"/>
+    <text x="20" y="18" fill="#67e8f9" font-size="11" font-weight="700">🔧 工具层 (MCP)</text>
+    <text x="200" y="18" fill="#64748b" font-size="8">Ch.3-4</text>
+    <line x1="12" y1="26" x2="248" y2="26" stroke="#1e293b" stroke-width="0.5"/>
+    <text x="20" y="42" fill="#94a3b8" font-size="9">读写文件 · 执行命令 · 调用 API</text>
+    <text x="20" y="58" fill="#64748b" font-size="8">协议：JSON-RPC over stdio/SSE</text>
+    <text x="20" y="72" fill="#64748b" font-size="8">关键约束：工具描述 ≤ 200 tokens · 返回 ≤ 4K</text>
+    <text x="20" y="84" fill="#06b6d4" font-size="7" opacity="0.7">→ 输出：结构化工具结果（string/JSON）</text>
+  </g>
+
+  <!-- Skill Layer -->
+  <g filter="url(#cardShadow)" transform="translate(30, 185)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5"/>
+    <rect width="4" height="90" rx="2" fill="#8b5cf6"/>
+    <text x="20" y="18" fill="#a78bfa" font-size="11" font-weight="700">📋 能力层 (Skill)</text>
+    <text x="200" y="18" fill="#64748b" font-size="8">Ch.5</text>
+    <line x1="12" y1="26" x2="248" y2="26" stroke="#1e293b" stroke-width="0.5"/>
+    <text x="20" y="42" fill="#94a3b8" font-size="9">编码规范 · 架构模式 · 工作流定义</text>
+    <text x="20" y="58" fill="#64748b" font-size="8">加载方式：按场景动态注入 System Prompt</text>
+    <text x="20" y="72" fill="#64748b" font-size="8">关键约束：单 Skill ≤ 2K tokens · 同时 ≤ 3 个</text>
+    <text x="20" y="84" fill="#8b5cf6" font-size="7" opacity="0.7">→ 输出：指令文本（注入上下文窗口）</text>
+  </g>
+
+  <!-- Collaboration Layer -->
+  <g filter="url(#cardShadow)" transform="translate(30, 285)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#ec4899" stroke-width="1.5"/>
+    <rect width="4" height="90" rx="2" fill="#ec4899"/>
+    <text x="20" y="18" fill="#f472b6" font-size="11" font-weight="700">👥 协作层 (Multi-Agent)</text>
+    <text x="200" y="18" fill="#64748b" font-size="8">Ch.6</text>
+    <line x1="12" y1="26" x2="248" y2="26" stroke="#1e293b" stroke-width="0.5"/>
+    <text x="20" y="42" fill="#94a3b8" font-size="9">并行执行 · 专业分工 · 结果汇总</text>
+    <text x="20" y="58" fill="#64748b" font-size="8">模式：Orchestrator → SubAgent（独立上下文）</text>
+    <text x="20" y="72" fill="#64748b" font-size="8">关键约束：SubAgent 无共享记忆 · 结果需合并</text>
+    <text x="20" y="84" fill="#ec4899" font-size="7" opacity="0.7">→ 输出：子任务结果（文本/代码片段）</text>
+  </g>
+
+  <!-- ===== CENTER COLUMN: Core Engine ===== -->
+
+  <!-- Agent Layer (Central) -->
+  <g filter="url(#cardShadow)" transform="translate(320, 155)">
+    <rect width="260" height="120" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="2.5"/>
+    <text x="130" y="22" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="700">🧠 Agent 层</text>
+    <text x="130" y="38" text-anchor="middle" fill="#64748b" font-size="9">Ch.3, 7, 11</text>
+    <line x1="16" y1="46" x2="244" y2="46" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="62" fill="#94a3b8" font-size="9">推理 → 规划 → 工具选择 → 执行 → 验证</text>
+    <text x="16" y="78" fill="#94a3b8" font-size="9">循环：ReAct (Reason + Act) Loop</text>
+    <text x="16" y="94" fill="#64748b" font-size="8">输入：上下文窗口全部内容（拼接的字符串）</text>
+    <text x="16" y="108" fill="#64748b" font-size="8">输出：下一步动作（工具调用 / 文本回复）</text>
+  </g>
+
+  <!-- User -->
+  <g filter="url(#cardShadow)" transform="translate(370, 85)">
+    <rect width="160" height="50" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="80" y="20" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="600">👤 用户</text>
+    <text x="80" y="38" text-anchor="middle" fill="#94a3b8" font-size="8">自然语言指令 + 确认/拒绝</text>
+  </g>
+  <!-- Arrow: User → Agent -->
+  <line x1="450" y1="135" x2="450" y2="155" stroke="#e2e8f0" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ===== RIGHT COLUMN: Knowledge Layers ===== -->
+
+  <!-- Memory Layer -->
+  <g filter="url(#cardShadow)" transform="translate(610, 85)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="4" height="90" rx="2" fill="#10b981"/>
+    <text x="20" y="18" fill="#6ee7b7" font-size="11" font-weight="700">💾 记忆层</text>
+    <text x="200" y="18" fill="#64748b" font-size="8">Ch.8</text>
+    <line x1="12" y1="26" x2="248" y2="26" stroke="#1e293b" stroke-width="0.5"/>
+    <text x="20" y="42" fill="#94a3b8" font-size="9">用户偏好 · 项目约定 · 历史决策</text>
+    <text x="20" y="58" fill="#64748b" font-size="8">存储：向量DB + KV Store · 检索：语义+关键词</text>
+    <text x="20" y="72" fill="#64748b" font-size="8">关键约束：注入预算 ≤ 上下文 15% · 需要衰减</text>
+    <text x="20" y="84" fill="#10b981" font-size="7" opacity="0.7">→ 输出：相关记忆片段（注入 System 区域）</text>
+  </g>
+
+  <!-- Knowledge Layer (RAG) -->
+  <g filter="url(#cardShadow)" transform="translate(610, 185)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect width="4" height="90" rx="2" fill="#3b82f6"/>
+    <text x="20" y="18" fill="#60a5fa" font-size="11" font-weight="700">📚 知识层 (RAG)</text>
+    <text x="200" y="18" fill="#64748b" font-size="8">Ch.10</text>
+    <line x1="12" y1="26" x2="248" y2="26" stroke="#1e293b" stroke-width="0.5"/>
+    <text x="20" y="42" fill="#94a3b8" font-size="9">代码库索引 · 文档检索 · API 参考</text>
+    <text x="20" y="58" fill="#64748b" font-size="8">流程：Query→Embed→Search→Rerank→Inject</text>
+    <text x="20" y="72" fill="#64748b" font-size="8">关键约束：检索延迟 ≤ 500ms · Top-K ≤ 5 chunks</text>
+    <text x="20" y="84" fill="#3b82f6" font-size="7" opacity="0.7">→ 输出：相关代码/文档片段（注入 User 区域）</text>
+  </g>
+
+  <!-- Spec Layer -->
+  <g filter="url(#cardShadow)" transform="translate(610, 285)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="4" height="90" rx="2" fill="#f59e0b"/>
+    <text x="20" y="18" fill="#fbbf24" font-size="11" font-weight="700">📐 规范层 (OpenSpec)</text>
+    <text x="200" y="18" fill="#64748b" font-size="8">Ch.12</text>
+    <line x1="12" y1="26" x2="248" y2="26" stroke="#1e293b" stroke-width="0.5"/>
+    <text x="20" y="42" fill="#94a3b8" font-size="9">编码标准 · 安全策略 · 质量约束 · 架构规则</text>
+    <text x="20" y="58" fill="#64748b" font-size="8">格式：声明式 YAML/TOML · 可组合 · 可验证</text>
+    <text x="20" y="72" fill="#64748b" font-size="8">关键约束：规则数 ≤ 50 · 无冲突 · 优先级明确</text>
+    <text x="20" y="84" fill="#f59e0b" font-size="7" opacity="0.7">→ 输出：约束规则集（注入 System 区域）</text>
+  </g>
+
+  <!-- ===== CONNECTION ARROWS ===== -->
+  <!-- Left → Center -->
+  <line x1="290" y1="130" x2="320" y2="185" stroke="#06b6d4" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="290" y1="230" x2="320" y2="215" stroke="#8b5cf6" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="290" y1="330" x2="320" y2="245" stroke="#ec4899" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <!-- Right → Center -->
+  <line x1="610" y1="130" x2="580" y2="185" stroke="#10b981" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="610" y1="230" x2="580" y2="215" stroke="#3b82f6" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="610" y1="330" x2="580" y2="245" stroke="#f59e0b" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+
+  <!-- ===== BOTTOM: Request Lifecycle ===== -->
+  <g transform="translate(30, 395)">
+    <rect width="840" height="145" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" opacity="0.7"/>
+    <text x="420" y="20" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="700">一次请求的生命周期（"帮我重构认证模块"）</text>
+    <line x1="16" y1="28" x2="824" y2="28" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Step 1 -->
+    <g transform="translate(16, 36)">
+      <rect width="110" height="50" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.6"/>
+      <text x="55" y="14" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">① 记忆检索</text>
+      <text x="55" y="28" text-anchor="middle" fill="#64748b" font-size="7">"用户偏好 slog"</text>
+      <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="7">"错误用 AppError"</text>
+    </g>
+    <text x="132" y="62" fill="#94a3b8" font-size="10">→</text>
+
+    <!-- Step 2 -->
+    <g transform="translate(142, 36)">
+      <rect width="110" height="50" rx="6" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="55" y="14" text-anchor="middle" fill="#60a5fa" font-size="8" font-weight="600">② RAG 检索</text>
+      <text x="55" y="28" text-anchor="middle" fill="#64748b" font-size="7">auth/ 目录代码</text>
+      <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="7">认证模块文档</text>
+    </g>
+    <text x="258" y="62" fill="#94a3b8" font-size="10">→</text>
+
+    <!-- Step 3 -->
+    <g transform="translate(268, 36)">
+      <rect width="110" height="50" rx="6" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="55" y="14" text-anchor="middle" fill="#a78bfa" font-size="8" font-weight="600">③ Skill 加载</text>
+      <text x="55" y="28" text-anchor="middle" fill="#64748b" font-size="7">"Go 重构规范"</text>
+      <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="7">"错误处理模式"</text>
+    </g>
+    <text x="384" y="62" fill="#94a3b8" font-size="10">→</text>
+
+    <!-- Step 4 -->
+    <g transform="translate(394, 36)">
+      <rect width="110" height="50" rx="6" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="0.6"/>
+      <text x="55" y="14" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">④ Agent 推理</text>
+      <text x="55" y="28" text-anchor="middle" fill="#64748b" font-size="7">规划重构步骤</text>
+      <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="7">选择工具序列</text>
+    </g>
+    <text x="510" y="62" fill="#94a3b8" font-size="10">→</text>
+
+    <!-- Step 5 -->
+    <g transform="translate(520, 36)">
+      <rect width="110" height="50" rx="6" fill="#06b6d4" fill-opacity="0.08" stroke="#06b6d4" stroke-width="0.6"/>
+      <text x="55" y="14" text-anchor="middle" fill="#67e8f9" font-size="8" font-weight="600">⑤ 工具执行</text>
+      <text x="55" y="28" text-anchor="middle" fill="#64748b" font-size="7">read_file → edit</text>
+      <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="7">run_tests → pass</text>
+    </g>
+    <text x="636" y="62" fill="#94a3b8" font-size="10">→</text>
+
+    <!-- Step 6 -->
+    <g transform="translate(646, 36)">
+      <rect width="110" height="50" rx="6" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="0.6"/>
+      <text x="55" y="14" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">⑥ 规范校验</text>
+      <text x="55" y="28" text-anchor="middle" fill="#64748b" font-size="7">lint pass ✓</text>
+      <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="7">符合 OpenSpec ✓</text>
+    </g>
+
+    <!-- Token budget breakdown -->
+    <g transform="translate(16, 96)">
+      <text x="0" y="12" fill="#94a3b8" font-size="9" font-weight="600">上下文窗口分配：</text>
+      <rect x="130" y="2" width="60" height="14" rx="3" fill="#10b981" opacity="0.3"/>
+      <text x="160" y="13" text-anchor="middle" fill="#6ee7b7" font-size="7">记忆 8%</text>
+      <rect x="192" y="2" width="100" height="14" rx="3" fill="#3b82f6" opacity="0.3"/>
+      <text x="242" y="13" text-anchor="middle" fill="#60a5fa" font-size="7">RAG 知识 15%</text>
+      <rect x="294" y="2" width="80" height="14" rx="3" fill="#8b5cf6" opacity="0.3"/>
+      <text x="334" y="13" text-anchor="middle" fill="#a78bfa" font-size="7">Skill 12%</text>
+      <rect x="376" y="2" width="100" height="14" rx="3" fill="#f59e0b" opacity="0.3"/>
+      <text x="426" y="13" text-anchor="middle" fill="#fbbf24" font-size="7">工具描述 10%</text>
+      <rect x="478" y="2" width="120" height="14" rx="3" fill="#64748b" opacity="0.3"/>
+      <text x="538" y="13" text-anchor="middle" fill="#94a3b8" font-size="7">对话历史 25%</text>
+      <rect x="600" y="2" width="120" height="14" rx="3" fill="#e2e8f0" opacity="0.2"/>
+      <text x="660" y="13" text-anchor="middle" fill="#e2e8f0" font-size="7">剩余（任务）30%</text>
+    </g>
+
+    <!-- Key insight -->
+    <text x="420" y="132" text-anchor="middle" fill="#64748b" font-size="8" font-style="italic">每一层都在竞争有限的上下文空间 — 这就是为什么每层都有 token 预算约束</text>
+  </g>
+</svg>

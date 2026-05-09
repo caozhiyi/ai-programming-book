@@ -1,0 +1,84 @@
+site_name: AI编程的第一性原理
+site_description: 从问答到执行的系统化推导
+site_author: ekko
+
+theme:
+  name: material
+  language: zh
+  palette:
+    # 浅色模式切换
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换到暗黑模式
+    # 暗黑模式切换
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  features:
+    - navigation.top # 返回顶部按钮
+    - navigation.footer # 底部翻页组件
+    - content.code.copy # 代码块复制按钮
+    - content.code.annotate # 代码交互注释
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - attr_list
+
+nav:
+  - 前言: index.md
+
+  - "卷一: 大模型的运行真相":
+    - 00a.卷一导读大模型的运行真相.md
+    - "1. 大模型是怎么思考的": 01.大模型是怎么思考的.md
+    - "2. 与大模型交互的本质": 02.与大模型交互的本质.md
+
+  - "卷二: 从对话到自主":
+    - 00b.卷二导读从对话到自主.md
+    - "3. 从问答到执行Agentic的运行原理": 03.从问答到执行Agentic的运行原理.md
+    - "4. 工具的标准化MCP交互原理": 04.工具的标准化MCP交互原理.md
+    - "5. 预定义的能力包Skill交互原理": 05.预定义的能力包Skill交互原理.md
+    - "6. 一个不够用多Agent协作原理": 06.一个不够用多Agent协作原理.md
+    - "7. Agent的能力边界与失败模式": 07.Agent的能力边界与失败模式.md
+
+  - "卷三: 记忆与上下文工程":
+    - 00c.卷三导读记忆与上下文.md
+    - "8. 让AI记住你：记忆体系的原理与设计": 08.让AI记住你：记忆体系的原理与设计.md
+    - "9. Token经济学：上下文工程的艺术": 09.Token经济学：上下文工程的艺术.md
+    - "10. 知识注入的三条路：RAG、微调与长上下文": 10.知识注入的三条路：RAG、微调与长上下文.md
+
+  - "卷四: 架构选型的判断力":
+    - 00d.卷四导读架构选型的判断力.md
+    - "11. 选型决策框架：面对具体场景该用什么": 11.选型决策框架：面对具体场景该用什么.md
+    - "12. 规范驱动编程：从提示词到OpenSpec": 12.规范驱动编程：从提示词到OpenSpec.md
+    - "13. 端到端AI编程系统蓝图：从请求到交付的全链路": 13.端到端AI编程系统蓝图：从请求到交付的全链路.md
+    - "14. 安全与对齐：AI系统的信任边界": 14.安全与对齐：AI系统的信任边界.md
+
+  - "卷五: 工程化与未来":
+    - 00e.卷五导读工程化与未来.md
+    - "15. 非确定性系统的工程化挑战": 15.非确定性系统的工程化挑战.md
+    - "16. AI工程组织学：治理、评估与团队迁移": 16.AI工程组织学：治理、评估与团队迁移.md
+    - "17. AI编程的边界与未来": 17.AI编程的边界与未来.md
+
+  - 附录:
+    - "附录A 快速参考卡片": appendix-quick-reference.md
+    - "附录B 30天实践路径": appendix-30-day-path.md

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="350" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="400" y="28" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">团队迁移路径：从 L0 到 L4 的关键动作与风险</text>
+
+  <!-- Timeline arrow -->
+  <line x1="40" y1="170" x2="770" y2="170" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- L0 -->
+  <g transform="translate(55, 80)">
+    <rect width="120" height="70" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+    <text x="60" y="20" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="700">L0</text>
+    <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="9">对话式使用</text>
+    <text x="60" y="52" text-anchor="middle" fill="#475569" font-size="8">个人随意探索</text>
+    <text x="60" y="64" text-anchor="middle" fill="#475569" font-size="8">无规范无评估</text>
+  </g>
+  <circle cx="115" cy="170" r="5" fill="#64748b"/>
+
+  <!-- Arrow L0→L1 -->
+  <g transform="translate(100, 195)">
+    <text x="50" y="12" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">🔑 接入 Agent 环境</text>
+    <text x="50" y="24" text-anchor="middle" fill="#475569" font-size="7">⚠️ 风险：期望过高</text>
+  </g>
+
+  <!-- L1 -->
+  <g transform="translate(195, 80)">
+    <rect width="120" height="70" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="60" y="20" text-anchor="middle" fill="#67e8f9" font-size="12" font-weight="700">L1</text>
+    <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="9">单 Agent + 工具</text>
+    <text x="60" y="52" text-anchor="middle" fill="#475569" font-size="8">能读写代码</text>
+    <text x="60" y="64" text-anchor="middle" fill="#475569" font-size="8">风格不一致</text>
+  </g>
+  <circle cx="255" cy="170" r="5" fill="#06b6d4"/>
+
+  <!-- Arrow L1→L2 -->
+  <g transform="translate(240, 195)">
+    <text x="50" y="12" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">🔑 建规范 + 记忆</text>
+    <text x="50" y="24" text-anchor="middle" fill="#475569" font-size="7">⚠️ 风险：规范冲突</text>
+  </g>
+
+  <!-- L2 -->
+  <g transform="translate(335, 80)">
+    <rect width="120" height="70" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="60" y="20" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="700">L2</text>
+    <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="9">有规范有知识</text>
+    <text x="60" y="52" text-anchor="middle" fill="#475569" font-size="8">输出风格一致</text>
+    <text x="60" y="64" text-anchor="middle" fill="#475569" font-size="8">质量无法量化</text>
+  </g>
+  <circle cx="395" cy="170" r="5" fill="#8b5cf6"/>
+
+  <!-- Arrow L2→L3 -->
+  <g transform="translate(380, 195)">
+    <text x="50" y="12" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">🔑 建评估 + 可观测</text>
+    <text x="50" y="24" text-anchor="middle" fill="#475569" font-size="7">⚠️ 风险：评估集过时</text>
+  </g>
+
+  <!-- L3 -->
+  <g transform="translate(475, 80)">
+    <rect width="120" height="70" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+    <text x="60" y="20" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">L3</text>
+    <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="9">有评估有监控</text>
+    <text x="60" y="52" text-anchor="middle" fill="#475569" font-size="8">质量可量化</text>
+    <text x="60" y="64" text-anchor="middle" fill="#475569" font-size="8">问题可追溯</text>
+  </g>
+  <circle cx="535" cy="170" r="5" fill="#10b981"/>
+
+  <!-- Arrow L3→L4 -->
+  <g transform="translate(520, 195)">
+    <text x="50" y="12" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">🔑 版本管理 + 变更流程</text>
+    <text x="50" y="24" text-anchor="middle" fill="#475569" font-size="7">⚠️ 风险：过度中心化</text>
+  </g>
+
+  <!-- L4 -->
+  <g transform="translate(615, 80)">
+    <rect width="140" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="70" y="20" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700">L4</text>
+    <text x="70" y="38" text-anchor="middle" fill="#64748b" font-size="9">团队级 AI 工程</text>
+    <text x="70" y="52" text-anchor="middle" fill="#475569" font-size="8">完整治理流程</text>
+    <text x="70" y="64" text-anchor="middle" fill="#475569" font-size="8">持续演进机制</text>
+  </g>
+  <circle cx="685" cy="170" r="5" fill="#f59e0b"/>
+
+  <!-- Bottom note -->
+  <g transform="translate(100, 260)">
+    <rect width="600" height="60" rx="8" fill="#1e293b" opacity="0.4" stroke="#334155" stroke-width="0.5"/>
+    <text x="300" y="18" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">💡 关键认知</text>
+    <text x="300" y="35" text-anchor="middle" fill="#64748b" font-size="9">大多数团队从 L0 → L2 就能获得显著收益（采纳率从 30% 提升到 60%+）</text>
+    <text x="300" y="50" text-anchor="middle" fill="#64748b" font-size="9">L3/L4 是当你开始依赖 AI 输出质量、需要系统化治理时才需要的</text>
+  </g>
+</svg>
