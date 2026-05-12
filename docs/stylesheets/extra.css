@@ -1,0 +1,32 @@
+.md-header__source {
+  display: flex;
+  align-items: center;
+}
+
+.md-source {
+  border: none;
+  border-radius: 0;
+  padding: 0 0.2rem;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.md-source:hover {
+  background: transparent;
+  opacity: 1;
+}
+
+.md-source__repository {
+  display: none;
+}
+
+.md-source__icon {
+  margin: 0;
+}
+
+.md-source__icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}

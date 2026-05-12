@@ -1,11 +1,17 @@
 site_name: AI编程的第一性原理
 site_description: 从问答到执行的系统化推导
-site_author: ekko
-site_url: https://caozhiyi.github.io/ai-programming-book/
+site_author: caozhiyi
+repo_name: GitHub
+repo_url: https://github.com/caozhiyi/ai-programming-book
+
+extra_css:
+  - stylesheets/extra.css
 
 theme:
   name: material
   language: zh
+  icon:
+    repo: fontawesome/brands/github
   palette:
     # 浅色模式切换
     - media: "(prefers-color-scheme: light)"
