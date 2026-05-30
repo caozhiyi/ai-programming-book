@@ -5,9 +5,9 @@
 ### 不是教你"怎么用 Cursor"，而是带你把 AI 编程系统从底层推导出来
 
 <p>
-  <a href="#-在线阅读"><img src="https://img.shields.io/badge/📖_在线阅读-mkdocs-2196F3?style=for-the-badge" alt="在线阅读"></a>
+  <a href="https://caozhiyi.github.io/ai-programming-book/"><img src="https://img.shields.io/badge/📖_在线阅读-mkdocs-2196F3?style=for-the-badge" alt="在线阅读"></a>
   <a href="#-章节目录"><img src="https://img.shields.io/badge/📚_章节-5卷_17章-4CAF50?style=for-the-badge" alt="章节"></a>
-  <a href="#-关于作者"><img src="https://img.shields.io/badge/✍️_作者-ekko-FF9800?style=for-the-badge" alt="作者"></a>
+  <a href="#-关于作者"><img src="https://img.shields.io/badge/✍️_作者-caozhiyi-FF9800?style=for-the-badge" alt="作者"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -72,7 +72,7 @@
 
 ## 📖 在线阅读
 
-> **🌐 推荐阅读方式：[在线版（mkdocs）](https://你的用户名.github.io/ai-programming-book/)**
+> **🌐 推荐阅读方式：[在线版（mkdocs）](https://caozhiyi.github.io/ai-programming-book/)**
 > 提供完整的目录导航、暗黑模式、代码高亮和 30+ 配图。
 
 或者点击下方目录直接跳转到 GitHub 上的 Markdown 文件。
@@ -186,21 +186,16 @@ mkdocs build
 
 ## 🌟 关于作者
 
-我是 **ekko**，一个做了多年基础设施和系统架构的工程师。这本书不是空想出来的——它来自我在使用 AI 编程工具时遇到的具体困惑、解决困惑过程中沉淀的方法论。
+我是 **caozhiyi**，一个做了多年网络和分布式系统架构的工程师。这本书不是空想出来的——它来自我在使用 AI 编程工具时遇到的具体困惑、解决困惑过程中沉淀的方法论。
 
 如果你觉得这本书有帮助，欢迎关注我的公众号。我会持续分享：
 - AI 编程的深度思考
 - 系统设计与架构方法论
 - 网络协议、QUIC 等底层技术
 
-> 📮 **公众号**：`<这里替换为公众号名称>`
-> （扫描下方二维码 / 在这里放二维码图片）
->
-> <!-- ![公众号二维码](docs/images/wechat-qr.png) -->
+> 📮 **公众号**：`煮码宝藏`
 
-我还有另外两本配套的书，欢迎关注：
-- **[network-book](https://github.com/你的用户名/network-book)** —— 云网络：从隔离到连接（即将开源）
-- **[quicX](https://github.com/你的用户名/quicX)** —— 一个独立实现的 QUIC/HTTP3 库 + 配套书
+> ![公众号二维码](docs/images/wechat-qr.jpg)
 
 ---
 
@@ -208,12 +203,24 @@ mkdocs build
 
 这本书还在持续打磨中，欢迎你以任何方式参与：
 
-- 🐛 发现错别字、技术错误？→ [提 Issue](../../issues)
-- 💡 觉得某个推导链可以更扎实？→ [提 PR](../../pulls) 或 Issue
-- ❓ 有读不懂的地方？→ [Discussions 提问](../../discussions)
+- 🐛 发现错别字、技术错误？→ [提 Issue](https://github.com/caozhiyi/ai-programming-book/issues)
+- 💡 觉得某个推导链可以更扎实？→ [提 PR](https://github.com/caozhiyi/ai-programming-book/pulls) 或 Issue
+- ❓ 有读不懂的地方？→ [Discussions 提问](https://github.com/caozhiyi/ai-programming-book/discussions)
 - ⭐ 觉得有用？**点个 Star 是对作者最大的支持**
 
 每一个 Issue 我都会认真回复。
+
+---
+
+## ☕ 赞赏与支持
+
+如果这本书对你的日常开发、架构选型或者认知升级有所启发，欢迎请作者喝杯咖啡，你的支持是我持续创作与维护的最大动力！
+
+<div align="center">
+  <img src="docs/images/wechat-pay.jpg" alt="微信打赏" width="240" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/images/ali-pay.jpg" alt="支付宝打赏" width="240" />
+</div>
 
 ---
 
@@ -232,8 +239,8 @@ mkdocs build
 
 **如果这本书对你有帮助，请点一个 ⭐ Star，这是对作者持续创作最大的鼓励。**
 
-<a href="https://star-history.com/#你的用户名/ai-programming-book&Date">
-  <img src="https://api.star-history.com/svg?repos=你的用户名/ai-programming-book&type=Date" alt="Star History" width="600">
+<a href="https://star-history.com/#caozhiyi/ai-programming-book&Date">
+  <img src="https://api.star-history.com/svg?repos=caozhiyi/ai-programming-book&type=Date" alt="Star History" width="600">
 </a>
 
 </div>

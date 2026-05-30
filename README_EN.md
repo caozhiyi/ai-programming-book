@@ -5,9 +5,9 @@
 ### Not "how to use Cursor" — but how to derive AI coding systems from the ground up
 
 <p>
-  <a href="#-read-online"><img src="https://img.shields.io/badge/📖_Read_online-mkdocs-2196F3?style=for-the-badge" alt="Read online"></a>
+  <a href="https://caozhiyi.github.io/ai-programming-book/en"><img src="https://img.shields.io/badge/📖_Read_Online-mkdocs-2196F3?style=for-the-badge" alt="Read Online"></a>
   <a href="#-table-of-contents"><img src="https://img.shields.io/badge/📚_Contents-5_parts_17_chapters-4CAF50?style=for-the-badge" alt="Contents"></a>
-  <a href="#-about-the-author"><img src="https://img.shields.io/badge/✍️_Author-ekko-FF9800?style=for-the-badge" alt="Author"></a>
+  <a href="#-about-the-author"><img src="https://img.shields.io/badge/✍️_Author-caozhiyi-FF9800?style=for-the-badge" alt="Author"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -72,7 +72,7 @@ This is an **anti-tool-tutorial** book. Tools age out. Principles don't.
 
 ## 📖 Read online
 
-> **🌐 Recommended: [Online edition (mkdocs)](https://your-username.github.io/ai-programming-book/)**
+> **🌐 Recommended: [Online edition (mkdocs)](https://caozhiyi.github.io/ai-programming-book/en/)**
 > Full navigation, dark mode, syntax highlighting, and the full set of structural diagrams.
 
 Or click into the table of contents below to jump straight to the Markdown files on GitHub.
@@ -187,21 +187,14 @@ mkdocs build
 
 ## 🌟 About the author
 
-I'm **ekko**, an engineer with a long stretch of years on infrastructure and systems architecture. This book didn't come out of thin air — it grew out of the concrete confusions I ran into while using AI coding tools, and the methodology I distilled from working through them.
+I'm **caozhiyi**, an engineer with a long stretch of years on infrastructure and systems architecture. This book didn't come out of thin air — it grew out of the concrete confusions I ran into while using AI coding tools, and the methodology I distilled from working through them.
 
-If the book was useful to you, you might also like my Chinese tech newsletter, where I keep writing about:
+If the book was useful to you, feel free to follow my WeChat Official Account (**煮码宝藏**). I will continue to share:
 - Reflections on AI coding from the trenches
 - System design and architecture methodology
 - Network protocols, QUIC, and other low-level work
 
-> 📮 **WeChat newsletter**: `<replace with your handle>`
-> (drop a QR code image here)
->
-> <!-- ![WeChat QR](docs/images/wechat-qr.png) -->
-
-I have two companion projects too:
-- **[network-book](https://github.com/your-username/network-book)** — *Cloud Networking: From Isolation to Connectivity* (open-sourcing soon)
-- **[quicX](https://github.com/your-username/quicX)** — an independent QUIC/HTTP3 implementation, with a companion book
+> 📮 *gmail**: `caozhiyi5@gmail.com`
 
 ---
 
@@ -209,14 +202,15 @@ I have two companion projects too:
 
 The book is still being polished. Any kind of involvement is welcome:
 
-- 🐛 Found a typo or a technical mistake? → [open an Issue](../../issues)
-- 💡 Think a derivation could be tightened? → [send a PR](../../pulls) or open an Issue
-- ❓ Got stuck on something? → [ask in Discussions](../../discussions)
+- 🐛 Found a typo or a technical mistake? → [open an Issue](https://github.com/caozhiyi/ai-programming-book/issues)
+- 💡 Think a derivation could be tightened? → [send a PR](https://github.com/caozhiyi/ai-programming-book/pulls) or open an Issue
+- ❓ Got stuck on something? → [ask in Discussions](https://github.com/caozhiyi/ai-programming-book/discussions)
 - ⭐ Found it useful? **A Star is the best support an author can get.**
 
 I read and reply to every Issue.
 
 ---
+
 
 ## 📜 License
 
@@ -233,8 +227,8 @@ In plain words:
 
 **If this book helped you, please drop a ⭐ Star — it's the most encouraging signal an author can get.**
 
-<a href="https://star-history.com/#your-username/ai-programming-book&Date">
-  <img src="https://api.star-history.com/svg?repos=your-username/ai-programming-book&type=Date" alt="Star History" width="600">
+<a href="https://star-history.com/#caozhiyi/ai-programming-book&Date">
+  <img src="https://api.star-history.com/svg?repos=caozhiyi/ai-programming-book&type=Date" alt="Star History" width="600">
 </a>
 
 </div>

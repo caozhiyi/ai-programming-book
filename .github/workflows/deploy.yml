@@ -25,4 +25,13 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - name: Build Chinese and English Sites
+        run: |
+          mkdocs build
+          mkdocs build -f mkdocs.en.yml
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
