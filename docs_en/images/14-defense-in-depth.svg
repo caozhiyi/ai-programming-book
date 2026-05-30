@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="520" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="450" y="28" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">Defense in depth: each layer fails on its own, but the combined breakthrough probability is tiny</text>
+  <text x="450" y="46" text-anchor="middle" fill="#64748b" font-size="10">Prompt injection cannot be eliminated (instructions and data share a channel), but its attack cost can be pushed beyond what's worth it</text>
+
+  <!-- ===== LEFT: Four Defense Layers with Details ===== -->
+
+  <!-- Layer 1: Input Filtering -->
+  <g filter="url(#cardShadow)" transform="translate(30, 62)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#ef4444"/>
+    <text x="20" y="18" fill="#fca5a5" font-size="12" font-weight="700">L1 input filtering</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">Block rate ~60–70% (known patterns)</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">Tech: regex matching · keyword denylists · semantic classifiers (fine-tuned BERT)</text>
+    <!-- Attack examples -->
+    <text x="20" y="54" fill="#64748b" font-size="8">Block examples: "Ignore previous instructions" / "You are now DAN" / Base64-encoded instructions</text>
+    <!-- Bypass -->
+    <text x="20" y="70" fill="#ef4444" font-size="8" opacity="0.7">Known bypasses: synonym substitution · multi-language mixing · gradual instruction injection (boiling frog)</text>
+  </g>
+
+  <!-- Layer 2: Structural Isolation -->
+  <g filter="url(#cardShadow)" transform="translate(30, 152)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#f59e0b"/>
+    <text x="20" y="18" fill="#fbbf24" font-size="12" font-weight="700">L2 structural isolation</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">Extra block rate ~40–50% (attacks that got past L1)</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">Tech: separate instructions and data with XML/JSON tags · role labels · data by reference, not inline</text>
+    <!-- Code example -->
+    <text x="20" y="54" fill="#64748b" font-size="8" font-family="monospace">&lt;system&gt;You are an assistant&lt;/system&gt;&lt;user_data trust="low"&gt;{external input}&lt;/user_data&gt;</text>
+    <!-- Bypass -->
+    <text x="20" y="70" fill="#f59e0b" font-size="8" opacity="0.7">Bypasses: tag-closing injection · model "understands" tags rather than parsing · indirect prompting</text>
+  </g>
+
+  <!-- Layer 3: Output Validation -->
+  <g filter="url(#cardShadow)" transform="translate(30, 242)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#06b6d4"/>
+    <text x="20" y="18" fill="#67e8f9" font-size="12" font-weight="700">L3 output validation</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">Extra block rate ~50–60% (attacks that got past L1+L2)</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">Tech: sensitive-data regex · dangerous-action allowlists · a second model as judge (LLM-as-judge)</text>
+    <!-- What it catches -->
+    <text x="20" y="54" fill="#64748b" font-size="8">Block examples: output containing API keys · running rm -rf · accessing unauthorized paths · leaking the system prompt</text>
+    <!-- Bypass -->
+    <text x="20" y="70" fill="#06b6d4" font-size="8" opacity="0.7">Bypasses: encoded info in normal-looking output · drip leaks across calls · tool-call side channels</text>
+  </g>
+
+  <!-- Layer 4: Permission Minimization -->
+  <g filter="url(#cardShadow)" transform="translate(30, 332)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#10b981"/>
+    <text x="20" y="18" fill="#6ee7b7" font-size="12" font-weight="700">L4 least privilege</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">Damage cap — bound the blast radius even on a successful attack</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">Tech: read/write/danger three-tier classification · sandbox · path allowlist · network limits</text>
+    <!-- Concrete limits -->
+    <text x="20" y="54" fill="#64748b" font-size="8">Constraint examples: writes only to src/ · no sudo · no .env access · network calls require approval</text>
+    <!-- Why it's the last line -->
+    <text x="20" y="70" fill="#10b981" font-size="8" opacity="0.7">Design principle: assume all three earlier layers fail; this layer still keeps the worst case acceptable</text>
+  </g>
+
+  <!-- ===== RIGHT: Probability Decay Visualization ===== -->
+  <g filter="url(#cardShadow)" transform="translate(590, 62)">
+    <rect width="280" height="250" rx="12" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="140" y="22" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="700">Decay of successful-attack probability</text>
+    <text x="140" y="38" text-anchor="middle" fill="#64748b" font-size="8">Assume each layer independently blocks 50%</text>
+
+    <!-- Bar chart -->
+    <g transform="translate(30, 50)">
+      <!-- Axis -->
+      <line x1="0" y1="0" x2="0" y2="170" stroke="#334155" stroke-width="1"/>
+      <line x1="0" y1="170" x2="220" y2="170" stroke="#334155" stroke-width="1"/>
+      <!-- Y-axis labels -->
+      <text x="-5" y="5" text-anchor="end" fill="#64748b" font-size="7">100%</text>
+      <text x="-5" y="48" text-anchor="end" fill="#64748b" font-size="7">75%</text>
+      <text x="-5" y="90" text-anchor="end" fill="#64748b" font-size="7">50%</text>
+      <text x="-5" y="133" text-anchor="end" fill="#64748b" font-size="7">25%</text>
+      <text x="-5" y="173" text-anchor="end" fill="#64748b" font-size="7">0%</text>
+
+      <!-- Bars -->
+      <rect x="15" y="0" width="35" height="170" rx="4" fill="#ef4444" opacity="0.8"/>
+      <text x="32" y="-5" text-anchor="middle" fill="#fca5a5" font-size="8" font-weight="600">100%</text>
+      <text x="32" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">No defense</text>
+
+      <rect x="65" y="85" width="35" height="85" rx="4" fill="#f59e0b" opacity="0.8"/>
+      <text x="82" y="80" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">50%</text>
+      <text x="82" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">Past L1</text>
+
+      <rect x="115" y="127" width="35" height="43" rx="4" fill="#06b6d4" opacity="0.8"/>
+      <text x="132" y="122" text-anchor="middle" fill="#67e8f9" font-size="8" font-weight="600">25%</text>
+      <text x="132" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">Past L1+L2</text>
+
+      <rect x="165" y="149" width="35" height="21" rx="4" fill="#10b981" opacity="0.8"/>
+      <text x="182" y="144" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">12.5%</text>
+      <text x="182" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">Past L1–L3</text>
+    </g>
+
+    <!-- Formula -->
+    <text x="140" y="240" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="monospace">P(breakthrough) = 0.5⁴ = 6.25%</text>
+  </g>
+
+  <!-- ===== RIGHT BOTTOM: Key Insight ===== -->
+  <g filter="url(#cardShadow)" transform="translate(590, 325)">
+    <rect width="280" height="87" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="140" y="20" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="700">Why one layer isn't enough</text>
+    <line x1="12" y1="28" x2="268" y2="28" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="44" fill="#94a3b8" font-size="8">• Input filtering: blind to novel (zero-day) attacks</text>
+    <text x="16" y="58" fill="#94a3b8" font-size="8">• Structural isolation: model 'reads' tags, doesn't parse</text>
+    <text x="16" y="72" fill="#94a3b8" font-size="8">• Output validation: can't catch every side-channel leak</text>
+    <text x="16" y="86" fill="#94a3b8" font-size="8">• Privilege limits: too tight and the feature breaks</text>
+  </g>
+
+  <!-- ===== BOTTOM: Attack Flow Arrow ===== -->
+  <g transform="translate(30, 425)">
+    <rect width="840" height="80" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.6"/>
+    <text x="420" y="18" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">Design principle: each layer assumes every other layer has already failed</text>
+    <line x1="20" y1="28" x2="820" y2="28" stroke="#334155" stroke-width="0.5"/>
+    <!-- Three principles -->
+    <text x="20" y="46" fill="#ef4444" font-size="9">① Independence: different stacks, no shared failures</text>
+    <text x="300" y="46" fill="#f59e0b" font-size="9">② Depth: an attacker has to bypass every layer at once</text>
+    <text x="580" y="46" fill="#10b981" font-size="9">③ Last resort: final layer caps the worst case</text>
+    <text x="20" y="66" fill="#64748b" font-size="8">Analogy: bank security = entry control (L1) + vault (L2) + monitoring &amp; alarms (L3) + insurance (L4). No single measure is enough, but combined the cost of a heist far outweighs the payoff.</text>
+  </g>
+</svg>

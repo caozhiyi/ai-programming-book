@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="420" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="440" y="34" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">Two opposite failure modes</text>
+  <text x="440" y="54" text-anchor="middle" fill="#64748b" font-size="11">One keeps trying; the other stops too early — same root cause</text>
+
+  <!-- Divider -->
+  <line x1="440" y1="72" x2="440" y2="330" stroke="#334155" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- ===== LEFT: Infinite Loop ===== -->
+  <text x="220" y="82" text-anchor="middle" fill="#f59e0b" font-size="15" font-weight="700">Infinite loop</text>
+  <text x="220" y="98" text-anchor="middle" fill="#64748b" font-size="10">"Keeps trying, can't break out"</text>
+
+  <!-- Plan A box -->
+  <g filter="url(#cardShadow)" transform="translate(60, 115)">
+    <rect width="140" height="70" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2"/>
+    <text x="70" y="22" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="600">Option A</text>
+    <text x="70" y="40" text-anchor="middle" fill="#94a3b8" font-size="8">Change to sync.Mutex</text>
+    <text x="70" y="56" text-anchor="middle" fill="#ef4444" font-size="8">→ compile error X</text>
+  </g>
+
+  <!-- Plan B box -->
+  <g filter="url(#cardShadow)" transform="translate(240, 115)">
+    <rect width="140" height="70" rx="10" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="70" y="22" text-anchor="middle" fill="#8b5cf6" font-size="11" font-weight="600">Option B</text>
+    <text x="70" y="40" text-anchor="middle" fill="#94a3b8" font-size="8">Switch to sync.RWMutex</text>
+    <text x="70" y="56" text-anchor="middle" fill="#ef4444" font-size="8">→ compile error Y</text>
+  </g>
+
+  <!-- Circular arrows between A and B -->
+  <path d="M 200 122 Q 220 108, 240 122" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+  <path d="M 240 178 Q 220 192, 200 178" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+  <text x="220" y="108" text-anchor="middle" fill="#f59e0b" font-size="7">Fix X</text>
+  <text x="220" y="200" text-anchor="middle" fill="#f59e0b" font-size="7">Fix Y</text>
+
+  <!-- Loop counter -->
+  <g transform="translate(100, 215)">
+    <rect width="240" height="50" rx="8" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-width="0.6"/>
+    <text x="120" y="18" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600">Loop log</text>
+    <text x="120" y="34" text-anchor="middle" fill="#94a3b8" font-size="8">Turn 1 → A  Turn 2 → B  Turn 3 → A  Turn 4 → B ...</text>
+    <text x="120" y="46" text-anchor="middle" fill="#ef4444" font-size="7" font-style="italic">Context fills with A/B failure records; the loop can't escape</text>
+  </g>
+
+  <!-- Why: context constrains -->
+  <g filter="url(#cardShadow)" transform="translate(60, 278)">
+    <rect width="320" height="50" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="160" y="20" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">Root cause: solution space constrained by past records</text>
+    <text x="160" y="38" text-anchor="middle" fill="#94a3b8" font-size="8">There's no info about "option C" in context; attention is hogged by A/B</text>
+  </g>
+
+  <!-- ===== RIGHT: Overconfidence ===== -->
+  <text x="660" y="82" text-anchor="middle" fill="#8b5cf6" font-size="15" font-weight="700">Overconfidence</text>
+  <text x="660" y="98" text-anchor="middle" fill="#64748b" font-size="10">"Declares success too early, while the result is wrong"</text>
+
+  <!-- Execution steps -->
+  <g filter="url(#cardShadow)" transform="translate(490, 115)">
+    <rect width="340" height="100" rx="10" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="170" y="22" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="600">An Agent's "self-verification"</text>
+    <line x1="12" y1="30" x2="328" y2="30" stroke="#334155" stroke-width="0.6"/>
+
+    <!-- Step: simplify -->
+    <text x="16" y="48" fill="#94a3b8" font-size="9">① Collapse three nested context layers into one</text>
+    <text x="16" y="64" fill="#94a3b8" font-size="9">② Run tests → all passed ✓</text>
+    <text x="16" y="80" fill="#94a3b8" font-size="9">③ Code review → "looks fine" ✓</text>
+
+    <!-- Confidence badge -->
+    <rect x="230" y="42" width="96" height="46" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="0.8"/>
+    <text x="278" y="60" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700">Task done!</text>
+    <text x="278" y="76" text-anchor="middle" fill="#6ee7b7" font-size="7">30% less code</text>
+  </g>
+
+  <!-- Reality check -->
+  <g filter="url(#cardShadow)" transform="translate(490, 222)">
+    <rect width="340" height="68" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="1.2"/>
+    <text x="170" y="18" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">What actually happens</text>
+    <text x="16" y="36" fill="#fca5a5" font-size="9">Request timeouts close the connection;</text>
+    <text x="16" y="49" fill="#fca5a5" font-size="9">connection timeouts trigger a global shutdown</text>
+    <text x="16" y="62" fill="#64748b" font-size="7" font-style="italic">The tests didn't cover this edge case → the hallucination slipped past every check</text>
+  </g>
+
+  <!-- Why: confirmation bias -->
+  <g filter="url(#cardShadow)" transform="translate(490, 300)">
+    <rect width="340" height="44" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="0.8"/>
+    <text x="170" y="18" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600">Confirmation bias</text>
+    <text x="170" y="34" text-anchor="middle" fill="#94a3b8" font-size="8">Context fills with the Agent's own reasoning, reinforcing its belief it's right</text>
+  </g>
+
+  <!-- ===== Bottom: Shared Root Cause ===== -->
+  <g transform="translate(40, 348)">
+    <rect width="800" height="56" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.7"/>
+    <text x="400" y="22" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="700">Same root cause: decisions are based on probability prediction, not logical reasoning</text>
+    <text x="400" y="42" text-anchor="middle" fill="#94a3b8" font-size="10">An Agent has no concept of "I'm not sure" — only "the most likely next step." It retries when it should retry; it reports done when it should report done.</text>
+  </g>
+</svg>

@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="480" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="450" y="28" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">From assertion to evaluation: the testing-mindset shift for non-deterministic systems</text>
+  <text x="450" y="46" text-anchor="middle" fill="#64748b" font-size="10">Deterministic systems have a single correct answer; non-deterministic systems have an "acceptable output space"</text>
+
+  <!-- ===== LEFT: Traditional Assertion ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 60)">
+    <rect width="380" height="200" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect width="380" height="3" rx="1.5" fill="#ef4444" y="0"/>
+    <text x="190" y="24" text-anchor="middle" fill="#fca5a5" font-size="13" font-weight="700">❌ Traditional assertions (deterministic mindset)</text>
+    <text x="190" y="40" text-anchor="middle" fill="#64748b" font-size="9">assert output == expected — exact match</text>
+
+    <!-- Code example -->
+    <rect x="16" y="50" width="348" height="44" rx="6" fill="#1e293b"/>
+    <text x="26" y="66" fill="#64748b" font-size="9" font-family="monospace">// Test the AI-generated sort function</text>
+    <text x="26" y="80" fill="#ef4444" font-size="9" font-family="monospace">assert generated_code == expected_code  // ❌</text>
+
+    <!-- Failure scenarios with data -->
+    <text x="16" y="108" fill="#94a3b8" font-size="9" font-weight="600">Why the failure rate > 80%:</text>
+    <text x="16" y="124" fill="#64748b" font-size="8">• Variable rename i→idx → test fails (logic correct, naming different)</text>
+    <text x="16" y="138" fill="#64748b" font-size="8">• One extra comment line → test fails (more info, not an error)</text>
+    <text x="16" y="152" fill="#64748b" font-size="8">• for→forEach → test fails (different style, same semantics)</text>
+    <text x="16" y="166" fill="#64748b" font-size="8">• Blank-line difference → test fails (formatting preference)</text>
+
+    <!-- Result -->
+    <rect x="16" y="176" width="348" height="18" rx="4" fill="#ef4444" fill-opacity="0.1"/>
+    <text x="190" y="190" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">Result: lots of "false failures" — output is correct but the test says it isn't</text>
+  </g>
+
+  <!-- ===== RIGHT: Evaluation-Based ===== -->
+  <g filter="url(#cardShadow)" transform="translate(430, 60)">
+    <rect width="440" height="200" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="440" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="220" y="24" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700">✅ Evaluation-based (probabilistic mindset)</text>
+    <text x="220" y="40" text-anchor="middle" fill="#64748b" font-size="9">assert satisfies(output, criteria) — property check</text>
+
+    <!-- Code example -->
+    <rect x="16" y="50" width="408" height="56" rx="6" fill="#1e293b"/>
+    <text x="26" y="66" fill="#64748b" font-size="9" font-family="monospace">// Test the AI-generated sort function</text>
+    <text x="26" y="80" fill="#10b981" font-size="9" font-family="monospace">assert compiles(output)           // syntactically correct</text>
+    <text x="26" y="94" fill="#10b981" font-size="9" font-family="monospace">assert passes_tests(output, cases) // functionally correct</text>
+
+    <!-- Evaluation dimensions -->
+    <text x="16" y="118" fill="#94a3b8" font-size="9" font-weight="600">Multi-dimensional evaluation matrix:</text>
+
+    <!-- Dimension table -->
+    <g transform="translate(16, 126)">
+      <!-- Headers -->
+      <text x="0" y="10" fill="#6ee7b7" font-size="8" font-weight="600">Dimension</text>
+      <text x="100" y="10" fill="#6ee7b7" font-size="8" font-weight="600">Verification method</text>
+      <text x="240" y="10" fill="#6ee7b7" font-size="8" font-weight="600">Pass standard</text>
+      <line x1="0" y1="14" x2="408" y2="14" stroke="#334155" stroke-width="0.5"/>
+      <!-- Row 1 -->
+      <text x="0" y="28" fill="#94a3b8" font-size="8">Syntactic correctness</text>
+      <text x="100" y="28" fill="#64748b" font-size="8">Compiler / interpreter</text>
+      <text x="240" y="28" fill="#64748b" font-size="8">Zero errors</text>
+      <!-- Row 2 -->
+      <text x="0" y="42" fill="#94a3b8" font-size="8">Functional correctness</text>
+      <text x="100" y="42" fill="#64748b" font-size="8">Unit-test suite</text>
+      <text x="240" y="42" fill="#64748b" font-size="8">All passed</text>
+      <!-- Row 3 -->
+      <text x="0" y="56" fill="#94a3b8" font-size="8">Code quality</text>
+      <text x="100" y="56" fill="#64748b" font-size="8">Linter + static analysis</text>
+      <text x="240" y="56" fill="#64748b" font-size="8">No new warnings</text>
+      <!-- Row 4 -->
+      <text x="0" y="70" fill="#94a3b8" font-size="8">Scope of changes</text>
+      <text x="100" y="70" fill="#64748b" font-size="8">diff line count</text>
+      <text x="240" y="70" fill="#64748b" font-size="8">Only change what's necessary</text>
+    </g>
+  </g>
+
+  <!-- ===== MIDDLE: The Spectrum ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 275)">
+    <rect width="840" height="90" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+    <text x="420" y="20" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="700">The determinism spectrum: different tasks call for different verification strategies</text>
+    <line x1="16" y1="28" x2="824" y2="28" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Spectrum bar -->
+    <rect x="40" y="38" width="760" height="12" rx="6" fill="#1e293b"/>
+    <rect x="40" y="38" width="760" height="12" rx="6" fill="url(#bgGrad)" opacity="0.5"/>
+    <!-- Gradient overlay -->
+    <rect x="40" y="38" width="190" height="12" rx="6" fill="#10b981" opacity="0.3"/>
+    <rect x="230" y="38" width="190" height="12" fill="#3b82f6" opacity="0.2"/>
+    <rect x="420" y="38" width="190" height="12" fill="#f59e0b" opacity="0.2"/>
+    <rect x="610" y="38" width="190" height="12" rx="6" fill="#ef4444" opacity="0.2"/>
+
+    <!-- Labels -->
+    <text x="135" y="36" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">High determinism</text>
+    <text x="135" y="64" text-anchor="middle" fill="#64748b" font-size="7">Format conversion · regex generation</text>
+    <text x="135" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ exact assertions work</text>
+
+    <text x="325" y="36" text-anchor="middle" fill="#60a5fa" font-size="8" font-weight="600">Medium-high determinism</text>
+    <text x="325" y="64" text-anchor="middle" fill="#64748b" font-size="7">Algorithm implementation · bug fixes</text>
+    <text x="325" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ unit-test verification</text>
+
+    <text x="515" y="36" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">Medium-low determinism</text>
+    <text x="515" y="64" text-anchor="middle" fill="#64748b" font-size="7">Refactoring · architecture design</text>
+    <text x="515" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ property checks + human review</text>
+
+    <text x="705" y="36" text-anchor="middle" fill="#fca5a5" font-size="8" font-weight="600">Low determinism</text>
+    <text x="705" y="64" text-anchor="middle" fill="#64748b" font-size="7">Creative coding · document drafting</text>
+    <text x="705" y="74" text-anchor="middle" fill="#64748b" font-size="7">→ LLM-as-judge + human</text>
+  </g>
+
+  <!-- ===== BOTTOM: Practical Evaluation Pipeline ===== -->
+  <g filter="url(#cardShadow)" transform="translate(30, 380)">
+    <rect width="840" height="85" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="420" y="20" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="700">Evaluation pipeline in practice (code generation as the example)</text>
+    <line x1="16" y1="28" x2="824" y2="28" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Pipeline steps -->
+    <g transform="translate(16, 36)">
+      <rect width="120" height="38" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.6"/>
+      <text x="60" y="14" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">Gate 1: compile</text>
+      <text x="60" y="28" text-anchor="middle" fill="#64748b" font-size="7">Pass rate ~95%</text>
+      <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="6">Cost: 0 (runs locally)</text>
+    </g>
+    <text x="142" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(152, 36)">
+      <rect width="120" height="38" rx="6" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="60" y="14" text-anchor="middle" fill="#60a5fa" font-size="8" font-weight="600">Gate 2: test</text>
+      <text x="60" y="28" text-anchor="middle" fill="#64748b" font-size="7">Pass rate ~70%</text>
+      <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="6">Cost: 0 (runs locally)</text>
+    </g>
+    <text x="278" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(288, 36)">
+      <rect width="120" height="38" rx="6" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="0.6"/>
+      <text x="60" y="14" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">Gate 3: Lint</text>
+      <text x="60" y="28" text-anchor="middle" fill="#64748b" font-size="7">Pass rate ~85%</text>
+      <text x="60" y="38" text-anchor="middle" fill="#64748b" font-size="6">Cost: 0 (runs locally)</text>
+    </g>
+    <text x="414" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(424, 36)">
+      <rect width="140" height="38" rx="6" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="70" y="14" text-anchor="middle" fill="#a78bfa" font-size="8" font-weight="600">Gate 4: LLM review</text>
+      <text x="70" y="28" text-anchor="middle" fill="#64748b" font-size="7">Accuracy ~80%</text>
+      <text x="70" y="38" text-anchor="middle" fill="#64748b" font-size="6">Cost: ~$0.01 per call</text>
+    </g>
+    <text x="570" y="56" fill="#94a3b8" font-size="10">→</text>
+    <g transform="translate(580, 36)">
+      <rect width="140" height="38" rx="6" fill="#e2e8f0" fill-opacity="0.05" stroke="#e2e8f0" stroke-width="0.6"/>
+      <text x="70" y="14" text-anchor="middle" fill="#e2e8f0" font-size="8" font-weight="600">Gate 5: human sign-off</text>
+      <text x="70" y="28" text-anchor="middle" fill="#64748b" font-size="7">High-risk operations only</text>
+      <text x="70" y="38" text-anchor="middle" fill="#64748b" font-size="6">Cost: human time</text>
+    </g>
+  </g>
+
+  <!-- Bottom insight -->
+  <text x="450" y="474" text-anchor="middle" fill="#94a3b8" font-size="9">💡 Core principle: filter with the cheapest gate first; reserve expensive verification for the few outputs that pass earlier checks</text>
+</svg>

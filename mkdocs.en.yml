@@ -1,0 +1,107 @@
+site_name: First Principles of AI Coding
+site_description: Deriving AI coding systems from the ground up
+site_author: ekko
+site_url: https://caozhiyi.github.io/ai-programming-book/en/
+repo_name: GitHub
+repo_url: https://github.com/caozhiyi/ai-programming-book
+
+# 英文版构建配置：源文件读 docs_en/，输出到 site/en/
+docs_dir: docs_en
+site_dir: site/en
+
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+
+extra:
+  alternate:
+    - name: 中文
+      link: /ai-programming-book/
+      lang: zh
+    - name: English
+      link: /ai-programming-book/en/
+      lang: en
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - attr_list
+
+nav:
+  - Preface: index.md
+
+  - "Part I — How LLMs actually work":
+    - "Overview": 00a.Part I — How LLMs actually work.md
+    - "1. How Large Language Models Actually Work": 01.How Large Language Models Actually Work.md
+    - "2. What Interaction with an LLM Really Is": 02.What Interaction with an LLM Really Is.md
+
+  - "Part II — From answering to acting":
+    - "Overview": 00b.Part II — From answering to acting.md
+    - "3. From Answering to Acting: How Agentic Systems Work": 03.From Answering to Acting How Agentic Systems Work.md
+    - "4. Standardizing Tool Use: How MCP Works": 04.Standardizing Tool Use How MCP Works.md
+    - "5. Skill as a Packaged Capability": 05.Skill as a Packaged Capability.md
+    - "6. When One Agent Is Not Enough": 06.When One Agent Is Not Enough.md
+    - "7. Agent Limits and Failure Modes": 07.Agent Limits and Failure Modes.md
+
+  - "Part III — Memory and context engineering":
+    - "Overview": 00c.Part III — Memory and context engineering.md
+    - "8. Building Memory for AI Systems": 08.Building Memory for AI Systems.md
+    - "9. Token Economics and the Art of Context Engineering": 09.Token Economics and the Art of Context Engineering.md
+    - "10. Three Paths to Knowledge Injection": 10.Three Paths to Knowledge Injection.md
+
+  - "Part IV — Judgment in architectural choice":
+    - "Overview": 00d.Part IV — Judgment in architectural choice.md
+    - "11. Choosing the Right Stack for the Job": 11.Choosing the Right Stack for the Job.md
+    - "12. From Prompts to OpenSpec": 12.From Prompts to OpenSpec.md
+    - "13. The End-to-End Blueprint of an AI Coding System": 13.The End-to-End Blueprint of an AI Coding System.md
+    - "14. Security and Alignment": 14.Security and Alignment.md
+
+  - "Part V — Engineering and the road ahead":
+    - "Overview": 00e.Part V — Engineering and the road ahead.md
+    - "15. Engineering for Non-Deterministic Systems": 15.Engineering for Non-Deterministic Systems.md
+    - "16. The Organizational Side of AI Engineering": 16.The Organizational Side of AI Engineering.md
+    - "17. The Limits and Future of AI Coding": 17.The Limits and Future of AI Coding.md
+
+  - Appendix:
+    - "Appendix A — Quick Reference Cards": appendix-quick-reference.md
+    - "Appendix B — A 30-Day Practice Path": appendix-30-day-path.md
+    - Terminology: TERMINOLOGY.md

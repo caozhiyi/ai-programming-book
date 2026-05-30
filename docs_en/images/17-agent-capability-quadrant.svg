@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Agent capability quadrant</text>
+
+  <!-- Axes -->
+  <line x1="120" y1="440" x2="750" y2="440" stroke="#475569" stroke-width="1.5"/>
+  <line x1="120" y1="440" x2="120" y2="60" stroke="#475569" stroke-width="1.5"/>
+  <!-- Arrow heads -->
+  <polygon points="750,440 740,435 740,445" fill="#475569"/>
+  <polygon points="120,60 115,70 125,70" fill="#475569"/>
+
+  <!-- Axis labels -->
+  <text x="435" y="475" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600">Task complexity (local → global)</text>
+  <text x="45" y="250" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600" transform="rotate(-90, 45, 250)">Degree of determinism (execution → discovery)</text>
+
+  <!-- Quadrant dividers -->
+  <line x1="435" y1="60" x2="435" y2="440" stroke="#334155" stroke-width="1" stroke-dasharray="6,4"/>
+  <line x1="120" y1="250" x2="750" y2="250" stroke="#334155" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- Quadrant labels -->
+  <text x="278" y="85" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700">✅ AI's strengths</text>
+  <text x="278" y="102" text-anchor="middle" fill="#64748b" font-size="9">Local + execution</text>
+
+  <text x="593" y="85" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700">⚠️ AI needs assistance</text>
+  <text x="593" y="102" text-anchor="middle" fill="#64748b" font-size="9">Global + execution</text>
+
+  <text x="278" y="420" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700">⚠️ AI needs guidance</text>
+  <text x="278" y="437" text-anchor="middle" fill="#64748b" font-size="9">Local + discovery</text>
+
+  <text x="593" y="420" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700">❌ Human-led</text>
+  <text x="593" y="437" text-anchor="middle" fill="#64748b" font-size="9">Global + discovery</text>
+
+  <!-- Task items - Q1: Local + Execute (AI strong) -->
+  <g transform="translate(170, 125)">
+    <rect width="190" height="28" rx="6" fill="#065f46" opacity="0.4"/>
+    <text x="95" y="19" text-anchor="middle" fill="#6ee7b7" font-size="10">Function implementation · code completion</text>
+  </g>
+  <g transform="translate(170, 162)">
+    <rect width="190" height="28" rx="6" fill="#065f46" opacity="0.4"/>
+    <text x="95" y="19" text-anchor="middle" fill="#6ee7b7" font-size="10">Bug fixes · test generation</text>
+  </g>
+  <g transform="translate(170, 199)">
+    <rect width="190" height="28" rx="6" fill="#065f46" opacity="0.4"/>
+    <text x="95" y="19" text-anchor="middle" fill="#6ee7b7" font-size="10">Code review · documentation</text>
+  </g>
+
+  <!-- Task items - Q2: Global + Execute (AI needs help) -->
+  <g transform="translate(480, 125)">
+    <rect width="220" height="28" rx="6" fill="#78350f" opacity="0.4"/>
+    <text x="110" y="19" text-anchor="middle" fill="#fbbf24" font-size="10">Cross-module refactoring · interface changes</text>
+  </g>
+  <g transform="translate(480, 162)">
+    <rect width="220" height="28" rx="6" fill="#78350f" opacity="0.4"/>
+    <text x="110" y="19" text-anchor="middle" fill="#fbbf24" font-size="10">Microservice splitting · data migration</text>
+  </g>
+  <g transform="translate(480, 199)">
+    <rect width="220" height="28" rx="6" fill="#78350f" opacity="0.4"/>
+    <text x="110" y="19" text-anchor="middle" fill="#fbbf24" font-size="10">End-to-end performance optimization</text>
+  </g>
+
+  <!-- Task items - Q3: Local + Discover (AI needs guidance) -->
+  <g transform="translate(170, 270)">
+    <rect width="190" height="28" rx="6" fill="#78350f" opacity="0.4"/>
+    <text x="95" y="19" text-anchor="middle" fill="#fbbf24" font-size="10">Requirement clarification · edge-case discovery</text>
+  </g>
+  <g transform="translate(170, 307)">
+    <rect width="190" height="28" rx="6" fill="#78350f" opacity="0.4"/>
+    <text x="95" y="19" text-anchor="middle" fill="#fbbf24" font-size="10">Stack-selection evaluation</text>
+  </g>
+  <g transform="translate(170, 344)">
+    <rect width="190" height="28" rx="6" fill="#78350f" opacity="0.4"/>
+    <text x="95" y="19" text-anchor="middle" fill="#fbbf24" font-size="10">UX design</text>
+  </g>
+
+  <!-- Task items - Q4: Global + Discover (Human domain) -->
+  <g transform="translate(480, 270)">
+    <rect width="220" height="28" rx="6" fill="#7f1d1d" opacity="0.4"/>
+    <text x="110" y="19" text-anchor="middle" fill="#f87171" font-size="10">System-architecture design</text>
+  </g>
+  <g transform="translate(480, 307)">
+    <rect width="220" height="28" rx="6" fill="#7f1d1d" opacity="0.4"/>
+    <text x="110" y="19" text-anchor="middle" fill="#f87171" font-size="10">Deep understanding of business requirements</text>
+  </g>
+  <g transform="translate(480, 344)">
+    <rect width="220" height="28" rx="6" fill="#7f1d1d" opacity="0.4"/>
+    <text x="110" y="19" text-anchor="middle" fill="#f87171" font-size="10">Inventing novel architectural patterns</text>
+  </g>
+</svg>

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="440" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="440" y="34" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">Five fault-tolerance mechanisms: trust but verify</text>
+  <text x="440" y="54" text-anchor="middle" fill="#64748b" font-size="11">The point isn't to stop the Agent from making mistakes, but to design the system to tolerate and recover from them</text>
+
+  <!-- ===== Central Principle ===== -->
+  <g filter="url(#cardShadow)" transform="translate(330, 175)">
+    <rect width="220" height="90" rx="16" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Trust but Verify</text>
+    <text x="110" y="50" text-anchor="middle" fill="#fbbf24" font-size="10">Run free, then verify</text>
+    <text x="110" y="70" text-anchor="middle" fill="#94a3b8" font-size="8">Let the Agent run autonomously</text>
+    <text x="110" y="82" text-anchor="middle" fill="#94a3b8" font-size="8">Set checkpoints at key milestones</text>
+  </g>
+
+  <!-- ===== Mechanism 1: Timeout (top-left) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(20, 75)">
+    <rect width="200" height="110" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.2"/>
+    <rect width="200" height="3" rx="1.5" fill="#ef4444" y="0"/>
+    <text x="100" y="24" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="700">⏱ Timeout mechanism</text>
+    <text x="100" y="42" text-anchor="middle" fill="#64748b" font-size="9">Counters: infinite loops</text>
+    <line x1="12" y1="50" x2="188" y2="50" stroke="#334155" stroke-width="0.6"/>
+    <text x="16" y="66" fill="#94a3b8" font-size="8">Set a wall-clock cap on execution</text>
+    <text x="16" y="80" fill="#94a3b8" font-size="8">Force-stop on timeout and report status</text>
+    <text x="16" y="98" fill="#64748b" font-size="7" font-style="italic">2 min for a function · 20 min for a refactor</text>
+  </g>
+
+  <!-- Connection line -->
+  <line x1="220" y1="155" x2="330" y2="200" stroke="#ef4444" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+
+  <!-- ===== Mechanism 2: Retry Limit (top-right) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(660, 75)">
+    <rect width="200" height="110" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect width="200" height="3" rx="1.5" fill="#f59e0b" y="0"/>
+    <text x="100" y="24" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="700">🔄 Retry cap</text>
+    <text x="100" y="42" text-anchor="middle" fill="#64748b" font-size="9">Counters: pointless retries</text>
+    <line x1="12" y1="50" x2="188" y2="50" stroke="#334155" stroke-width="0.6"/>
+    <text x="16" y="66" fill="#94a3b8" font-size="8">Retry the same operation at most N times</text>
+    <text x="16" y="80" fill="#94a3b8" font-size="8">Switch strategy or ask for help</text>
+    <text x="16" y="98" fill="#64748b" font-size="7" font-style="italic">Distinguish transient vs permanent failures</text>
+  </g>
+
+  <!-- Connection line -->
+  <line x1="660" y1="155" x2="550" y2="200" stroke="#f59e0b" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+
+  <!-- ===== Mechanism 3: Human Confirmation (left) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(20, 255)">
+    <rect width="200" height="130" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+    <rect width="200" height="3" rx="1.5" fill="#8b5cf6" y="0"/>
+    <text x="100" y="24" text-anchor="middle" fill="#8b5cf6" font-size="13" font-weight="700">👤 Human approval</text>
+    <text x="100" y="42" text-anchor="middle" fill="#64748b" font-size="9">Counters: overconfidence</text>
+    <line x1="12" y1="50" x2="188" y2="50" stroke="#334155" stroke-width="0.6"/>
+    <text x="16" y="66" fill="#94a3b8" font-size="8">Human review before critical actions</text>
+    <line x1="12" y1="76" x2="188" y2="76" stroke="#334155" stroke-width="0.4"/>
+    <text x="16" y="90" fill="#10b981" font-size="8">Low risk: auto-execute</text>
+    <text x="16" y="104" fill="#f59e0b" font-size="8">Medium risk: execute + log</text>
+    <text x="16" y="118" fill="#ef4444" font-size="8">High risk: human approval first</text>
+  </g>
+
+  <!-- Connection line -->
+  <line x1="220" y1="300" x2="330" y2="240" stroke="#8b5cf6" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+
+  <!-- ===== Mechanism 4: Rollback (right) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(660, 255)">
+    <rect width="200" height="130" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+    <rect width="200" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="100" y="24" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700">↩ rollback strategy</text>
+    <text x="100" y="42" text-anchor="middle" fill="#64748b" font-size="9">Counters: irreversible errors</text>
+    <line x1="12" y1="50" x2="188" y2="50" stroke="#334155" stroke-width="0.6"/>
+    <text x="16" y="66" fill="#94a3b8" font-size="8">Create a Git commit/stash before execution</text>
+    <text x="16" y="80" fill="#94a3b8" font-size="8">If the result isn't right, just roll back</text>
+    <line x1="12" y1="90" x2="188" y2="90" stroke="#334155" stroke-width="0.4"/>
+    <text x="16" y="106" fill="#94a3b8" font-size="8">More reliable than Agent self-undo</text>
+    <text x="16" y="120" fill="#64748b" font-size="7" font-style="italic">An Agent's rollback is itself probabilistic</text>
+  </g>
+
+  <!-- Connection line -->
+  <line x1="660" y1="300" x2="550" y2="240" stroke="#10b981" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+
+  <!-- ===== Mechanism 5: Observability (bottom center) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(240, 310)">
+    <rect width="400" height="110" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2"/>
+    <rect width="400" height="3" rx="1.5" fill="#3b82f6" y="0"/>
+    <text x="200" y="24" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="700">🔍 Observability</text>
+    <text x="200" y="42" text-anchor="middle" fill="#64748b" font-size="9">Counters: every failure mode — when something breaks, you can locate it fast</text>
+    <line x1="16" y1="50" x2="384" y2="50" stroke="#334155" stroke-width="0.6"/>
+
+    <!-- Four pillars -->
+    <g transform="translate(16, 58)">
+      <rect width="84" height="40" rx="6" fill="#3b82f6" fill-opacity="0.06" stroke="#3b82f6" stroke-width="0.5"/>
+      <text x="42" y="16" text-anchor="middle" fill="#93c5fd" font-size="8" font-weight="600">Execution trace</text>
+      <text x="42" y="30" text-anchor="middle" fill="#64748b" font-size="7">Each thought and call</text>
+    </g>
+    <g transform="translate(110, 58)">
+      <rect width="84" height="40" rx="6" fill="#3b82f6" fill-opacity="0.06" stroke="#3b82f6" stroke-width="0.5"/>
+      <text x="42" y="16" text-anchor="middle" fill="#93c5fd" font-size="8" font-weight="600">Rationale</text>
+      <text x="42" y="30" text-anchor="middle" fill="#64748b" font-size="7">Why pick A over B</text>
+    </g>
+    <g transform="translate(204, 58)">
+      <rect width="84" height="40" rx="6" fill="#3b82f6" fill-opacity="0.06" stroke="#3b82f6" stroke-width="0.5"/>
+      <text x="42" y="16" text-anchor="middle" fill="#93c5fd" font-size="8" font-weight="600">Resource usage</text>
+      <text x="42" y="30" text-anchor="middle" fill="#64748b" font-size="7">Tokens and window</text>
+    </g>
+    <g transform="translate(298, 58)">
+      <rect width="84" height="40" rx="6" fill="#3b82f6" fill-opacity="0.06" stroke="#3b82f6" stroke-width="0.5"/>
+      <text x="42" y="16" text-anchor="middle" fill="#93c5fd" font-size="8" font-weight="600">Exception marker</text>
+      <text x="42" y="30" text-anchor="middle" fill="#64748b" font-size="7">Retries and timeouts</text>
+    </g>
+  </g>
+
+  <!-- Connection line -->
+  <line x1="440" y1="310" x2="440" y2="268" stroke="#3b82f6" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+</svg>

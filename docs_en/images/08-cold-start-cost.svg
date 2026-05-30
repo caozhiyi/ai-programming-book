@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="420" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700">Repeated cold starts: every new session begins from zero</text>
+
+  <!-- Timeline axis -->
+  <line x1="80" y1="380" x2="840" y2="380" stroke="#334155" stroke-width="1.5"/>
+  <text x="80" y="400" fill="#64748b" font-size="10">Day 1</text>
+  <text x="270" y="400" fill="#64748b" font-size="10">Day 2</text>
+  <text x="460" y="400" fill="#64748b" font-size="10">Day 3</text>
+  <text x="650" y="400" fill="#64748b" font-size="10">Day 4</text>
+  <text x="840" y="400" fill="#64748b" font-size="10" text-anchor="end">Day 5</text>
+
+  <!-- Session blocks - Day 1 -->
+  <g transform="translate(80, 60)">
+    <rect width="160" height="300" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="80" y="22" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Session 1</text>
+    
+    <!-- Teaching phase -->
+    <rect x="10" y="35" width="140" height="120" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <text x="80" y="52" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">🔄 Teaching phase</text>
+    <text x="16" y="70" fill="#94a3b8" font-size="8">"This is a Go project"</text>
+    <text x="16" y="84" fill="#94a3b8" font-size="8">"Log with slog"</text>
+    <text x="16" y="98" fill="#94a3b8" font-size="8">"Wrap errors with AppError"</text>
+    <text x="16" y="112" fill="#94a3b8" font-size="8">"The cache-key convention is..."</text>
+    <text x="16" y="126" fill="#94a3b8" font-size="8">"Read config from env vars"</text>
+    <text x="16" y="144" fill="#ef4444" font-size="9">≈ 30% of time</text>
+
+    <!-- Productive phase -->
+    <rect x="10" y="162" width="140" height="120" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.8"/>
+    <text x="80" y="179" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">✓ Efficient collaboration</text>
+    <text x="16" y="197" fill="#94a3b8" font-size="8">Refactor the auth module</text>
+    <text x="16" y="211" fill="#94a3b8" font-size="8">Write middleware</text>
+    <text x="16" y="225" fill="#94a3b8" font-size="8">Add a cache layer</text>
+    <text x="16" y="239" fill="#94a3b8" font-size="8">Smoother and smoother...</text>
+    <text x="16" y="270" fill="#10b981" font-size="9">≈ 70% of time</text>
+  </g>
+
+  <!-- Session end marker -->
+  <g transform="translate(255, 180)">
+    <line x1="0" y1="0" x2="0" y2="180" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="0" y="-6" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">End</text>
+    <text x="0" y="196" text-anchor="middle" fill="#ef4444" font-size="8">Reset ↓</text>
+  </g>
+
+  <!-- Session blocks - Day 2 -->
+  <g transform="translate(270, 60)">
+    <rect width="160" height="300" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="80" y="22" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Session 2</text>
+    
+    <!-- Teaching phase (same!) -->
+    <rect x="10" y="35" width="140" height="120" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <text x="80" y="52" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">🔄 Repeated teaching</text>
+    <text x="16" y="70" fill="#94a3b8" font-size="8">"This is a Go project"</text>
+    <text x="16" y="84" fill="#94a3b8" font-size="8">"Log with slog"</text>
+    <text x="16" y="98" fill="#94a3b8" font-size="8">"Wrap errors with AppError"</text>
+    <text x="16" y="112" fill="#94a3b8" font-size="8">"The cache-key convention is..."</text>
+    <text x="16" y="126" fill="#94a3b8" font-size="8">"Read config from env vars"</text>
+    <text x="16" y="144" fill="#ef4444" font-size="9">≈ 30% (repeating!)</text>
+
+    <!-- Productive phase -->
+    <rect x="10" y="162" width="140" height="120" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.8"/>
+    <text x="80" y="179" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">✓ Efficient collaboration</text>
+    <text x="16" y="197" fill="#94a3b8" font-size="8">Write user-registration API</text>
+    <text x="16" y="211" fill="#94a3b8" font-size="8">Design the DB tables</text>
+    <text x="16" y="225" fill="#94a3b8" font-size="8">...</text>
+    <text x="16" y="270" fill="#10b981" font-size="9">≈ 70% of time</text>
+  </g>
+
+  <!-- Session end marker -->
+  <g transform="translate(445, 180)">
+    <line x1="0" y1="0" x2="0" y2="180" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="0" y="-6" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">End</text>
+    <text x="0" y="196" text-anchor="middle" fill="#ef4444" font-size="8">Reset ↓</text>
+  </g>
+
+  <!-- Session blocks - Day 3 -->
+  <g transform="translate(460, 60)">
+    <rect width="160" height="300" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="80" y="22" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Session 3</text>
+    
+    <!-- Teaching phase (same again!) -->
+    <rect x="10" y="35" width="140" height="120" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <text x="80" y="52" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">🔄 Repeat again</text>
+    <text x="16" y="70" fill="#94a3b8" font-size="8">"This is a Go project"</text>
+    <text x="16" y="84" fill="#94a3b8" font-size="8">"Log with slog"</text>
+    <text x="16" y="98" fill="#94a3b8" font-size="8">"Wrap errors with AppError"</text>
+    <text x="16" y="112" fill="#94a3b8" font-size="8">(missed the caching spec)</text>
+    <text x="16" y="126" fill="#f59e0b" font-size="8">⚠ AI used the wrong format</text>
+    <text x="16" y="144" fill="#ef4444" font-size="9">≈ 35% (incl. rework)</text>
+
+    <!-- Productive phase (shorter) -->
+    <rect x="10" y="162" width="140" height="120" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.8"/>
+    <text x="80" y="179" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">✓ Efficient collaboration</text>
+    <text x="16" y="197" fill="#94a3b8" font-size="8">Write the login API</text>
+    <text x="16" y="211" fill="#94a3b8" font-size="8">...</text>
+    <text x="16" y="270" fill="#10b981" font-size="9">≈ 65% of time</text>
+  </g>
+
+  <!-- Repeating pattern indicator -->
+  <g transform="translate(650, 60)">
+    <rect width="160" height="300" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" stroke-dasharray="5,3"/>
+    <text x="80" y="150" text-anchor="middle" fill="#64748b" font-size="28">···</text>
+    <text x="80" y="180" text-anchor="middle" fill="#64748b" font-size="10">Forever repeating</text>
+    <text x="80" y="196" text-anchor="middle" fill="#64748b" font-size="10">Can't build up rapport</text>
+  </g>
+
+  <!-- Bottom insight -->
+  <g transform="translate(80, 370)">
+    <text x="380" y="0" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Ceiling on collaboration depth: human colleagues build rapport over time; AI is forever stuck on "day one"</text>
+  </g>
+</svg>
