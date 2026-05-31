@@ -1,7 +1,5 @@
 # Preface
 
-> 🌐 **Language**: [简体中文](../) · English
-
 You are almost certainly already writing code with AI.
 
 Maybe you press Tab to accept an autocompletion in your editor. Maybe you paste a stack trace into a chat box and ask the model to track it down. Maybe you ask it, from scratch, to generate an entire CRUD module. Whatever the form, you have already felt the productivity lift AI coding brings—sometimes a lift sharp enough to be unsettling.

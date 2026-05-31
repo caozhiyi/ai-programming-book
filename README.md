@@ -1,243 +1,231 @@
 <div align="center">
 
-# AI 编程的第一性原理
+# First Principles of AI Coding
 
-### 不是教你"怎么用 Cursor"，而是带你把 AI 编程系统从底层推导出来
+### Not "how to use Cursor" — but how to derive AI coding systems from the ground up
 
 <p>
-  <a href="https://caozhiyi.github.io/ai-programming-book/"><img src="https://img.shields.io/badge/📖_在线阅读-mkdocs-2196F3?style=for-the-badge" alt="在线阅读"></a>
-  <a href="#-章节目录"><img src="https://img.shields.io/badge/📚_章节-5卷_17章-4CAF50?style=for-the-badge" alt="章节"></a>
-  <a href="#-关于作者"><img src="https://img.shields.io/badge/✍️_作者-caozhiyi-FF9800?style=for-the-badge" alt="作者"></a>
+  <a href="https://caozhiyi.github.io/ai-programming-book/en"><img src="https://img.shields.io/badge/📖_Read_Online-mkdocs-2196F3?style=for-the-badge" alt="Read Online"></a>
+  <a href="#-table-of-contents"><img src="https://img.shields.io/badge/📚_Contents-5_parts_17_chapters-4CAF50?style=for-the-badge" alt="Contents"></a>
+  <a href="#-about-the-author"><img src="https://img.shields.io/badge/✍️_Author-caozhiyi-FF9800?style=for-the-badge" alt="Author"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge" alt="License"></a>
 </p>
 
-<p><strong>📖 一本写给"AI 编程深度使用者"的原理之书 · 全文免费在线阅读</strong></p>
+<p><strong>📖 A first-principles book for serious users of AI coding tools · Free to read online</strong></p>
 
-<p><a href="README_EN.md">📄 English README</a></p>
+<p><a href="README_cn.md">📄 中文版 README</a></p>
 
 </div>
 
 ---
 
-## 🤔 你是不是也遇到过这些问题？
+## 🤔 Do any of these sound familiar?
 
-- AI 自信满满地给你一段代码，编译通过、看起来没问题，**跑起来就是不对**
-- 你让它修，它改完一处又引入新问题，**陷入"AI 修 AI"的死循环**
-- 你不知道什么场景该用 RAG，什么场景该用微调，什么场景该堆长上下文，**全靠试**
-- Cursor、Claude Code、Copilot、各种 Agent 框架眼花缭乱，**每出一个新工具又要从零学**
-- 写 Prompt 像玄学，**有效的不知道为什么有效，无效的也不知道为什么无效**
-- 看了无数"AI 编程教程"，**感觉懂了，遇到新场景又懵了**
+- The AI hands you confident-looking code, it compiles, it looks fine — and then **it just doesn't work at runtime**
+- You ask it to fix the bug; it patches one place and breaks another, and you're **stuck in an "AI fixing AI" loop**
+- You can't tell when to reach for RAG, when to fine-tune, when to just throw more context at the model — **everything is trial and error**
+- Cursor, Claude Code, Copilot, a new agent framework every other week — **every new tool feels like learning from scratch again**
+- Prompt writing feels like superstition: **the ones that work, you can't say why; the ones that don't, you can't say why either**
+- You've read plenty of "AI coding tutorials" — **felt like you got it, then a slightly new situation throws you off again**
 
-> 如果以上有任何一条戳到你，**这本书就是为你写的**。
+> If any of these landed, **this book was written for you**.
 
 ---
 
-## 🎯 这本书在做一件不一样的事
+## 🎯 What this book actually does differently
 
-市面上 99% 的 AI 编程内容，都在教你"**怎么用**"——怎么写 Prompt、怎么配置 Cursor、怎么调 API。
+Most AI coding content out there teaches you **how to use the tools** — how to write prompts, how to configure Cursor, how to call an API.
 
-这本书走的是**另一条路**：
+This book takes **a different path**:
 
-> **每一个概念都不是凭空出现的产品功能，而是从底层原理一步步"推导"出来的必然结果。**
+> **Every concept here isn't a product feature dropped from the sky — it's a consequence derived, step by step, from underlying principles.**
 
-| 流行教程教你 | 这本书让你理解 |
+| What typical tutorials teach | What this book makes you understand |
 |---|---|
-| 上下文窗口怎么配置 | 上下文窗口为什么是**注意力机制 O(n²) 复杂度的物理约束** |
-| 怎么搭一个 Agent | Agent 为什么是**工具调用能力出现后的必然架构** |
-| RAG 怎么实现 | RAG 为什么是**上下文有限这个约束下的工程权衡** |
-| MCP 协议怎么用 | MCP 为什么会出现，**如果没有它会发生什么** |
+| How to configure the context window | Why the context window exists at all — as a **physical constraint of attention's O(n²) cost** |
+| How to build an Agent | Why an Agent is **the inevitable architecture once tool calling becomes possible** |
+| How to implement RAG | Why RAG is **an engineering trade-off shaped by the limits of context** |
+| How to use the MCP protocol | Why MCP appeared, **and what would go wrong without it** |
 
-**当你理解了"为什么"，面对任何新工具、新概念、新范式，你都能问出正确的问题：**
+**Once you understand the *why*, every new tool, every new concept, every new paradigm becomes a question you can answer:**
 
-> 它解决的是什么问题？代价是什么？边界在哪里？
+> What problem does it solve? What's the cost? Where does it stop working?
 
-这是一本**反工具教程**的书。工具会过时，原理不会。
-
----
-
-## 👥 这本书适合谁
-
-✅ **适合**：
-- 已经在用 AI 编程，但想从"能用"进阶到"用好"的工程师
-- 在团队中负责 AI 工具选型 / Agent 架构设计的 Tech Lead
-- 想搞清楚 RAG、Agent、MCP、Skill 这些概念**底层逻辑**的开发者
-- 厌倦了"教程一更新工具就过时"的人
-
-❌ **不适合**：
-- 完全没有编程经验的初学者（建议先有真实项目经验）
-- 想深入 Transformer 数学细节的 ML 研究者（这是一本工程书）
-- 只想抄一段 Prompt 就上线的"AI 调用方"
+This is an **anti-tool-tutorial** book. Tools age out. Principles don't.
 
 ---
 
-## 📖 在线阅读
+## 👥 Who this book is for
 
-> **🌐 推荐阅读方式：[在线版（mkdocs）](https://caozhiyi.github.io/ai-programming-book/)**
-> 提供完整的目录导航、暗黑模式、代码高亮和 30+ 配图。
+✅ **A good fit if you are**:
+- An engineer already using AI coding tools, looking to move from "able to use" to "actually good with them"
+- A tech lead responsible for choosing AI tooling or designing agent architectures for your team
+- A developer who wants to understand the **underlying logic** behind RAG, Agents, MCP, Skills — not just the surface
+- Someone tired of tutorials that go stale every time a tool updates
 
-或者点击下方目录直接跳转到 GitHub 上的 Markdown 文件。
-
----
-
-## 📚 章节目录
-
-全书分为 **5 卷 17 章**，沿着一条**严格递进**的逻辑主线展开。每一卷都是下一卷的前提。
-
-### 📘 卷一：大模型的运行真相
-
-> 不理解模型本身，所有上层讨论都是空中楼阁。
-
-- **第 1 章** [大模型是怎么思考的](docs/01.大模型是怎么思考的.md) —— Token 化、注意力、概率采样的完整链路
-- **第 2 章** [与大模型交互的本质](docs/02.与大模型交互的本质.md) —— 上下文窗口、Lost in the Middle、多轮对话的物理真相
-
-### 📗 卷二：从对话到自主
-
-> 从"你问它答"到 Agent 自主执行任务，到底跨越了什么？
-
-- **第 3 章** [从问答到执行：Agentic 的运行原理](docs/03.从问答到执行Agentic的运行原理.md)
-- **第 4 章** [工具的标准化：MCP 交互原理](docs/04.工具的标准化MCP交互原理.md)
-- **第 5 章** [预定义的能力包：Skill 交互原理](docs/05.预定义的能力包Skill交互原理.md)
-- **第 6 章** [一个不够用：多 Agent 协作原理](docs/06.一个不够用多Agent协作原理.md)
-- **第 7 章** [Agent 的能力边界与失败模式](docs/07.Agent的能力边界与失败模式.md) ⭐
-
-### 📙 卷三：记忆与上下文工程
-
-> AI 系统怎么"记住"你？为什么 Token 是一种经济学？
-
-- **第 8 章** [让 AI 记住你：记忆体系的原理与设计](docs/08.让AI记住你：记忆体系的原理与设计.md)
-- **第 9 章** [Token 经济学：上下文工程的艺术](docs/09.Token经济学：上下文工程的艺术.md)
-- **第 10 章** [知识注入的三条路：RAG、微调与长上下文](docs/10.知识注入的三条路：RAG、微调与长上下文.md) ⭐
-
-### 📕 卷四：架构选型的判断力
-
-> 工具箱满了，知道**什么场景用哪个**才是真本事。
-
-- **第 11 章** [选型决策框架：面对具体场景该用什么](docs/11.选型决策框架：面对具体场景该用什么.md)
-- **第 12 章** [规范驱动编程：从提示词到 OpenSpec](docs/12.规范驱动编程：从提示词到OpenSpec.md)
-- **第 13 章** [端到端 AI 编程系统蓝图](docs/13.端到端AI编程系统蓝图：从请求到交付的全链路.md)
-- **第 14 章** [安全与对齐：AI 系统的信任边界](docs/14.安全与对齐：AI系统的信任边界.md)
-
-### 📔 卷五：工程化与未来
-
-> 把"会用 AI"变成"团队能持续交付"，这中间隔着一整套工程方法论。
-
-- **第 15 章** [非确定性系统的工程化挑战](docs/15.非确定性系统的工程化挑战.md)
-- **第 16 章** [AI 工程组织学：治理、评估与团队迁移](docs/16.AI工程组织学：治理、评估与团队迁移.md)
-- **第 17 章** [AI 编程的边界与未来](docs/17.AI编程的边界与未来.md)
-
-### 📎 附录
-
-- [附录 A · 快速参考卡片](docs/appendix-quick-reference.md) —— 关键概念速查
-- [附录 B · 30 天实践路径](docs/appendix-30-day-path.md) —— 从入门到精通的可执行计划
+❌ **Probably not a good fit if you are**:
+- A complete beginner with no programming background (build some real project experience first)
+- An ML researcher looking for deep Transformer math (this is an engineering book, not a research one)
+- Someone who just wants a copy-paste prompt and calls themselves an "AI user"
 
 ---
 
-## 💡 这本书的几个特点
+## 📖 Read online
 
-### 1. **每个结论都从前置原理推导而来**
-你不会看到"业界推荐用 RAG"这种结论。你会看到：**因为上下文窗口有限 → 所以需要外部知识 → 检索方式有几种权衡 → RAG 是某种约束下的最优解**。
+> **🌐 Recommended: [Online edition (mkdocs)](https://caozhiyi.github.io/ai-programming-book/en/)**
+> Full navigation, dark mode, syntax highlighting, and the full set of structural diagrams.
 
-### 2. **配套 30+ 张原创结构图**
-关键机制（注意力、ReAct 循环、MCP 架构、记忆分层、知识注入决策树……）全部配有 SVG 结构图，**看图就能理解一半**。
-
-### 3. **有"反面案例"系统呈现**
-不只讲"为什么需要 X"，也讲"X 被滥用时会怎样"。第 7 章专门讨论 Agent 的失败模式，这是大多数书避而不谈的部分。
-
-### 4. **强调"边界感"**
-每一项技术都有适用边界。书中明确告诉你：**什么场景下该用，什么场景下不该用，临界点在哪里**。
-
-### 5. **不会过时**
-不教任何具体工具的用法。只讲底层原理。Cursor 可能明天被替代，但 Token、注意力、上下文、Agent 的本质不会变。
+Or click into the table of contents below to jump straight to the Markdown files on GitHub.
 
 ---
 
-## 🚀 怎么开始读
+## 📚 Table of contents
 
-### 🍱 时间充裕（推荐）：从头读到尾
-每一章的结尾都自然引出下一章的问题。这条逻辑链本身就是理解 AI 编程系统的最佳路径。
+The book is organized into **5 parts and 17 chapters**, along a strictly progressive logical line. Each part is a prerequisite for the next.
 
-### ⚡ 时间紧张：先读卷导读
-每一卷开头都有"导读"，告诉你这一卷要解决什么问题、核心结论是什么。先读导读，再决定深入哪些章节。
+### 📘 Part I — How large language models actually work
 
-### 🎯 带问题来：直接跳读
-- 想搞清楚 **Agent 失效** → 直接读第 7 章
-- 想做 **RAG/微调选型** → 直接读第 10 章
-- 想搭 **企业级 AI 编程系统** → 直接读第 13 章
-- 想说服老板做 **AI 转型** → 直接读第 16 章
+> Without understanding the model itself, every higher-level discussion floats in the air.
+
+- **Chapter 1** — [How Large Language Models Actually Work](docs_en/01.How%20Large%20Language%20Models%20Actually%20Work.md) — tokenization, attention, sampling: the full pipeline
+- **Chapter 2** — [What Interaction with an LLM Really Is](docs_en/02.What%20Interaction%20with%20an%20LLM%20Really%20Is.md) — context windows, "lost in the middle", and the physical reality of multi-turn dialogue
+
+### 📗 Part II — From answering to acting
+
+> What exactly do you cross when you go from "you ask, it answers" to an Agent that executes tasks on its own?
+
+- **Chapter 3** — [From Answering to Acting: How Agentic Systems Work](docs_en/03.From%20Answering%20to%20Acting%20How%20Agentic%20Systems%20Work.md)
+- **Chapter 4** — [Standardizing Tool Use: How MCP Works](docs_en/04.Standardizing%20Tool%20Use%20How%20MCP%20Works.md)
+- **Chapter 5** — [Skill as a Packaged Capability](docs_en/05.Skill%20as%20a%20Packaged%20Capability.md)
+- **Chapter 6** — [When One Agent Is Not Enough: Multi-Agent Collaboration](docs_en/06.When%20One%20Agent%20Is%20Not%20Enough.md)
+- **Chapter 7** — [Agent Limits and Failure Modes](docs_en/07.Agent%20Limits%20and%20Failure%20Modes.md) ⭐
+
+### 📙 Part III — Memory and context engineering
+
+> How does an AI system "remember" you? And why is the token a unit of economics?
+
+- **Chapter 8** — [Building Memory for AI Systems](docs_en/08.Building%20Memory%20for%20AI%20Systems.md)
+- **Chapter 9** — [Token Economics and the Art of Context Engineering](docs_en/09.Token%20Economics%20and%20the%20Art%20of%20Context%20Engineering.md)
+- **Chapter 10** — [Three Paths to Knowledge Injection: RAG, Fine-tuning, and Long Context](docs_en/10.Three%20Paths%20to%20Knowledge%20Injection.md) ⭐
+
+### 📕 Part IV — Judgment in architectural choice
+
+> Once the toolbox is full, knowing **which tool fits which situation** is the real skill.
+
+- **Chapter 11** — [Choosing the Right Stack for the Job](docs_en/11.Choosing%20the%20Right%20Stack%20for%20the%20Job.md)
+- **Chapter 12** — [From Prompts to OpenSpec: Spec-driven Programming](docs_en/12.From%20Prompts%20to%20OpenSpec.md)
+- **Chapter 13** — [The End-to-End Blueprint of an AI Coding System](docs_en/13.The%20End-to-End%20Blueprint%20of%20an%20AI%20Coding%20System.md)
+- **Chapter 14** — [Security and Alignment: Where AI Systems Should and Shouldn't Be Trusted](docs_en/14.Security%20and%20Alignment.md)
+
+### 📔 Part V — Engineering and the road ahead
+
+> Turning "I can use AI" into "our team ships continuously with AI" takes a whole engineering methodology.
+
+- **Chapter 15** — [Engineering for Non-Deterministic Systems](docs_en/15.Engineering%20for%20Non-Deterministic%20Systems.md)
+- **Chapter 16** — [The Organizational Side of AI Engineering: Governance, Evaluation, Team Migration](docs_en/16.The%20Organizational%20Side%20of%20AI%20Engineering.md)
+- **Chapter 17** — [The Limits and Future of AI Coding](docs_en/17.The%20Limits%20and%20Future%20of%20AI%20Coding.md)
+
+### 📎 Appendix
+
+- [Appendix A — Quick Reference Cards](docs_en/appendix-quick-reference.md) — fast lookup for key concepts
+- [Appendix B — A 30-Day Practice Path](docs_en/appendix-30-day-path.md) — an executable plan from beginner to comfortable
+- [Terminology](docs_en/TERMINOLOGY.md) — glossary of recurring terms
 
 ---
 
-## 🛠️ 本地构建（可选）
+## 💡 A few things that make this book different
 
-如果你想本地运行 mkdocs 站点：
+### 1. **Every conclusion is derived from prior principles**
+You won't find sentences like "the industry recommends RAG". You'll find: **context windows are limited → so external knowledge has to come from somewhere → there are several retrieval trade-offs → RAG is the optimum under a particular set of constraints**.
+
+### 2. **Original structural diagrams throughout**
+The key mechanisms — attention, the ReAct loop, MCP architecture, layered memory, the knowledge-injection decision tree, and so on — all come with hand-drawn SVG diagrams. **Half the understanding comes from looking at the picture.**
+
+### 3. **Failure modes get their own real estate**
+The book doesn't only explain "why you need X" — it also explains "what happens when X is misused". Chapter 7 is dedicated to Agent failure modes, the part most other books quietly skip.
+
+### 4. **A strong sense of where things stop working**
+Every technique has a boundary. The book is explicit about it: **what to use it for, what not to use it for, and where the edge actually is.**
+
+### 5. **Built to age slowly**
+There's no tutorial for any specific tool. Only the underlying principles. Cursor may be replaced tomorrow, but the nature of tokens, attention, context, and Agents won't be.
+
+---
+
+## 🚀 How to read it
+
+### 🍱 If you have time (recommended): read it cover to cover
+Each chapter naturally raises the question that the next chapter answers. That logical chain itself is the best path through AI coding systems.
+
+### ⚡ If you're in a hurry: read the part introductions first
+Each part opens with a short introduction — what it sets out to solve, what the core takeaway is. Read those first, then decide which chapters to go deep on.
+
+### 🎯 If you're coming with a question: jump straight in
+- Trying to figure out **why your Agent fails** → go straight to Chapter 7
+- Choosing between **RAG vs. fine-tuning** → go straight to Chapter 10
+- Designing an **enterprise-grade AI coding system** → go straight to Chapter 13
+- Building the case for **AI adoption to leadership** → go straight to Chapter 16
+
+---
+
+## 🛠️ Local build (optional)
+
+If you'd like to run the mkdocs site locally:
 
 ```bash
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 启动本地服务（默认 http://127.0.0.1:8000）
+# Start the local server (defaults to http://127.0.0.1:8000)
 mkdocs serve
 
-# 构建静态站点
+# Build the static site
 mkdocs build
 ```
 
 ---
 
-## 🌟 关于作者
+## 🌟 About the author
 
-我是 **caozhiyi**，一个做了多年网络和分布式系统架构的工程师。这本书不是空想出来的——它来自我在使用 AI 编程工具时遇到的具体困惑、解决困惑过程中沉淀的方法论。
+I'm **caozhiyi**, an engineer with a long stretch of years on infrastructure and systems architecture. This book didn't come out of thin air — it grew out of the concrete confusions I ran into while using AI coding tools, and the methodology I distilled from working through them.
 
-如果你觉得这本书有帮助，欢迎关注我的公众号。我会持续分享：
-- AI 编程的深度思考
-- 系统设计与架构方法论
-- 网络协议、QUIC 等底层技术
+If the book was useful to you, feel free to follow my WeChat Official Account (**煮码宝藏**). I will continue to share:
+- Reflections on AI coding from the trenches
+- System design and architecture methodology
+- Network protocols, QUIC, and other low-level work
 
-> 📮 **公众号**：`煮码宝藏`
-
-> ![公众号二维码](docs/images/wechat-qr.jpg)
+> 📮 *gmail**: `caozhiyi5@gmail.com`
 
 ---
 
-## 🤝 参与与反馈
+## 🤝 Contribution and feedback
 
-这本书还在持续打磨中，欢迎你以任何方式参与：
+The book is still being polished. Any kind of involvement is welcome:
 
-- 🐛 发现错别字、技术错误？→ [提 Issue](https://github.com/caozhiyi/ai-programming-book/issues)
-- 💡 觉得某个推导链可以更扎实？→ [提 PR](https://github.com/caozhiyi/ai-programming-book/pulls) 或 Issue
-- ❓ 有读不懂的地方？→ [Discussions 提问](https://github.com/caozhiyi/ai-programming-book/discussions)
-- ⭐ 觉得有用？**点个 Star 是对作者最大的支持**
+- 🐛 Found a typo or a technical mistake? → [open an Issue](https://github.com/caozhiyi/ai-programming-book/issues)
+- 💡 Think a derivation could be tightened? → [send a PR](https://github.com/caozhiyi/ai-programming-book/pulls) or open an Issue
+- ❓ Got stuck on something? → [ask in Discussions](https://github.com/caozhiyi/ai-programming-book/discussions)
+- ⭐ Found it useful? **A Star is the best support an author can get.**
 
-每一个 Issue 我都会认真回复。
-
----
-
-## ☕ 赞赏与支持
-
-如果这本书对你的日常开发、架构选型或者认知升级有所启发，欢迎请作者喝杯咖啡，你的支持是我持续创作与维护的最大动力！
-
-<div align="center">
-  <img src="docs/images/wechat-pay.jpg" alt="微信打赏" width="240" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/images/ali-pay.jpg" alt="支付宝打赏" width="240" />
-</div>
+I read and reply to every Issue.
 
 ---
 
-## 📜 协议
 
-本书采用 [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。
+## 📜 License
 
-简单来说：
-- ✅ 你可以**自由阅读、复制、传播**本书内容
-- ✅ 你可以**基于本书内容做修改和二次创作**（需要署名 + 同样开放）
-- ❌ **不允许商业用途**（不能拿去出书卖钱、不能放进付费课程等）
+This book is released under [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+In plain words:
+- ✅ You can **read, copy, and share** the content freely
+- ✅ You can **adapt and build on it** (with attribution, and under the same license)
+- ❌ **No commercial use** (no selling it as a printed book, no putting it inside a paid course, etc.)
 
 ---
 
 <div align="center">
 
-**如果这本书对你有帮助，请点一个 ⭐ Star，这是对作者持续创作最大的鼓励。**
+**If this book helped you, please drop a ⭐ Star — it's the most encouraging signal an author can get.**
 
 <a href="https://star-history.com/#caozhiyi/ai-programming-book&Date">
   <img src="https://api.star-history.com/svg?repos=caozhiyi/ai-programming-book&type=Date" alt="Star History" width="600">
