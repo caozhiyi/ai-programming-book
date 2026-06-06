@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="images/book-cover.svg" alt="AI编程的第一性原理" width="450" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 2rem;">
+</div>
+
 # 前言
 
 你大概率已经在用 AI 写代码了。

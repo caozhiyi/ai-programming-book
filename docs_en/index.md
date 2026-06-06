@@ -1,4 +1,10 @@
+<div align="center">
+  <img src="images/book-cover.svg" alt="First Principles of AI Coding" width="450" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 2rem;">
+</div>
+
 # Preface
+
+> 🌐 **Language**: [简体中文](../) · English
 
 You are almost certainly already writing code with AI.
 
