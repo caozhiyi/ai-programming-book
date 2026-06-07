@@ -13,7 +13,7 @@
 
 <p><strong>📖 A first-principles book for serious users of AI coding tools · Free to read online</strong></p>
 
-<p><a href="README.md">📄 中文版 README</a></p>
+<p><a href="README_cn.md">📄 中文版 README</a></p>
 
 </div>
 
