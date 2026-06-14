@@ -5,7 +5,7 @@
 ### Not "how to use Cursor" — but how to derive AI coding systems from the ground up
 
 <p>
-  <a href="https://caozhiyi.github.io/ai-programming-book/en"><img src="https://img.shields.io/badge/📖_Read_Online-mkdocs-2196F3?style=for-the-badge" alt="Read Online"></a>
+  <a href="https://caozhiyi.cc/ai-programming-book/en/"><img src="https://img.shields.io/badge/📖_Read_Online-mkdocs-2196F3?style=for-the-badge" alt="Read Online"></a>
   <a href="#-table-of-contents"><img src="https://img.shields.io/badge/📚_Contents-5_parts_17_chapters-4CAF50?style=for-the-badge" alt="Contents"></a>
   <a href="#-about-the-author"><img src="https://img.shields.io/badge/✍️_Author-caozhiyi-FF9800?style=for-the-badge" alt="Author"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge" alt="License"></a>
@@ -72,7 +72,7 @@ This is an **anti-tool-tutorial** book. Tools age out. Principles don't.
 
 ## 📖 Read online
 
-> **🌐 Recommended: [Online edition (mkdocs)](https://caozhiyi.github.io/ai-programming-book/en/)**
+> **🌐 Recommended: [Online edition (mkdocs)](https://caozhiyi.cc/ai-programming-book/en/)**
 > Full navigation, dark mode, syntax highlighting, and the full set of structural diagrams.
 
 Or click into the table of contents below to jump straight to the Markdown files on GitHub.

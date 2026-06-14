@@ -5,7 +5,7 @@
 ### 不是教你"怎么用 Cursor"，而是带你把 AI 编程系统从底层推导出来
 
 <p>
-  <a href="https://caozhiyi.github.io/ai-programming-book/"><img src="https://img.shields.io/badge/📖_在线阅读-mkdocs-2196F3?style=for-the-badge" alt="在线阅读"></a>
+  <a href="https://caozhiyi.cc/ai-programming-book/"><img src="https://img.shields.io/badge/📖_在线阅读-mkdocs-2196F3?style=for-the-badge" alt="在线阅读"></a>
   <a href="#-章节目录"><img src="https://img.shields.io/badge/📚_章节-5卷_17章-4CAF50?style=for-the-badge" alt="章节"></a>
   <a href="#-关于作者"><img src="https://img.shields.io/badge/✍️_作者-caozhiyi-FF9800?style=for-the-badge" alt="作者"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge" alt="License"></a>
@@ -72,7 +72,7 @@
 
 ## 📖 在线阅读
 
-> **🌐 推荐阅读方式：[在线版（mkdocs）](https://caozhiyi.github.io/ai-programming-book/)**
+> **🌐 推荐阅读方式：[在线版（mkdocs）](https://caozhiyi.cc/ai-programming-book/)**
 > 提供完整的目录导航、暗黑模式、代码高亮和 30+ 配图。
 
 或者点击下方目录直接跳转到 GitHub 上的 Markdown 文件。

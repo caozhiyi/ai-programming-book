@@ -27,3 +27,6 @@ requests==2.32.5
 six==1.17.0
 urllib3==2.6.3
 watchdog==6.0.0
+mkdocs-minify-plugin==0.8.0
+pillow==10.4.0
+cairosvg==2.7.1

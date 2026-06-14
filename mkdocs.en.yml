@@ -1,7 +1,7 @@
 site_name: First Principles of AI Coding
 site_description: Deriving AI coding systems from the ground up
 site_author: ekko
-site_url: https://caozhiyi.github.io/ai-programming-book/en/
+site_url: https://caozhiyi.cc/ai-programming-book/en/
 repo_name: GitHub
 repo_url: https://github.com/caozhiyi/ai-programming-book
 
@@ -46,9 +46,17 @@ extra:
     - name: English
       link: /ai-programming-book/en/
       lang: en
+  analytics:
+    provider: google
+    property: G-4J919K537P
 
 plugins:
   - search
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+  - social
 
 markdown_extensions:
   - pymdownx.highlight:
