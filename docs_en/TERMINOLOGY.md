@@ -264,10 +264,10 @@ These are not final titles. They are directionally preferred renderings to keep 
 | Token 经济学：上下文工程的艺术 | Token Economics and the Art of Context Engineering |
 | 知识注入的三条路：RAG、微调与长上下文 | Three Paths to Knowledge Injection |
 | 规范驱动编程：从提示词到 OpenSpec | From Prompts to OpenSpec |
-| 安全与对齐：AI 系统的信任边界 | Security, Alignment, and Trust Boundaries |
-| 非确定性系统的工程化挑战 | Engineering for Non-Deterministic Systems |
-| AI 工程组织学：治理、评估与团队迁移 | The Organizational Side of AI Engineering |
-| AI 编程的边界与未来 | The Limits and Future of AI Coding |
+| 安全与对齐：AI 系统的信任边界 | Security and Alignment |
+| 判定权重建：AI 写的代码该怎么审 | Rebuilding Judgment |
+| 当 AI 进入团队：协同重排 | When AI Enters the Team |
+| 当 AI 进入组织：从工具到能力底座 | When AI Enters the Organization |
 
 ---
 

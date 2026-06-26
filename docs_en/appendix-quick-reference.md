@@ -1,7 +1,7 @@
 
 # Appendix A — Quick Reference
 
-This appendix compresses the core judgement frameworks from all seventeen chapters into a set of lookup tables you can pull up in the middle of real work.
+This appendix compresses the core judgement frameworks from all fifteen chapters into a set of lookup tables you can pull up in the middle of real work.
 
 ---
 
@@ -17,29 +17,7 @@ This appendix compresses the core judgement frameworks from all seventeen chapte
 
 ---
 
-## 2. The Stack Selection Decision Tree (Chapter 11)
-
-```
-Does your task need to interact with tools?
-├── No  → Use Chat (pure dialogue)
-└── Yes → Does it need multi-step autonomous execution?
-    ├── No  → Use Tool-Augmented Chat
-    └── Yes → Does it need distinct specialist roles?
-        ├── No  → Use a Single Agent
-        └── Yes → Are the subtasks tightly coupled?
-            ├── Yes → Use a Single Agent with role switching
-            └── No  → Use Multi-Agent
-```
-
-**How to read each branch:**
-
-- *Needs tool interaction* — the task requires reading or writing files, executing commands, or calling APIs.
-- *Multi-step autonomous execution* — more than one step, with real dependencies between them.
-- *Distinct specialist roles* — the subtasks need mutually exclusive Skill sets or independent contexts.
-
----
-
-## 3. Layered Compression Strategy (Chapter 9)
+## 2. Layered Compression Strategy (Chapter 9)
 
 | Context layer        | Compression strategy       | Ratio   | Why                                                       |
 |----------------------|----------------------------|:-------:|-----------------------------------------------------------|
@@ -51,7 +29,7 @@ Does your task need to interact with tools?
 
 ---
 
-## 4. Three Rules of Spec Design (Chapter 12)
+## 3. Three Rules of Spec Design (Chapter 11)
 
 1. **Cross-task generality** — a spec rule should hold across many tasks, not be glued to one specific task.
 2. **Composability** — multiple specs should stack without contradicting each other.
@@ -68,7 +46,7 @@ Does your task need to interact with tools?
 
 ---
 
-## 5. The Four-Layer Security Model (Chapter 14)
+## 4. The Four-Layer Security Model (Chapter 12)
 
 | Layer | Name                  | Mechanism                                                          | What it stops                                  |
 |:-----:|-----------------------|--------------------------------------------------------------------|------------------------------------------------|
@@ -83,21 +61,7 @@ Does your task need to interact with tools?
 
 ---
 
-## 6. Maturity Self-Assessment Checklist (Chapter 16)
-
-| Tier | The question to ask                                       | What "yes" looks like                                                       |
-|:----:|-----------------------------------------------------------|-----------------------------------------------------------------------------|
-| L0   | Is anyone on the team using AI for coding at all?         | Someone is using Chat-style assistance during coding                        |
-| L1   | Can the AI execute multi-step tasks on its own?           | An agent environment is wired in; it can read/write files and run commands  |
-| L2   | Is the AI's output style consistent across the team?      | Shared Skills/specs are in place; there is a project knowledge base         |
-| L3   | Can you *quantify* the AI's output quality?               | An evaluation set, monitoring metrics, and a way to trace incidents         |
-| L4   | Is there a regression process when the model is upgraded? | Versioned assets, with a canary/rollback path                               |
-
-**The honest read:** *most teams capture most of the value somewhere between L0 and L2.*
-
----
-
-## 7. When to Reach for Multi-Agent (Chapter 6)
+## 5. When to Reach for Multi-Agent (Chapter 6)
 
 **✅ Multi-agent fits when:**
 
@@ -116,7 +80,7 @@ Does your task need to interact with tools?
 
 ---
 
-## 8. Choosing an Evaluation Strategy (Chapter 15)
+## 6. Choosing an Evaluation Strategy (Chapter 13)
 
 | Task determinism | Examples                            | Verification method            | Cost |
 |:----------------:|-------------------------------------|--------------------------------|:----:|
@@ -129,7 +93,7 @@ Does your task need to interact with tools?
 
 ---
 
-## 9. Quick Token-Cost Math (Chapter 9)
+## 7. Quick Token-Cost Math (Chapter 9)
 
 | Scenario                       | Estimation formula                                       | Worked example                       |
 |--------------------------------|----------------------------------------------------------|--------------------------------------|
@@ -145,7 +109,7 @@ Does your task need to interact with tools?
 
 ---
 
-## 10. Reference Allocation of the Context Window (Chapter 13)
+## 8. Reference Allocation of the Context Window (Chapter 9)
 
 | Region                         | Suggested share | What lives here                                            |
 |--------------------------------|:---------------:|------------------------------------------------------------|

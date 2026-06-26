@@ -96,20 +96,21 @@ nav:
     - "9. Token Economics and the Art of Context Engineering": 09.Token Economics and the Art of Context Engineering.md
     - "10. Three Paths to Knowledge Injection": 10.Three Paths to Knowledge Injection.md
 
-  - "Part IV — Judgment in architectural choice":
-    - "Overview": 00d.Part IV — Judgment in architectural choice.md
-    - "11. Choosing the Right Stack for the Job": 11.Choosing the Right Stack for the Job.md
-    - "12. From Prompts to OpenSpec": 12.From Prompts to OpenSpec.md
-    - "13. The End-to-End Blueprint of an AI Coding System": 13.The End-to-End Blueprint of an AI Coding System.md
-    - "14. Security and Alignment": 14.Security and Alignment.md
-
-  - "Part V — Engineering and the road ahead":
-    - "Overview": 00e.Part V — Engineering and the road ahead.md
-    - "15. Engineering for Non-Deterministic Systems": 15.Engineering for Non-Deterministic Systems.md
-    - "16. The Organizational Side of AI Engineering": 16.The Organizational Side of AI Engineering.md
-    - "17. The Limits and Future of AI Coding": 17.The Limits and Future of AI Coding.md
+  - "Part IV — Engineering and Organization":
+    - "Overview": 00d.Part IV — Engineering and Organization.md
+    - "11. From Prompts to OpenSpec": 11.From Prompts to OpenSpec.md
+    - "12. Security and Alignment": 12.Security and Alignment.md
+    - "13. Rebuilding Judgment": 13.Rebuilding Judgment.md
+    - "14. When AI Enters the Team": 14.When AI Enters the Team.md
+    - "15. When AI Enters the Organization": 15.When AI Enters the Organization.md
 
   - Appendix:
-    - "Appendix A — Quick Reference Cards": appendix-quick-reference.md
-    - "Appendix B — A 30-Day Practice Path": appendix-30-day-path.md
-    - Terminology: TERMINOLOGY.md
+    - "Essay Appendices":
+      - "Appendix I — It Is Not a Lesser Human: Notes on What LLMs Actually Are": appendix-llm-intelligence-blackbox.md
+      - "Appendix II — Software Ate Only Half the World: From Rule-Based to Token-Based": appendix-software-second-half.md
+      - "Appendix III — From API Gateway to AI Gateway: When Infrastructure Is Stretched by Tokens": appendix-ai-gateway-as-infra.md
+      - "Appendix IV — The Repriced Engineer: The Second Half of Software Engineering": appendix-engineer-repricing.md
+    - "Reference Appendices":
+      - "Appendix A — Quick Reference Cards": appendix-quick-reference.md
+      - "Appendix B — A 30-Day Practice Path": appendix-30-day-path.md
+      - Terminology: TERMINOLOGY.md

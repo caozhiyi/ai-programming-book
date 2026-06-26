@@ -28,7 +28,7 @@ If you have no programming background at all, this book is probably not the righ
 
 ## Structure of the Book
 
-The book is organized into five parts and seventeen chapters along a single progressive logical line.
+The book is organized into four parts and fifteen chapters along a single progressive logical line.
 
 ### Part I — How LLMs Actually Work (Chapters 1–2)
 
@@ -55,24 +55,17 @@ How an AI system *remembers* you—the design of the memory layer, how to use a 
 - [Chapter 9 — Token Economics and the Art of Context Engineering](09.Token%20Economics%20and%20the%20Art%20of%20Context%20Engineering.md)
 - [Chapter 10 — Three Paths to Knowledge Injection: RAG, Fine-tuning, and Long Context](10.Three%20Paths%20to%20Knowledge%20Injection.md) ⭐
 
-### Part IV — Judgment in Architectural Choice (Chapters 11–14)
+### Part IV — Engineering and Organization (Chapters 11–15)
 
-The toolbox is full; knowing which tool to reach for is what separates competence from theater. A decision framework helps you judge which approach fits which scenario, specification-driven development moves the model's output from *getting lucky* to *being predictable*, and once a system actually has to ship, the end-to-end blueprint and the trust boundary—security and alignment—are no longer optional.
+Individual ability to use AI is one thing; turning that ability into something an engineering system, a team, and an organization can carry over the long term is another. Specs move the model's output from *getting lucky* to *being predictable*. The trust boundary makes the agent safe to actually run. Judgment over non-deterministic code makes its output land in the repo. Coordination patterns get reordered when production-side cost collapses. And finally the organization itself has to learn how to absorb a capability whose payoff is no longer linear in headcount.
 
-- [Chapter 11 — Choosing the Right Stack for the Job](11.Choosing%20the%20Right%20Stack%20for%20the%20Job.md)
-- [Chapter 12 — From Prompts to OpenSpec: Spec-driven Programming](12.From%20Prompts%20to%20OpenSpec.md)
-- [Chapter 13 — The End-to-End Blueprint of an AI Coding System](13.The%20End-to-End%20Blueprint%20of%20an%20AI%20Coding%20System.md)
-- [Chapter 14 — Security and Alignment: Where AI Systems Should and Shouldn't Be Trusted](14.Security%20and%20Alignment.md)
+- [Chapter 11 — From Prompts to OpenSpec: When Requirements Become Engineering Artifacts](11.From%20Prompts%20to%20OpenSpec.md)
+- [Chapter 12 — Security and Alignment: The Trust Boundary of AI Systems](12.Security%20and%20Alignment.md)
+- [Chapter 13 — Rebuilding Judgment: How AI-Written Code Should Be Reviewed](13.Rebuilding%20Judgment.md)
+- [Chapter 14 — When AI Enters the Team: Reordering Coordination](14.When%20AI%20Enters%20the%20Team.md)
+- [Chapter 15 — When AI Enters the Organization: From Tool to Capability Foundation](15.When%20AI%20Enters%20the%20Organization.md)
 
-### Part V — Engineering and the Road Ahead (Chapters 15–17)
-
-Turning *I can use AI* into *our team ships continuously with AI* takes a whole engineering methodology—quality assurance for non-deterministic systems, organizational governance and team migration, and finally the limits and evolution of AI coding itself.
-
-- [Chapter 15 — Engineering for Non-Deterministic Systems](15.Engineering%20for%20Non-Deterministic%20Systems.md)
-- [Chapter 16 — The Organizational Side of AI Engineering: Governance, Evaluation, Team Migration](16.The%20Organizational%20Side%20of%20AI%20Engineering.md)
-- [Chapter 17 — The Limits and Future of AI Coding](17.The%20Limits%20and%20Future%20of%20AI%20Coding.md)
-
-The five parts form a progression. Without understanding how the model works, you cannot understand why agents are designed the way they are. Without understanding agents, you cannot understand why context engineering matters. Without context engineering, you cannot make the right architectural choices. Without architectural judgment, you cannot build a reliable engineering practice on top. Each part is the prerequisite for the next.
+The four parts form a progression. Without understanding how the model works, you cannot understand why agents are designed the way they are. Without understanding agents, you cannot understand why context engineering matters. Without context engineering, you cannot make the right architectural choices. Without engineering and organizational discipline, none of those choices survive contact with a real team. Each part is the prerequisite for the next.
 
 ## How to Read This Book
 
@@ -83,6 +76,17 @@ If you do not have time, scan the part headings above to find the question you a
 One thing worth saying up front: this book is not going to age out quickly. The product form of AI coding tools will keep shifting—today's Cursor may be replaced by something else tomorrow. But the underlying principles will not shift on the same clock—the mechanics of tokenization, the physical constraints of attention, the execution logic of an agent, the engineering challenges of non-deterministic systems—those are dictated by the architecture of large models themselves and are not invalidated by any single product update. What this book is trying to teach you is how to fish, not to hand you a fish.
 
 ## Appendices
+
+The appendices come in two groups. The **essay appendices** are extended reflections that sit alongside the main fifteen chapters, looking at the same shift through three different time scales—the industry, the infrastructure, the engineer's career—and one underlying reflection on what an LLM actually is. They are written in the same voice as the main text and are meant to be read like the rest of the book. The **reference appendices** are the practical companions: a quick reference for everyday lookups, and a thirty-day path for putting the ideas into practice.
+
+### Essay Appendices
+
+- [Appendix I — It Is Not a Lesser Human: Notes on What LLMs Actually Are](appendix-llm-intelligence-blackbox.md)
+- [Appendix II — Software Ate Only Half the World: From Rule-Based to Token-Based](appendix-software-second-half.md)
+- [Appendix III — From API Gateway to AI Gateway: When Infrastructure Is Stretched by Tokens](appendix-ai-gateway-as-infra.md)
+- [Appendix IV — The Repriced Engineer: The Second Half of Software Engineering](appendix-engineer-repricing.md)
+
+### Reference Appendices
 
 - [Appendix A — Quick Reference](appendix-quick-reference.md)
 - [Appendix B — A 30-Day Practice Path](appendix-30-day-path.md)

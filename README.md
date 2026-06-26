@@ -6,7 +6,7 @@
 
 <p>
   <a href="https://caozhiyi.cc/ai-programming-book/en/"><img src="https://img.shields.io/badge/📖_Read_Online-mkdocs-2196F3?style=for-the-badge" alt="Read Online"></a>
-  <a href="#-table-of-contents"><img src="https://img.shields.io/badge/📚_Contents-5_parts_17_chapters-4CAF50?style=for-the-badge" alt="Contents"></a>
+  <a href="#-table-of-contents"><img src="https://img.shields.io/badge/📚_Contents-4_parts_15_chapters-4CAF50?style=for-the-badge" alt="Contents"></a>
   <a href="#-about-the-author"><img src="https://img.shields.io/badge/✍️_Author-caozhiyi-FF9800?style=for-the-badge" alt="Author"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge" alt="License"></a>
 </p>
@@ -81,7 +81,7 @@ Or click into the table of contents below to jump straight to the Markdown files
 
 ## 📚 Table of contents
 
-The book is organized into **5 parts and 17 chapters**, along a strictly progressive logical line. Each part is a prerequisite for the next.
+The book is organized into **4 parts and 15 chapters**, along a strictly progressive logical line. Each part is a prerequisite for the next.
 
 ### 📘 Part I — How large language models actually work
 
@@ -108,24 +108,28 @@ The book is organized into **5 parts and 17 chapters**, along a strictly progres
 - **Chapter 9** — [Token Economics and the Art of Context Engineering](docs_en/09.Token%20Economics%20and%20the%20Art%20of%20Context%20Engineering.md)
 - **Chapter 10** — [Three Paths to Knowledge Injection: RAG, Fine-tuning, and Long Context](docs_en/10.Three%20Paths%20to%20Knowledge%20Injection.md) ⭐
 
-### 📕 Part IV — Judgment in architectural choice
+### 📕 Part IV — Engineering and organization
 
-> Once the toolbox is full, knowing **which tool fits which situation** is the real skill.
+> Individual ability to use AI is one thing. Turning that ability into something an engineering system, a team, and an organization can carry over the long term is another.
 
-- **Chapter 11** — [Choosing the Right Stack for the Job](docs_en/11.Choosing%20the%20Right%20Stack%20for%20the%20Job.md)
-- **Chapter 12** — [From Prompts to OpenSpec: Spec-driven Programming](docs_en/12.From%20Prompts%20to%20OpenSpec.md)
-- **Chapter 13** — [The End-to-End Blueprint of an AI Coding System](docs_en/13.The%20End-to-End%20Blueprint%20of%20an%20AI%20Coding%20System.md)
-- **Chapter 14** — [Security and Alignment: Where AI Systems Should and Shouldn't Be Trusted](docs_en/14.Security%20and%20Alignment.md)
+- **Chapter 11** — [From Prompts to OpenSpec: When Requirements Become Engineering Artifacts](docs_en/11.From%20Prompts%20to%20OpenSpec.md)
+- **Chapter 12** — [Security and Alignment: The Trust Boundary of AI Systems](docs_en/12.Security%20and%20Alignment.md)
+- **Chapter 13** — [Rebuilding Judgment: How AI-Written Code Should Be Reviewed](docs_en/13.Rebuilding%20Judgment.md)
+- **Chapter 14** — [When AI Enters the Team: Reordering Coordination](docs_en/14.When%20AI%20Enters%20the%20Team.md)
+- **Chapter 15** — [When AI Enters the Organization: From Tool to Capability Foundation](docs_en/15.When%20AI%20Enters%20the%20Organization.md)
 
-### 📔 Part V — Engineering and the road ahead
+### 📎 Appendices
 
-> Turning "I can use AI" into "our team ships continuously with AI" takes a whole engineering methodology.
+The appendices come in two groups. The **essay appendices** sit alongside the main fifteen chapters and look at the same shift through three different time scales — the industry, the infrastructure, the engineer's career — plus one underlying reflection on what an LLM actually is. The **reference appendices** are the practical companions for daily use.
 
-- **Chapter 15** — [Engineering for Non-Deterministic Systems](docs_en/15.Engineering%20for%20Non-Deterministic%20Systems.md)
-- **Chapter 16** — [The Organizational Side of AI Engineering: Governance, Evaluation, Team Migration](docs_en/16.The%20Organizational%20Side%20of%20AI%20Engineering.md)
-- **Chapter 17** — [The Limits and Future of AI Coding](docs_en/17.The%20Limits%20and%20Future%20of%20AI%20Coding.md)
+#### Essay Appendices
 
-### 📎 Appendix
+- **Appendix I** — [It Is Not a Lesser Human: Notes on What LLMs Actually Are](docs_en/appendix-llm-intelligence-blackbox.md) — Turing, Searle, and the conversation the LLM is forcing us to have with ourselves
+- **Appendix II** — [Software Ate Only Half the World: From Rule-Based to Token-Based](docs_en/appendix-software-second-half.md) — why the second half of *software eats the world* runs on a different track
+- **Appendix III** — [From API Gateway to AI Gateway: When Infrastructure Is Stretched by Tokens](docs_en/appendix-ai-gateway-as-infra.md) — the new layer of infrastructure non-determinism is forcing into existence
+- **Appendix IV** — [The Repriced Engineer: The Second Half of Software Engineering](docs_en/appendix-engineer-repricing.md) — what the market is marking up, what it is marking down, and how *senior* gets split into two layers
+
+#### Reference Appendices
 
 - [Appendix A — Quick Reference Cards](docs_en/appendix-quick-reference.md) — fast lookup for key concepts
 - [Appendix B — A 30-Day Practice Path](docs_en/appendix-30-day-path.md) — an executable plan from beginner to comfortable
@@ -163,8 +167,8 @@ Each part opens with a short introduction — what it sets out to solve, what th
 ### 🎯 If you're coming with a question: jump straight in
 - Trying to figure out **why your Agent fails** → go straight to Chapter 7
 - Choosing between **RAG vs. fine-tuning** → go straight to Chapter 10
-- Designing an **enterprise-grade AI coding system** → go straight to Chapter 13
-- Building the case for **AI adoption to leadership** → go straight to Chapter 16
+- Designing an **enterprise-grade AI coding system** → go straight to Chapter 15
+- Building the case for **AI adoption to leadership** → go straight to Chapter 15
 
 ---
 

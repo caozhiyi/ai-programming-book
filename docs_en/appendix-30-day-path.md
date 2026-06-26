@@ -39,7 +39,7 @@ Take one task. Use the exact same prompt. Run it three times. Then compare.
 - [ ] Where do the differences land—variable names, code style, the implementation strategy itself?
 - [ ] Which differences can you live with, and which cross a line?
 
-**The principle you are testing:** temperature and sampling (Chapter 1), and the fact that you are operating a non-deterministic system in the first place (Chapter 15).
+**The principle you are testing:** temperature and sampling (Chapter 1), and the fact that you are operating a non-deterministic system in the first place (Chapter 13).
 
 ---
 
@@ -47,7 +47,7 @@ Take one task. Use the exact same prompt. Run it three times. Then compare.
 
 **Goal:** Write the first usable spec file for your project.
 
-**Maps to:** Chapters 5 and 12.
+**Maps to:** Chapters 5 and 11.
 
 ### Day 8–9: Surface the Implicit Spec
 
@@ -96,7 +96,7 @@ Take one task. Run it twice—once with the spec loaded, once without. Compare t
 - [ ] Are there rules the AI quietly ignores? Why? (Usually the wording is not specific enough.)
 - [ ] Iterate on the wording until the AI follows the rule consistently, not just sometimes.
 
-**The principle you are testing:** the four ingredients of a Skill (Chapter 5), and the evolution stages a spec goes through (Chapter 12).
+**The principle you are testing:** the four ingredients of a Skill (Chapter 5), and the evolution stages a spec goes through (Chapter 11).
 
 ---
 
@@ -104,7 +104,7 @@ Take one task. Run it twice—once with the spec loaded, once without. Compare t
 
 **Goal:** Stand up a minimum-viable evaluation set so you can put a number on output quality instead of *feeling* it.
 
-**Maps to:** Chapter 15.
+**Maps to:** Chapter 13.
 
 ### Day 15–17: Collect Evaluation Cases
 
@@ -140,7 +140,7 @@ With your current setup—your spec, your tools, your context—run all ten case
 - [ ] Compute the overall pass rate. That number is your baseline.
 - [ ] For the failures, do a root-cause pass: is the spec under-specified, is context missing, or is the task itself genuinely too complex?
 
-**The principle you are testing:** the shift from *assertion* to *evaluation* (Chapter 15), and the idea of an evaluation pipeline as a real engineering surface (Chapter 15).
+**The principle you are testing:** the shift from *assertion* to *evaluation* (Chapter 13), and the idea of an evaluation pipeline as a real engineering surface (Chapter 13).
 
 ---
 
@@ -148,7 +148,7 @@ With your current setup—your spec, your tools, your context—run all ten case
 
 **Goal:** Stand up the smallest version of a governance process that actually works.
 
-**Maps to:** Chapter 16.
+**Maps to:** Chapter 14.
 
 ### Day 22–23: Check the Spec In
 
