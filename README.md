@@ -106,7 +106,7 @@ The book is organized into **4 parts and 15 chapters**, along a strictly progres
 
 - **Chapter 8** — [Building Memory for AI Systems](docs_en/08.Building%20Memory%20for%20AI%20Systems.md)
 - **Chapter 9** — [Token Economics and the Art of Context Engineering](docs_en/09.Token%20Economics%20and%20the%20Art%20of%20Context%20Engineering.md)
-- **Chapter 10** — [Three Paths to Knowledge Injection: RAG, Fine-tuning, and Long Context](docs_en/10.Three%20Paths%20to%20Knowledge%20Injection.md) ⭐
+- **Chapter 10** — [From RAG to Code-Native Retrieval](docs_en/10.From%20RAG%20to%20Code-Native%20Retrieval.md) ⭐
 
 ### 📕 Part IV — Engineering and organization
 

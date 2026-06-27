@@ -49,11 +49,11 @@ From the *you ask, it answers* mode to the full mechanism by which an agent auto
 
 ### Part III — Memory and Context (Chapters 8–10)
 
-How an AI system *remembers* you—the design of the memory layer, how to use a finite context window efficiently, and how to inject external knowledge when the model's training data is not enough (RAG, fine-tuning, long context).
+How an AI system *remembers* you—the design of the memory layer, how to use a finite context window efficiently, and how the model gets to the knowledge it needs (from classic RAG to code-native retrieval, where the act of looking things up moves from the system to the model itself).
 
 - [Chapter 8 — Building Memory for AI Systems](08.Building%20Memory%20for%20AI%20Systems.md)
 - [Chapter 9 — Token Economics and the Art of Context Engineering](09.Token%20Economics%20and%20the%20Art%20of%20Context%20Engineering.md)
-- [Chapter 10 — Three Paths to Knowledge Injection: RAG, Fine-tuning, and Long Context](10.Three%20Paths%20to%20Knowledge%20Injection.md) ⭐
+- [Chapter 10 — From RAG to Code-Native Retrieval](10.From%20RAG%20to%20Code-Native%20Retrieval.md) ⭐
 
 ### Part IV — Engineering and Organization (Chapters 11–15)
 

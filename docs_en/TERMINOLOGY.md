@@ -135,6 +135,7 @@ Its purpose is not to force artificial one-to-one translation. Its purpose is to
 | 输入 Token | input tokens | prompt tokens | Use `input tokens` unless the pricing model specifically says `prompt tokens`. |
 | 输出 Token | output tokens | completion tokens | `output tokens` is the safest neutral term. |
 | 缓存 Token | cached tokens | cache tokens | Use `cached tokens`. |
+| KV Cache | KV Cache | kv-cache / KV-cache | Keep the canonical Transformer term `KV Cache` (capitalized two-word form). Use it only when the prose explicitly discusses the underlying mechanism behind prompt caching; otherwise prefer `prompt caching` for the product-level concept to avoid mixing the mechanism and the feature. |
 
 ---
 
@@ -244,6 +245,7 @@ These terms should usually remain in English even inside otherwise translated pr
 - `Prompt Injection`
 - `Lost in the Middle`
 - `prompt caching`
+- `KV Cache`
 
 ---
 
@@ -262,7 +264,7 @@ These are not final titles. They are directionally preferred renderings to keep 
 | Agent 的能力边界与失败模式 | Agent Limits and Failure Modes |
 | 让 AI 记住你：记忆体系的原理与设计 | Building Memory for AI Systems |
 | Token 经济学：上下文工程的艺术 | Token Economics and the Art of Context Engineering |
-| 知识注入的三条路：RAG、微调与长上下文 | Three Paths to Knowledge Injection |
+| 知识注入：从 RAG 到代码库原生检索 | From RAG to Code-Native Retrieval |
 | 规范驱动编程：从提示词到 OpenSpec | From Prompts to OpenSpec |
 | 安全与对齐：AI 系统的信任边界 | Security and Alignment |
 | 判定权重建：AI 写的代码该怎么审 | Rebuilding Judgment |
