@@ -193,12 +193,14 @@ mkdocs build
 
 I'm **caozhiyi**, an engineer with a long stretch of years on infrastructure and systems architecture. This book didn't come out of thin air — it grew out of the concrete confusions I ran into while using AI coding tools, and the methodology I distilled from working through them.
 
-If the book was useful to you, feel free to follow my WeChat Official Account (**煮码宝藏**). I will continue to share:
+I keep writing about:
 - Reflections on AI coding from the trenches
 - System design and architecture methodology
 - Network protocols, QUIC, and other low-level work
 
-> 📮 *gmail**: `caozhiyi5@gmail.com`
+> 📮 **Email**: `caozhiyi5@gmail.com`
+> 🐙 **GitHub**: [@caozhiyi](https://github.com/caozhiyi)
+> 💬 **WeChat Official Account** (Chinese): `煮码宝藏`
 
 ---
 
