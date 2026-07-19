@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="680" height="320" rx="12" fill="url(#bgGrad)"/>
+
+  <text x="340" y="26" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600">Lost in the Middle: how attention is distributed across the context</text>
+
+  <!-- Attention curve area -->
+  <g transform="translate(50, 45)">
+    <!-- Axes -->
+    <line x1="0" y1="130" x2="580" y2="130" stroke="#334155" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="130" stroke="#334155" stroke-width="1"/>
+
+    <!-- Y-axis label -->
+    <text x="-10" y="70" fill="#64748b" font-size="9" text-anchor="end" transform="rotate(-90, -10, 70)">Attention strength</text>
+
+    <!-- U-shaped curve with fill -->
+    <path d="M 0 20 C 30 25, 80 90, 140 105 C 200 115, 250 118, 290 118 C 330 118, 380 115, 440 105 C 500 90, 550 25, 580 20" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <path d="M 0 20 C 30 25, 80 90, 140 105 C 200 115, 250 118, 290 118 C 330 118, 380 115, 440 105 C 500 90, 550 25, 580 20 L 580 130 L 0 130 Z" fill="#f59e0b" opacity="0.06"/>
+
+    <!-- Danger zone highlight -->
+    <rect x="140" y="0" width="300" height="130" fill="#ef4444" opacity="0.04" rx="4"/>
+
+    <!-- Zone labels -->
+    <g transform="translate(0, 140)">
+      <!-- Start zone -->
+      <rect x="0" width="130" height="22" rx="4" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="65" y="15" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600">Start — System Prompt</text>
+
+      <!-- Middle zone -->
+      <rect x="150" width="280" height="22" rx="4" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="0.6"/>
+      <text x="290" y="15" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="600">Middle — attention valley ⚠</text>
+
+      <!-- End zone -->
+      <rect x="450" width="130" height="22" rx="4" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="515" y="15" text-anchor="middle" fill="#93c5fd" font-size="9" font-weight="600">End — latest message</text>
+    </g>
+
+    <!-- Annotation arrows with data -->
+    <text x="50" y="12" text-anchor="middle" fill="#a78bfa" font-size="8">Accuracy ~75%</text>
+    <text x="290" y="112" text-anchor="middle" fill="#ef4444" font-size="8" opacity="0.8">Accuracy ~56% (↓25%)</text>
+    <text x="530" y="12" text-anchor="middle" fill="#93c5fd" font-size="8">Accuracy ~72%</text>
+
+    <!-- Data points from Liu et al. 2023 -->
+    <circle cx="30" cy="25" r="3" fill="#a78bfa" opacity="0.8"/>
+    <circle cx="100" cy="75" r="3" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="190" cy="100" r="3" fill="#ef4444" opacity="0.8"/>
+    <circle cx="290" cy="115" r="3" fill="#ef4444" opacity="0.8"/>
+    <circle cx="390" cy="100" r="3" fill="#ef4444" opacity="0.8"/>
+    <circle cx="480" cy="75" r="3" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="550" cy="25" r="3" fill="#93c5fd" opacity="0.8"/>
+
+    <!-- Paper reference -->
+    <text x="290" y="-6" text-anchor="middle" fill="#475569" font-size="7" font-style="italic">Source: Liu et al. "Lost in the Middle" (2023) — 20-document NQ task</text>
+  </g>
+
+  <!-- Practical implication -->
+  <g transform="translate(50, 220)">
+    <rect x="0" y="0" width="580" height="86" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.7"/>
+    <text x="290" y="18" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">Practical guidance</text>
+    <text x="290" y="36" text-anchor="middle" fill="#94a3b8" font-size="10">✦ Put important information at the start or end</text>
+    <text x="290" y="52" text-anchor="middle" fill="#94a3b8" font-size="10">✦ Chunk long documents instead of stuffing them whole</text>
+    <text x="290" y="68" text-anchor="middle" fill="#94a3b8" font-size="10">✦ Ordering itself is prompt engineering</text>
+    <text x="290" y="82" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">A 128K window full of noise can be worse than a well-organized 4K one</text>
+  </g>
+</svg>

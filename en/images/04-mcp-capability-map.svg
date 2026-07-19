@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="channelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6" stop-opacity="0.5"/>
+      <stop offset="50%" style="stop-color:#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" style="stop-color:#3b82f6" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowToClient" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+    <marker id="arrowToServer" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="560" rx="16" fill="url(#bgGrad)"/>
+  <g opacity="0.025">
+    <line x1="0" y1="100" x2="920" y2="100" stroke="#fff"/>
+    <line x1="0" y1="200" x2="920" y2="200" stroke="#fff"/>
+    <line x1="0" y1="300" x2="920" y2="300" stroke="#fff"/>
+    <line x1="0" y1="400" x2="920" y2="400" stroke="#fff"/>
+  </g>
+
+  <!-- Title -->
+  <text x="460" y="40" text-anchor="middle" fill="#e2e8f0" font-size="22" font-weight="700" letter-spacing="1">MCP capability map</text>
+  <text x="460" y="64" text-anchor="middle" fill="#64748b" font-size="13" letter-spacing="0.5">The two-way capability contract between Server and Client</text>
+
+  <!-- ==================== MCP SERVER (Left) ==================== -->
+  <g filter="url(#cardShadow)" transform="translate(40, 110)">
+    <rect width="320" height="340" rx="16" fill="#1a1533" stroke="#8b5cf6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="320" height="4" rx="2" fill="url(#serverGrad)" y="0"/>
+
+    <!-- Header -->
+    <g transform="translate(20, 20)">
+      <circle cx="16" cy="16" r="16" fill="#8b5cf6" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="1.2"/>
+      <text x="16" y="21" text-anchor="middle" fill="#8b5cf6" font-size="13" font-weight="700">S</text>
+    </g>
+    <text x="58" y="34" fill="#e2e8f0" font-size="17" font-weight="700">MCP Server</text>
+    <text x="58" y="52" fill="#94a3b8" font-size="10">Tells the Client: what I can do, show, and recommend</text>
+
+    <line x1="20" y1="68" x2="300" y2="68" stroke="#2a1a4a" stroke-width="0.8"/>
+
+    <!-- Tools -->
+    <g transform="translate(20, 84)">
+      <rect width="280" height="76" rx="10" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.8"/>
+      <g transform="translate(14, 14)">
+        <rect width="40" height="20" rx="5" fill="#8b5cf6" fill-opacity="0.25" stroke="#8b5cf6" stroke-width="0.6"/>
+        <text x="20" y="14" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="700">Tools</text>
+      </g>
+      <text x="64" y="28" fill="#e2e8f0" font-size="11" font-weight="600">Executable actions</text>
+      <text x="14" y="52" fill="#94a3b8" font-size="9.5">read_file · search_code · run_command</text>
+      <text x="14" y="66" fill="#64748b" font-size="9" font-style="italic">"Hands" — can act, with side effects</text>
+    </g>
+
+    <!-- Resources -->
+    <g transform="translate(20, 170)">
+      <rect width="280" height="76" rx="10" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.8"/>
+      <g transform="translate(14, 14)">
+        <rect width="68" height="20" rx="5" fill="#8b5cf6" fill-opacity="0.25" stroke="#8b5cf6" stroke-width="0.6"/>
+        <text x="34" y="14" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="700">Resources</text>
+      </g>
+      <text x="92" y="28" fill="#e2e8f0" font-size="11" font-weight="600">Readable data</text>
+      <text x="14" y="52" fill="#94a3b8" font-size="9.5">Architecture docs · DB schema · API docs</text>
+      <text x="14" y="66" fill="#64748b" font-size="9" font-style="italic">"Eyes" — context injected up front</text>
+    </g>
+
+    <!-- Prompts -->
+    <g transform="translate(20, 256)">
+      <rect width="280" height="76" rx="10" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.8"/>
+      <g transform="translate(14, 14)">
+        <rect width="56" height="20" rx="5" fill="#8b5cf6" fill-opacity="0.25" stroke="#8b5cf6" stroke-width="0.6"/>
+        <text x="28" y="14" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="700">Prompts</text>
+      </g>
+      <text x="80" y="28" fill="#e2e8f0" font-size="11" font-weight="600">Interaction templates</text>
+      <text x="14" y="52" fill="#94a3b8" font-size="9.5">code_review · data_analysis · troubleshooting</text>
+      <text x="14" y="66" fill="#64748b" font-size="9" font-style="italic">"Experience" — knows how to get things done</text>
+    </g>
+  </g>
+
+  <!-- ==================== MCP CLIENT (Right) ==================== -->
+  <g filter="url(#cardShadow)" transform="translate(560, 110)">
+    <rect width="320" height="340" rx="16" fill="#0f1a33" stroke="#3b82f6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="320" height="4" rx="2" fill="url(#clientGrad)" y="0"/>
+
+    <!-- Header -->
+    <g transform="translate(20, 20)">
+      <circle cx="16" cy="16" r="16" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1.2"/>
+      <text x="16" y="21" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="700">C</text>
+    </g>
+    <text x="58" y="34" fill="#e2e8f0" font-size="17" font-weight="700">MCP Client</text>
+    <text x="58" y="52" fill="#94a3b8" font-size="10">Tells the Server: scope, inference, and user prompts</text>
+
+    <line x1="20" y1="68" x2="300" y2="68" stroke="#1e2a4a" stroke-width="0.8"/>
+
+    <!-- Roots -->
+    <g transform="translate(20, 84)">
+      <rect width="280" height="76" rx="10" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.8"/>
+      <g transform="translate(14, 14)">
+        <rect width="44" height="20" rx="5" fill="#3b82f6" fill-opacity="0.25" stroke="#3b82f6" stroke-width="0.6"/>
+        <text x="22" y="14" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="700">Roots</text>
+      </g>
+      <text x="68" y="28" fill="#e2e8f0" font-size="11" font-weight="600">Declared workspace scope</text>
+      <text x="14" y="52" fill="#94a3b8" font-size="9.5">Server stays within the granted directories</text>
+      <text x="14" y="66" fill="#64748b" font-size="9" font-style="italic">From "self-declared" to "enforced" boundaries</text>
+    </g>
+
+    <!-- Sampling -->
+    <g transform="translate(20, 170)">
+      <rect width="280" height="76" rx="10" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.8"/>
+      <g transform="translate(14, 14)">
+        <rect width="64" height="20" rx="5" fill="#3b82f6" fill-opacity="0.25" stroke="#3b82f6" stroke-width="0.6"/>
+        <text x="32" y="14" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="700">Sampling</text>
+      </g>
+      <text x="88" y="28" fill="#e2e8f0" font-size="11" font-weight="600">Reverse LLM inference</text>
+      <text x="14" y="52" fill="#94a3b8" font-size="9.5">Server has no API key; delegates to Client</text>
+      <text x="14" y="66" fill="#64748b" font-size="9" font-style="italic">Quota stays a Client-side decision</text>
+    </g>
+
+    <!-- Elicitation -->
+    <g transform="translate(20, 256)">
+      <rect width="280" height="76" rx="10" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.8"/>
+      <g transform="translate(14, 14)">
+        <rect width="68" height="20" rx="5" fill="#3b82f6" fill-opacity="0.25" stroke="#3b82f6" stroke-width="0.6"/>
+        <text x="34" y="14" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="700">Elicitation</text>
+      </g>
+      <text x="92" y="28" fill="#e2e8f0" font-size="11" font-weight="600">Runtime user follow-up</text>
+      <text x="14" y="52" fill="#94a3b8" font-size="9.5">Server pauses and asks the Client to query the user</text>
+      <text x="14" y="66" fill="#64748b" font-size="9" font-style="italic">Humans become a decision point in the loop</text>
+    </g>
+  </g>
+
+  <!-- ==================== BIDIRECTIONAL CHANNEL (Center) ==================== -->
+  <g transform="translate(360, 110)">
+    <!-- Channel pipe -->
+    <rect width="200" height="340" rx="14" fill="url(#channelGrad)" opacity="0.18"/>
+    <rect width="200" height="340" rx="14" fill="none" stroke="#475569" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.5"/>
+
+    <!-- Channel label -->
+    <text x="100" y="28" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600">MCP protocol channel</text>
+    <text x="100" y="44" text-anchor="middle" fill="#64748b" font-size="9">JSON-RPC over stdio / Streamable HTTP</text>
+
+    <!-- Server → Client arrow -->
+    <g transform="translate(0, 110)">
+      <line x1="6" y1="20" x2="194" y2="20" stroke="#a78bfa" stroke-width="2.2" marker-end="url(#arrowToClient)"/>
+      <rect x="32" y="2" width="136" height="16" rx="4" fill="#1a1533" stroke="#8b5cf6" stroke-width="0.6"/>
+      <text x="100" y="13" text-anchor="middle" fill="#c4b5fd" font-size="9" font-weight="600">Server → Client: expose capabilities</text>
+      <text x="100" y="36" text-anchor="middle" fill="#94a3b8" font-size="8.5" font-style="italic">Tools / Resources / Prompts</text>
+    </g>
+
+    <!-- Client → Server arrow -->
+    <g transform="translate(0, 200)">
+      <line x1="194" y1="20" x2="6" y2="20" stroke="#60a5fa" stroke-width="2.2" marker-end="url(#arrowToServer)"/>
+      <rect x="32" y="2" width="136" height="16" rx="4" fill="#0f1a33" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="100" y="13" text-anchor="middle" fill="#93c5fd" font-size="9" font-weight="600">Client → Server: expose capabilities</text>
+      <text x="100" y="36" text-anchor="middle" fill="#94a3b8" font-size="8.5" font-style="italic">Roots / Sampling / Elicitation</text>
+    </g>
+
+    <!-- Symmetry hint -->
+    <g transform="translate(0, 290)">
+      <rect x="14" y="0" width="172" height="36" rx="6" fill="#1e293b" stroke="#475569" stroke-width="0.6" opacity="0.85"/>
+      <text x="100" y="14" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Symmetric contract</text>
+      <text x="100" y="28" text-anchor="middle" fill="#64748b" font-size="8.5">The two sides exchange "what I can do"</text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM INSIGHT ==================== -->
+  <g transform="translate(40, 470)">
+    <rect width="840" height="68" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="0.8" opacity="0.7"/>
+    <text x="420" y="20" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="600">Key insight</text>
+    <text x="420" y="38" text-anchor="middle" fill="#94a3b8" font-size="10">MCP has grown from "a standard protocol for tool calls" into "a unified protocol covering context, tools, workflow, and permission boundaries."</text>
+    <text x="420" y="55" text-anchor="middle" fill="#94a3b8" font-size="10">2024-vintage write-ups tend to narrow it down to a standardized Function Calling — that view needs an update.</text>
+  </g>
+</svg>
