@@ -94,7 +94,7 @@ nav:
     - "Overview": 00c.Part III — Memory and context engineering.md
     - "8. Building Memory for AI Systems": 08.Building Memory for AI Systems.md
     - "9. Token Economics and the Art of Context Engineering": 09.Token Economics and the Art of Context Engineering.md
-    - "10. Three Paths to Knowledge Injection": 10.Three Paths to Knowledge Injection.md
+    - "10. From RAG to Code-Native Retrieval": 10.From RAG to Code-Native Retrieval.md
 
   - "Part IV — Engineering and Organization":
     - "Overview": 00d.Part IV — Engineering and Organization.md

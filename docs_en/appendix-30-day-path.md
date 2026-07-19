@@ -186,7 +186,7 @@ Look back across the 30 days.
 
 ## After the 30 Days
 
-By the end of this path, your team should be operating somewhere around **L2** in the maturity model—you have a spec, you have knowledge injection in place—and you should be visibly moving toward **L3**, where evaluation and observability become first-class.
+By the end of this path, your team should have a working spec and a knowledge-injection setup in place, and the center of gravity should be visibly shifting toward evaluation and observability—moving from *the AI can produce it* to *what the AI produces can be continuously verified*.
 
 **A sustainable cadence to keep going:**
 

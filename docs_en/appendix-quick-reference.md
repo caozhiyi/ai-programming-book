@@ -19,13 +19,15 @@ This appendix compresses the core judgement frameworks from all fifteen chapters
 
 ## 2. Layered Compression Strategy (Chapter 9)
 
-| Context layer        | Compression strategy       | Ratio   | Why                                                       |
-|----------------------|----------------------------|:-------:|-----------------------------------------------------------|
-| System Prompt        | 🔒 Do not compress         | 1:1     | Every token here changes behavior                         |
-| Tool descriptions    | ✂️ Selective injection      | ~3:1    | Inject only the tools relevant to the current task        |
-| Conversation history | 📝 Summarize                | ~5:1    | Keep decisions and conclusions; drop the deliberation     |
-| Tool results         | 🗜️ Aggressive compression   | ~20:1   | Keep only the parts tied to what the agent is doing now   |
-| Memory injection     | 📊 Cap the count            | ~8:1    | Top-K relevant memories, with a hard cap on how many      |
+| Context layer        | Compression strategy       | Intensity  | Why                                                       |
+|----------------------|----------------------------|:----------:|-----------------------------------------------------------|
+| System Prompt        | 🔒 Do not compress         | None       | Every token here changes behavior                         |
+| Tool descriptions    | ✂️ Selective injection      | Low        | Inject only the tools relevant to the current task        |
+| Conversation history | 📝 Summarize                | Medium     | Keep decisions and conclusions; drop the deliberation     |
+| Tool results         | 🗜️ Aggressive compression   | High       | Keep only the parts tied to what the agent is doing now   |
+| Memory injection     | 📊 Cap the count            | Medium     | Top-K relevant memories, with a hard cap on how many      |
+
+**The core idea:** *different layers carry different information density, so the room you have to compress them differs too. The system prompt is worth every token; tool results are usually the most redundant thing on the wire.*
 
 ---
 
@@ -35,14 +37,16 @@ This appendix compresses the core judgement frameworks from all fifteen chapters
 2. **Composability** — multiple specs should stack without contradicting each other.
 3. **Verifiability** — compliance with the spec should be machine-checkable: a linter, a test, or LLM-as-judge.
 
-**The four evolutionary stages of a spec:**
+**How the three kinds of specs stack together:**
 
-| Stage | Form                          | Character                               | Where it fits         |
-|-------|-------------------------------|-----------------------------------------|-----------------------|
-| 1     | Natural-language prompt       | Flexible, but vague                     | Solo exploration      |
-| 2     | Structured Skill              | Has shape, but is not verifiable        | Early team adoption   |
-| 3     | Declarative spec              | Verifiable, but needs maintenance       | Mature team           |
-| 4     | Executable spec               | Auto-verified and auto-repaired         | Operating at scale    |
+| Dimension            | Persistent Behavioral Preferences        | Change-Level Spec                                 | Capability-Level Spec                                     |
+|----------------------|------------------------------------------|---------------------------------------------------|-----------------------------------------------------------|
+| Granularity          | Cross-cutting: affects every task        | Vertical slice: one change                        | Vertical slice: one capability                            |
+| Lifecycle            | Long-lived, stable, occasionally updated | Single-shot, frozen on archive                    | Lives as long as the code, evolves continuously           |
+| Entry point          | Occasional manual review and update      | Written, then frozen; new changes go in new files | Spec first, then code                                     |
+| Typical form         | `.cursorrules`, `AGENTS.md`              | OpenSpec proposals under `changes/`               | Specs under `specs/` in OpenSpec                          |
+
+**The judgement:** *cross-cutting behavioral base color goes into behavioral preferences; single-shot decision archives go into change-level specs; long-lived capability truth goes into capability-level specs. Three layers, none of them a substitute for another.*
 
 ---
 
@@ -111,14 +115,14 @@ This appendix compresses the core judgement frameworks from all fifteen chapters
 
 ## 8. Reference Allocation of the Context Window (Chapter 9)
 
-| Region                         | Suggested share | What lives here                                            |
+| Region                         | Relative share  | What lives here                                            |
 |--------------------------------|:---------------:|------------------------------------------------------------|
-| System Prompt + spec           | ~10%            | Role definition, core rules, OpenSpec                      |
-| Skill instructions             | ~12%            | The capability packs loaded for the current scenario       |
-| Tool descriptions              | ~10%            | Schemas of the tools currently available                   |
-| Memory injection               | ~8%             | Relevant long-term memory fragments                        |
-| RAG knowledge                  | ~15%            | Retrieved code and document snippets                       |
-| Conversation history           | ~25%            | Compressed prior turns                                     |
-| **Remaining (task workspace)** | **~20–30%**     | **Reserved for the current task's input and output**       |
+| System Prompt + spec           | Small           | Role definition, core rules, OpenSpec                      |
+| Skill instructions             | Medium          | The capability packs loaded for the current scenario       |
+| Tool descriptions              | Small to medium | Schemas of the tools currently available                   |
+| Memory injection               | Small           | Relevant long-term memory fragments                        |
+| RAG knowledge                  | Medium          | Retrieved code and document snippets                       |
+| Conversation history           | Medium to large | Compressed prior turns                                     |
+| **Remaining (task workspace)** | **Keep enough** | **Reserved for the current task's input and output**       |
 
-**Warning:** *once the task workspace is squeezed below 15%, output quality drops noticeably.*
+**The judgement:** *everything that is not the task workspace—spec + Skills + tools + memory + RAG + history—has to leave the task workspace enough room to breathe. There is no universal split; it depends on the task. But once the workspace is visibly squeezed and output quality starts to slip, that is the signal to rebalance the allocation, not to keep stuffing more background into the window.*
