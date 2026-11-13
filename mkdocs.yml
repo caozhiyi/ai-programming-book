@@ -1,9 +1,10 @@
 site_name: AI编程的第一性原理
 site_description: 从问答到执行的系统化推导
-site_author: ekko
+site_author: 曹智轶 (caozhiyi)
 site_url: https://caozhiyi.cc/ai-programming-book/
 repo_name: GitHub
 repo_url: https://github.com/caozhiyi/ai-programming-book
+copyright: Copyright © 2026 曹智轶 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
 
 # 中文版构建配置
 docs_dir: docs
@@ -41,6 +42,13 @@ theme:
     - content.code.annotate # 代码交互注释
 
 extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://caozhiyi.cc
+    - icon: fontawesome/brands/github
+      link: https://github.com/caozhiyi
+    - icon: fontawesome/regular/envelope
+      link: mailto:caozhiyi5@gmail.com
   alternate:
     - name: 中文
       link: /ai-programming-book/

@@ -112,7 +112,7 @@ The first reaction is usually: *did large models copy the brain's homework?* The
 
 Pull up the actual genealogy of today's large models, though, and the intuition does not hold.
 
-The Transformer lineage barely touches neuroscience. The 2017 paper *Attention Is All You Need* came from Google engineers and researchers, citing machine translation, sequence modeling, and information retrieval—not neuroscience. The name *attention* causes the most confusion. It sounds biomimetic. Mechanically, it is weighted summation in a matrix, and the *attention* in your brain shares the name and almost nothing else. The companies driving today's LLMs—OpenAI, Anthropic—are walking the *scale + data + Transformer* engineering line. The line with strong biomimetic flavor (DeepMind's AlphaGo, AlphaFold) is not the line that produced today's large language models.
+The Transformer lineage barely touches neuroscience. The 2017 paper *Attention Is All You Need*[1] came from Google engineers and researchers, citing machine translation, sequence modeling, and information retrieval—not neuroscience. The name *attention* causes the most confusion. It sounds biomimetic. Mechanically, it is weighted summation in a matrix, and the *attention* in your brain shares the name and almost nothing else. The companies driving today's LLMs—OpenAI, Anthropic—are walking the *scale + data + Transformer* engineering line. The line with strong biomimetic flavor (DeepMind's AlphaGo, AlphaFold) is not the line that produced today's large language models.
 
 So the more accurate description is: **the original design was not biomimetic, but the trained result has unexpectedly converged with certain mechanisms in the brain.**
 
@@ -225,3 +225,7 @@ We thought we were measuring the machine. The machine has been measuring us. We 
 The LLM goes deeper than any previous technological turn, because it directly reaches *language* and *thinking*—the two things we had treated, until now, as the last walls of *what makes me me*. With those two walls partly breached, we either keep retreating, drawing narrower and narrower boundaries, or we stop and admit that the things being conceded were never the boundary. The real boundary has always been deeper—in the body, in time, in the way we are *actually living together with this world*.
 
 What it looks like at the end of that road, nobody knows today. But the engineers walking the road right now, more than any generation of engineers before them, have a chance to stop and think about it.
+
+## References
+
+- [1] Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., Polosukhin, I. *Attention Is All You Need*. 2017. <https://arxiv.org/abs/1706.03762>

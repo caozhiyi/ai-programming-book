@@ -156,6 +156,31 @@ There's no tutorial for any specific tool. Only the underlying principles. Curso
 
 ---
 
+## 🧰 Companion Skill Pack
+
+The book covers the *why*. This pack covers the *how* — it turns the spec-driven workflow of Chapter 11, the review discipline of Chapter 13, and the "one persisted artifact per stage" model into procedures an AI coding tool can load directly.
+
+| Skill | Responsibility | Covers |
+|---|---|---|
+| `ai-full-lifecycle` | Orchestration: determine the current stage, route to sub-skills, manage artifact persistence and handoff across sessions | Entire flow |
+| `spec-writing` | Templates and acceptance criteria for PRDs, design docs, E2E case docs, and delivery docs | Requirements / design / cases / delivery |
+| `ai-coding-discipline` | Coding-phase constraints: kickoff checks, ordering, unit-test validity | Coding / test scripts / regression |
+| `ai-code-review` | Multi-persona review checklists plus the human final-pass focus areas | Review |
+
+Install:
+
+```bash
+git clone https://github.com/caozhiyi/ai-programming-book.git
+cd ai-programming-book
+
+cp -r skills/* ~/.codebuddy/skills/                   # user-wide
+# or: cp -r skills/* your-project/.codebuddy/skills/  # per-project, shared with the team
+```
+
+See [skills/README.md](skills/README.md) for details.
+
+---
+
 ## 🚀 How to read it
 
 ### 🍱 If you have time (recommended): read it cover to cover

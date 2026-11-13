@@ -44,7 +44,7 @@ This appendix compresses the core judgement frameworks from all fifteen chapters
 | Granularity          | Cross-cutting: affects every task        | Vertical slice: one change                        | Vertical slice: one capability                            |
 | Lifecycle            | Long-lived, stable, occasionally updated | Single-shot, frozen on archive                    | Lives as long as the code, evolves continuously           |
 | Entry point          | Occasional manual review and update      | Written, then frozen; new changes go in new files | Spec first, then code                                     |
-| Typical form         | `.cursorrules`, `AGENTS.md`              | OpenSpec proposals under `changes/`               | Specs under `specs/` in OpenSpec                          |
+| Typical form         | `.cursor/rules`, `AGENTS.md`              | OpenSpec proposals under `changes/`               | Specs under `specs/` in OpenSpec                          |
 
 **The judgement:** *cross-cutting behavioral base color goes into behavioral preferences; single-shot decision archives go into change-level specs; long-lived capability truth goes into capability-level specs. Three layers, none of them a substitute for another.*
 
@@ -103,13 +103,15 @@ This appendix compresses the core judgement frameworks from all fifteen chapters
 |--------------------------------|----------------------------------------------------------|--------------------------------------|
 | Single call                    | (System + tools + history + new message) × unit price    | 14K tokens × $2.5/M = $0.035         |
 | N-turn dialogue (no caching)   | N(N+1)/2 × per-turn delta + N × fixed overhead           | 50 turns ≈ 1.82M tokens ≈ $4.56      |
-| N-turn dialogue (with caching) | Roughly 30%–40% of the un-cached cost                    | 50 turns ≈ $1.5–$1.8                 |
+| N-turn dialogue (with caching) | Hit prefixes are billed at a discount; total is clearly below un-cached, exact ratio varies by provider and hit rate | No fixed figure; follow official pricing |
 
-**Conditions for prompt caching to actually kick in:**
+**Conditions for prompt caching to actually kick in[1][2]:**
 
 1. The prefix matches token-for-token.
-2. The prefix is at least 1024–2048 tokens long.
-3. The gap between calls stays under the cache TTL—usually 5–10 minutes.
+2. The prefix reaches the provider's minimum length (it varies by provider and model, from a few hundred to a few thousand tokens).
+3. The gap between calls stays under the cache lifetime (anywhere from a few minutes to half an hour, depending on provider and configuration).
+
+The prices and cache discounts in the worked examples are for arithmetic only; actual prices vary by provider and over time, so check the official pricing.
 
 ---
 
@@ -126,3 +128,10 @@ This appendix compresses the core judgement frameworks from all fifteen chapters
 | **Remaining (task workspace)** | **Keep enough** | **Reserved for the current task's input and output**       |
 
 **The judgement:** *everything that is not the task workspace—spec + Skills + tools + memory + RAG + history—has to leave the task workspace enough room to breathe. There is no universal split; it depends on the task. But once the workspace is visibly squeezed and output quality starts to slip, that is the signal to rebalance the allocation, not to keep stuffing more background into the window.*
+
+## References
+
+- [1] Anthropic. *Prompt caching*. Claude Platform Docs. <https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching>
+- [2] OpenAI. *Prompt caching*. OpenAI API Docs. <https://platform.openai.com/docs/guides/prompt-caching>
+
+Access date for the official documentation entries is November 2026; prices and parameters may have been updated since.

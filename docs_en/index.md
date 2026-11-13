@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/book-cover.svg" alt="First Principles of AI Coding" width="450" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 2rem;">
+  <img src="images/book-cover.svg" alt="First Principles of AI Coding" width="450" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 2rem;" />
 </div>
 
 # Preface
@@ -73,7 +73,9 @@ If you have time, read it from cover to cover. The end of every chapter naturall
 
 If you do not have time, scan the part headings above to find the question you are currently stuck on, then drop into the chapter directly. Each chapter is designed to read on its own, with cross-references back to earlier chapters where the dependency is real.
 
-One thing worth saying up front: this book is not going to age out quickly. The product form of AI coding tools will keep shifting—today's Cursor may be replaced by something else tomorrow. But the underlying principles will not shift on the same clock—the mechanics of tokenization, the physical constraints of attention, the execution logic of an agent, the engineering challenges of non-deterministic systems—those are dictated by the architecture of large models themselves and are not invalidated by any single product update. What this book is trying to teach you is how to fish, not to hand you a fish.
+Specific product features, model capabilities, and prices in this book are as of 2026; wherever a passage depends on them, the date is marked, and each chapter ends with its references.
+
+One thing worth saying up front: this book is not going to age out quickly. The product form of AI coding tools will keep shifting—today's Cursor may be replaced by something else tomorrow. But the underlying principles will not shift on the same clock—the mechanics of tokenization, the physical constraints of attention, the execution logic of an agent, how to judge and govern non-deterministic output—those are dictated by the architecture of large models themselves and are not invalidated by any single product update. What this book is trying to teach you is how to fish, not to hand you a fish.
 
 ## Appendices
 

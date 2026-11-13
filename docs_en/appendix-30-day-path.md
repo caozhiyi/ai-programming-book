@@ -62,7 +62,7 @@ Collect those corrections into a list. That list *is* your implicit spec; it jus
 
 ### Day 10–12: Write the First Spec File
 
-Convert the implicit spec into a format your AI tool actually reads—`.cursorrules`, `CLAUDE.md`, or whatever format your tool of choice consumes.
+Convert the implicit spec into a format your AI tool actually reads—`.cursor/rules`, `CLAUDE.md`, or whatever format your tool of choice consumes.
 
 ```markdown
 # Project Coding Spec
