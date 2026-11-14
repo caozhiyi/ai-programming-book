@@ -1,3 +1,9 @@
+---
+seo_title: "AI 网关是什么？当 Token 流量撑开传统 API 网关"
+description: "LLM 调用不再是调用一个 API 那么简单：流量形态变化、旧基础设施假设失效、网络层开始承载思考——AI 网关成为 Token 流量统一入口。"
+canonical: https://caozhiyi.cc/zh/articles/ai-gateway-as-infra/
+---
+
 # 从 API 网关到 AI 网关：当基础设施被 Token 撑开
 
 最近我越来越发现，把 LLM 调用接入自家产品的过程，已经不仅仅是调用一个 API 那么简单了。

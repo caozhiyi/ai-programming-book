@@ -1,3 +1,9 @@
+---
+seo_title: "Software Ate Only Half the World: Rule-Based to Token-Based"
+description: "Rule-codification covers only half of human demand; tokens make thinking a schedulable resource for the first time—the industry's full trajectory."
+canonical: https://caozhiyi.cc/en/articles/software-second-half/
+---
+
 # Software Ate Only Half the World: From Rule-Based to Token-Based
 
 The market has felt creatively stuck for a while now. No new category-defining product, no fresh wave of breakout software. The needs that are easy to write down already have something running against them. The ones still left—every team knows they exist, but nobody can put them into a clean PRD. They have real business value, yet the moment you sit down to write rules for them, the whole problem turns gray. Every case feels like *this one we have to look at by hand*.

@@ -1,3 +1,9 @@
+---
+seo_title: "Is an LLM Really Thinking? Notes on Machine Intelligence"
+description: "Push compression hard enough and something intelligence-shaped falls out: convergent evolution, intelligence as terrain, an 'I' it doesn't have but can perform."
+canonical: https://caozhiyi.cc/en/articles/llm-intelligence-blackbox/
+---
+
 # It Is Not a Lesser Human: Notes on What LLMs Actually Are
 
 The standard rhythm of modern science is theory first, engineering second. Maxwell's equations come first, and decades later the radio shows up—Hertz produces electromagnetic waves in the lab, Marconi turns it into the wireless telegraph, and behind both of them are the equations on a blackboard. The usual reason a new technology lands at all is that the principle has already been worked out. The engineering is just bringing it down to earth.

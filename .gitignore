@@ -1,0 +1,4 @@
+# build caches
+.cache/
+plugins/**/mkdocs_seo_canonical.egg-info/
+**/__pycache__/

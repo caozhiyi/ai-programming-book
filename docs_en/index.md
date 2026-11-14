@@ -1,10 +1,12 @@
+---
+description: "An open-source book on the first principles of AI programming: how LLMs think, how agents execute, MCP and skills, memory and context design, with a 30-day path."
+---
+
 <div align="center">
   <img src="images/book-cover.svg" alt="First Principles of AI Coding" width="450" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 2rem;" />
 </div>
 
 # Preface
-
-> 🌐 **Language**: [简体中文](../) · English
 
 You are almost certainly already writing code with AI.
 
@@ -96,3 +98,15 @@ The appendices come in two groups. The **essay appendices** are extended reflect
 ## Reference
 
 - [Terminology Notes (English-edition translation guide)](TERMINOLOGY.md)
+
+---
+
+## About the Author
+
+**Zhiyi Cao** (caozhiyi), system architect with ten years of engineering experience, focused on distributed systems, high-performance networking, low-level systems development, and AI engineering—the systems-engineering questions that surface only when large models meet production. Currently working on infrastructure at a leading cloud provider.
+
+- **Website**: [caozhiyi.cc](https://caozhiyi.cc)
+- **GitHub**: [github.com/caozhiyi](https://github.com/caozhiyi)
+- **Email**: [caozhiyi5@gmail.com](mailto:caozhiyi5@gmail.com)
+
+> If this book helped you make sense of how AI coding systems actually work, consider giving the [GitHub repository](https://github.com/caozhiyi/ai-programming-book) a Star—it means a lot to the author.

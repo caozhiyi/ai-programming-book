@@ -1,3 +1,9 @@
+---
+seo_title: "“软件吞噬世界”为什么只对了一半：从规则化到 Token 化"
+description: "软件至今只吞噬了世界的一半。规则化只能盖到人类需求的一半，Token 让思考与研判第一次变成可调度的资源——产业轨迹的完整推演。"
+canonical: https://caozhiyi.cc/zh/articles/software-second-half/
+---
+
 # 软件吃掉了世界的一半：从规则化到 Token 化的产业轨迹
 
 不知道你有没有这种感觉：我们手机里的 App 已经很久没有发生过什么本质的变化了。

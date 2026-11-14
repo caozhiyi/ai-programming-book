@@ -30,3 +30,4 @@ watchdog==6.0.0
 mkdocs-minify-plugin==0.8.0
 pillow==10.4.0
 cairosvg==2.7.1
+-e ./plugins/seo-canonical

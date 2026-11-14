@@ -1,3 +1,9 @@
+---
+seo_title: "From API Gateway to AI Gateway: When Tokens Stretch Infra"
+description: "LLM calls aren't just an API anymore: traffic shapes change, old infrastructure assumptions break, the network layer starts carrying reasoning."
+canonical: https://caozhiyi.cc/en/articles/ai-gateway-as-infra/
+---
+
 # From API Gateway to AI Gateway: When Infrastructure Is Stretched by Tokens
 
 The act of wiring an LLM call into your own product, the more I do it, the less it looks like *just calling another API*.

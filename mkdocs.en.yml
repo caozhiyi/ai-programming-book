@@ -1,9 +1,10 @@
 site_name: First Principles of AI Coding
 site_description: Deriving AI coding systems from the ground up
-site_author: ekko
+site_author: Zhiyi Cao (caozhiyi)
 site_url: https://caozhiyi.cc/ai-programming-book/en/
 repo_name: GitHub
 repo_url: https://github.com/caozhiyi/ai-programming-book
+copyright: Copyright © 2026 Zhiyi Cao · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
 
 # 英文版构建配置：源文件读 docs_en/，输出到 site/en/
 docs_dir: docs_en
@@ -14,6 +15,7 @@ extra_css:
 
 theme:
   name: material
+  custom_dir: overrides-en
   language: en
   icon:
     repo: fontawesome/brands/github
@@ -39,6 +41,13 @@ theme:
     - content.code.annotate
 
 extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://caozhiyi.cc/
+    - icon: fontawesome/brands/github
+      link: https://github.com/caozhiyi
+    - icon: fontawesome/regular/envelope
+      link: mailto:caozhiyi5@gmail.com
   alternate:
     - name: 中文
       link: /ai-programming-book/
@@ -52,6 +61,7 @@ extra:
 
 plugins:
   - search
+  - seo-canonical
   - minify:
       minify_html: true
       minify_css: true

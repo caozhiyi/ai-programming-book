@@ -1,3 +1,8 @@
+---
+seo_title: "AI Programming Glossary: English Terminology and Usage"
+description: "A working glossary for AI-era programming: book-level framing, model and interaction fundamentals, agent concepts, and the style principles behind terms."
+---
+
 # English Terminology Draft
 
 This file is the working glossary for the English edition of `ai-programming-book`.

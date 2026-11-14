@@ -1,3 +1,9 @@
+---
+seo_title: "The Repriced Engineer in the AI Era: Falling and Rising Skills"
+description: "The scarcity of implementation is structurally falling; judgment assets are pushed to the front. How engineering capabilities get reclassified in the token era."
+canonical: https://caozhiyi.cc/en/articles/engineer-repricing/
+---
+
 # The Repriced Engineer: The Second Half of Software Engineering as a Profession
 
 The software engineering profession has, for decades, sat on top of a stable capability list. Which language. What scale. Which domain. Each cell on that grid mapped to a slice of money the market was willing to pay. Over the last two years that list has started to come loose. Which cells get a premium and which ones no longer do is being reshuffled.

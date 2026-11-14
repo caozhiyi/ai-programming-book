@@ -1,3 +1,7 @@
+---
+description: "一本系统性讲透 AI 编程的开源书：大模型如何思考、Agent 如何执行任务、MCP 与 Skill 如何扩展能力、记忆与上下文如何设计，附 30 天实践路径。"
+---
+
 <div align="center">
   <img src="images/book-cover.svg" alt="AI编程的第一性原理" width="450" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 2rem;" />
 </div>

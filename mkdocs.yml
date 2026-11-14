@@ -15,6 +15,7 @@ extra_css:
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   icon:
     repo: fontawesome/brands/github
@@ -44,7 +45,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/solid/globe
-      link: https://caozhiyi.cc
+      link: https://caozhiyi.cc/
     - icon: fontawesome/brands/github
       link: https://github.com/caozhiyi
     - icon: fontawesome/regular/envelope
@@ -62,6 +63,7 @@ extra:
 
 plugins:
   - search
+  - seo-canonical
   - minify:
       minify_html: true
       minify_css: true

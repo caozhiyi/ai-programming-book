@@ -1,3 +1,7 @@
+---
+seo_title: "A 30-Day Practice Path for AI-Assisted Programming"
+description: "Understanding and doing are different skills. A four-week plan: know your tools, establish a spec, error handling and logging, code style."
+---
 
 # Appendix B — A 30-Day Practice Path
 

@@ -206,7 +206,7 @@ mkdocs build
 
 **曹智轶**（caozhiyi），系统架构师，十年研发经验，专注分布式系统架构、高性能网络、底层系统开发与 AI 工程——研究大模型真正落地时才浮出来的系统工程问题。现于一线云厂商从事基础设施研发。这本书不是空想出来的——它来自作者使用 AI 编程工具时遇到的具体困惑、解决困惑过程中沉淀的方法论。
 
-- 🌐 个人网站：[caozhiyi.cc](https://caozhiyi.cc)
+- 🌐 个人网站：[caozhiyi.cc](https://caozhiyi.cc/)
 - 🔗 GitHub：[github.com/caozhiyi](https://github.com/caozhiyi)
 - 📧 邮箱：[caozhiyi5@gmail.com](mailto:caozhiyi5@gmail.com) — 勘误、交流、转载事宜均欢迎
 - 📮 公众号：**煮码宝藏** — 持续分享 AI 编程的深度思考、系统设计与架构方法论、网络协议等底层技术

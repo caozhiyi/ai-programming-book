@@ -1,3 +1,7 @@
+---
+seo_title: "Quick Reference: Core Frameworks of AI Programming"
+description: "Three rules for organizing context, layered compression, spec design principles, the four-layer security model—15 chapters as cheat sheets."
+---
 
 # Appendix A — Quick Reference
 
