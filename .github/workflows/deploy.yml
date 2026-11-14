@@ -29,6 +29,10 @@ jobs:
         run: |
           mkdocs build
           mkdocs build -f mkdocs.en.yml
+      - name: Build llms.txt for AI crawlers
+        run: |
+          python scripts/build_llms.py site
+          python scripts/build_llms.py site/en mkdocs.en.yml
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
