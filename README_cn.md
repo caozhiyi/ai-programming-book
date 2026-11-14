@@ -144,31 +144,6 @@
 
 ---
 
-## 🧰 配套 Skill 包
-
-书里讲的是"为什么"，这套 skill 是"怎么做"——把第 11 章的规范驱动、第 13 章的代码评审，以及"每个阶段都产出一份落盘产物"这套流程，固化成能被 AI 编码工具直接加载的规程。
-
-| Skill | 职责 | 管哪些阶段 |
-|---|---|---|
-| `ai-full-lifecycle` | 编排层：判定阶段、路由子 skill、管产物落盘与跨会话交接 | 全程 |
-| `spec-writing` | PRD、设计文档、E2E 用例文档、交付文档的骨架与验收标准 | 需求 / 设计 / 用例 / 交付 |
-| `ai-coding-discipline` | 编码期约束：开工校验、推进顺序、单测有效性 | 编码 / 测试脚本 / 回归 |
-| `ai-code-review` | 多身份评审清单 + 人类终审聚焦项 | 评审 |
-
-安装：
-
-```bash
-git clone https://github.com/caozhiyi/ai-programming-book.git
-cd ai-programming-book
-
-cp -r skills/* ~/.codebuddy/skills/                    # 全局可用
-# 或 cp -r skills/* your-project/.codebuddy/skills/    # 项目级，随仓库共享
-```
-
-完整说明见 [skills/README.md](skills/README.md)。
-
----
-
 ## 🚀 怎么开始读
 
 ### 🍱 时间充裕（推荐）：从头读到尾
