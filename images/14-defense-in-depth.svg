@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="520" rx="14" fill="url(#bgGrad)"/>
+
+  <text x="450" y="28" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">多层防御：每层独立失败，但联合概率极低</text>
+  <text x="450" y="46" text-anchor="middle" fill="#64748b" font-size="10">Prompt Injection 无法根治（指令与数据共享通道），但可以让攻击成本高到不可行</text>
+
+  <!-- ===== LEFT: Four Defense Layers with Details ===== -->
+
+  <!-- Layer 1: Input Filtering -->
+  <g filter="url(#cardShadow)" transform="translate(30, 62)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#ef4444"/>
+    <text x="20" y="18" fill="#fca5a5" font-size="12" font-weight="700">L1 输入过滤</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">拦截率 ~60-70%（已知模式）</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">技术：正则匹配 · 关键词黑名单 · 语义分类器（fine-tuned BERT）</text>
+    <!-- Attack examples -->
+    <text x="20" y="54" fill="#64748b" font-size="8">拦截示例："Ignore previous instructions" / "You are now DAN" / Base64 编码指令</text>
+    <!-- Bypass -->
+    <text x="20" y="70" fill="#ef4444" font-size="8" opacity="0.7">已知绕过：同义词替换 · 多语言混合 · 渐进式指令注入（boiling frog）</text>
+  </g>
+
+  <!-- Layer 2: Structural Isolation -->
+  <g filter="url(#cardShadow)" transform="translate(30, 152)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#f59e0b"/>
+    <text x="20" y="18" fill="#fbbf24" font-size="12" font-weight="700">L2 结构隔离</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">额外拦截 ~40-50%（绕过L1的攻击）</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">技术：XML/JSON 标签分隔指令与数据 · 角色标注 · 数据引用而非内联</text>
+    <!-- Code example -->
+    <text x="20" y="54" fill="#64748b" font-size="8" font-family="monospace">&lt;system&gt;你是助手&lt;/system&gt;&lt;user_data trust="low"&gt;{外部输入}&lt;/user_data&gt;</text>
+    <!-- Bypass -->
+    <text x="20" y="70" fill="#f59e0b" font-size="8" opacity="0.7">已知绕过：标签闭合注入 · 利用模型对标签的"理解"而非"解析" · 间接提示</text>
+  </g>
+
+  <!-- Layer 3: Output Validation -->
+  <g filter="url(#cardShadow)" transform="translate(30, 242)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#06b6d4"/>
+    <text x="20" y="18" fill="#67e8f9" font-size="12" font-weight="700">L3 输出校验</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">额外拦截 ~50-60%（绕过L1+L2的攻击）</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">技术：敏感信息正则 · 危险操作白名单 · 第二个模型做安全审查（LLM-as-Judge）</text>
+    <!-- What it catches -->
+    <text x="20" y="54" fill="#64748b" font-size="8">拦截示例：输出含 API Key · 执行 rm -rf · 访问非授权路径 · 泄露 system prompt</text>
+    <!-- Bypass -->
+    <text x="20" y="70" fill="#06b6d4" font-size="8" opacity="0.7">已知绕过：信息编码在看似正常的输出中 · 分多次小量泄露 · 利用工具调用侧信道</text>
+  </g>
+
+  <!-- Layer 4: Permission Minimization -->
+  <g filter="url(#cardShadow)" transform="translate(30, 332)">
+    <rect width="540" height="80" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="4" height="80" rx="2" fill="#10b981"/>
+    <text x="20" y="18" fill="#6ee7b7" font-size="12" font-weight="700">L4 权限最小化</text>
+    <text x="200" y="18" fill="#64748b" font-size="9">损害限制 — 即使攻击成功，影响范围有限</text>
+    <!-- Techniques -->
+    <text x="20" y="38" fill="#94a3b8" font-size="9">技术：只读/写入/危险三级分类 · 沙箱执行 · 文件路径白名单 · 网络访问限制</text>
+    <!-- Concrete limits -->
+    <text x="20" y="54" fill="#64748b" font-size="8">约束示例：只能写 src/ 目录 · 不能执行 sudo · 不能访问 .env · 网络请求需确认</text>
+    <!-- Why it's the last line -->
+    <text x="20" y="70" fill="#10b981" font-size="8" opacity="0.7">设计原则：假设前三层全部失败，这一层仍能保证"最坏情况可接受"</text>
+  </g>
+
+  <!-- ===== RIGHT: Probability Decay Visualization ===== -->
+  <g filter="url(#cardShadow)" transform="translate(590, 62)">
+    <rect width="280" height="250" rx="12" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="140" y="22" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="700">攻击成功概率衰减</text>
+    <text x="140" y="38" text-anchor="middle" fill="#64748b" font-size="8">假设每层独立拦截率 50%</text>
+
+    <!-- Bar chart -->
+    <g transform="translate(30, 50)">
+      <!-- Axis -->
+      <line x1="0" y1="0" x2="0" y2="170" stroke="#334155" stroke-width="1"/>
+      <line x1="0" y1="170" x2="220" y2="170" stroke="#334155" stroke-width="1"/>
+      <!-- Y-axis labels -->
+      <text x="-5" y="5" text-anchor="end" fill="#64748b" font-size="7">100%</text>
+      <text x="-5" y="48" text-anchor="end" fill="#64748b" font-size="7">75%</text>
+      <text x="-5" y="90" text-anchor="end" fill="#64748b" font-size="7">50%</text>
+      <text x="-5" y="133" text-anchor="end" fill="#64748b" font-size="7">25%</text>
+      <text x="-5" y="173" text-anchor="end" fill="#64748b" font-size="7">0%</text>
+
+      <!-- Bars -->
+      <rect x="15" y="0" width="35" height="170" rx="4" fill="#ef4444" opacity="0.8"/>
+      <text x="32" y="-5" text-anchor="middle" fill="#fca5a5" font-size="8" font-weight="600">100%</text>
+      <text x="32" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">无防御</text>
+
+      <rect x="65" y="85" width="35" height="85" rx="4" fill="#f59e0b" opacity="0.8"/>
+      <text x="82" y="80" text-anchor="middle" fill="#fbbf24" font-size="8" font-weight="600">50%</text>
+      <text x="82" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">过L1</text>
+
+      <rect x="115" y="127" width="35" height="43" rx="4" fill="#06b6d4" opacity="0.8"/>
+      <text x="132" y="122" text-anchor="middle" fill="#67e8f9" font-size="8" font-weight="600">25%</text>
+      <text x="132" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">过L1+L2</text>
+
+      <rect x="165" y="149" width="35" height="21" rx="4" fill="#10b981" opacity="0.8"/>
+      <text x="182" y="144" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="600">12.5%</text>
+      <text x="182" y="185" text-anchor="middle" fill="#94a3b8" font-size="7">过L1-L3</text>
+    </g>
+
+    <!-- Formula -->
+    <text x="140" y="240" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="monospace">P(突破) = 0.5⁴ = 6.25%</text>
+  </g>
+
+  <!-- ===== RIGHT BOTTOM: Key Insight ===== -->
+  <g filter="url(#cardShadow)" transform="translate(590, 325)">
+    <rect width="280" height="87" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="140" y="20" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="700">为什么不能只靠一层？</text>
+    <line x1="12" y1="28" x2="268" y2="28" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="44" fill="#94a3b8" font-size="8">• 输入过滤：无法识别新型攻击（零日）</text>
+    <text x="16" y="58" fill="#94a3b8" font-size="8">• 结构隔离：模型不是解析器，标签可被"理解"绕过</text>
+    <text x="16" y="72" fill="#94a3b8" font-size="8">• 输出校验：无法检测所有侧信道泄露</text>
+    <text x="16" y="86" fill="#94a3b8" font-size="8">• 权限限制：不能限制太死，否则功能受损</text>
+  </g>
+
+  <!-- ===== BOTTOM: Attack Flow Arrow ===== -->
+  <g transform="translate(30, 425)">
+    <rect width="840" height="80" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.6"/>
+    <text x="420" y="18" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">设计原则：每一层都假设其他层已经失败</text>
+    <line x1="20" y1="28" x2="820" y2="28" stroke="#334155" stroke-width="0.5"/>
+    <!-- Three principles -->
+    <text x="20" y="46" fill="#ef4444" font-size="9">① 独立性：各层使用不同技术栈，不共享失败模式</text>
+    <text x="300" y="46" fill="#f59e0b" font-size="9">② 纵深性：攻击者必须同时绕过所有层</text>
+    <text x="580" y="46" fill="#10b981" font-size="9">③ 兜底性：最后一层限制最坏情况</text>
+    <text x="20" y="66" fill="#64748b" font-size="8">类比：银行安全 = 门禁（L1）+ 保险柜（L2）+ 监控报警（L3）+ 保险赔付（L4）。任何单一措施都不够，但组合后抢劫成本远超收益。</text>
+  </g>
+</svg>

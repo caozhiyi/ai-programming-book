@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="380" rx="12" fill="url(#bgGrad)"/>
+
+  <text x="390" y="26" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600">The truth of multi-turn dialogue: every turn resends the full history to the model</text>
+
+  <!-- Round 1 -->
+  <g filter="url(#cardShadow)" transform="translate(20, 42)">
+    <rect width="230" height="130" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="115" y="20" text-anchor="middle" fill="#64748b" font-size="10" font-weight="600">Turn 1 — the model receives:</text>
+    <rect x="10" y="30" width="210" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.6"/>
+    <text x="16" y="44" fill="#8b5cf6" font-size="9">System: You are a Go engineer...</text>
+    <rect x="10" y="56" width="210" height="20" rx="4" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+    <text x="16" y="70" fill="#3b82f6" font-size="9">User①: Refactor the auth module</text>
+    <rect x="10" y="82" width="210" height="20" rx="4" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.6" stroke-dasharray="3 2"/>
+    <text x="16" y="96" fill="#10b981" font-size="9">→ generates a reply</text>
+    <text x="115" y="120" text-anchor="middle" fill="#475569" font-size="9">~700 Token</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="258" y1="107" x2="275" y2="107" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Round 2 -->
+  <g filter="url(#cardShadow)" transform="translate(280, 42)">
+    <rect width="230" height="130" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="115" y="20" text-anchor="middle" fill="#64748b" font-size="10" font-weight="600">Turn 2 — the model receives:</text>
+    <rect x="10" y="30" width="210" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.6"/>
+    <text x="16" y="44" fill="#8b5cf6" font-size="9">System: You are a Go engineer...</text>
+    <rect x="10" y="56" width="210" height="20" rx="4" fill="#3b82f6" fill-opacity="0.06" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="70" fill="#64748b" font-size="9">User①: Refactor the auth module</text>
+    <rect x="10" y="78" width="210" height="14" rx="3" fill="#10b981" fill-opacity="0.04" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="89" fill="#64748b" font-size="8">AI①: OK, let me look at the structure...</text>
+    <rect x="10" y="96" width="210" height="20" rx="4" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+    <text x="16" y="110" fill="#3b82f6" font-size="9">User②: Make it async</text>
+    <text x="115" y="120" text-anchor="middle" fill="#475569" font-size="9">~1500 Token</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="518" y1="107" x2="535" y2="107" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Round 10 -->
+  <g filter="url(#cardShadow)" transform="translate(540, 42)">
+    <rect width="230" height="130" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="115" y="20" text-anchor="middle" fill="#64748b" font-size="10" font-weight="600">Turn 10 — the model receives:</text>
+    <rect x="10" y="30" width="210" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.08" stroke="#8b5cf6" stroke-width="0.6"/>
+    <text x="16" y="44" fill="#8b5cf6" font-size="9">System: You are a Go engineer...</text>
+    <rect x="10" y="56" width="210" height="30" rx="4" fill="#334155" fill-opacity="0.3" stroke="#334155" stroke-width="0.5" stroke-dasharray="3 2"/>
+    <text x="115" y="75" text-anchor="middle" fill="#475569" font-size="8">Full history of the first 9 turns (all resent)</text>
+    <rect x="10" y="92" width="210" height="20" rx="4" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+    <text x="16" y="106" fill="#3b82f6" font-size="9">User⑩: Add error-retry logic</text>
+    <text x="115" y="120" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">~18000 Token</text>
+  </g>
+
+  <!-- Cost growth bar -->
+  <g transform="translate(20, 190)">
+    <rect width="740" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+    <text x="370" y="18" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">Per-turn token usage keeps growing</text>
+    <!-- Bar chart -->
+    <g transform="translate(30, 26)">
+      <rect x="0" width="20" height="24" rx="3" fill="#06b6d4" fill-opacity="0.6" y="0"/>
+      <text x="10" y="38" text-anchor="middle" fill="#64748b" font-size="7">1</text>
+      <rect x="30" width="20" rx="3" fill="#06b6d4" fill-opacity="0.6" y="-2" height="26"/>
+      <rect x="60" width="20" rx="3" fill="#06b6d4" fill-opacity="0.6" y="-5" height="29"/>
+      <rect x="90" width="20" rx="3" fill="#06b6d4" fill-opacity="0.6" y="-8" height="32"/>
+      <rect x="120" width="20" rx="3" fill="#3b82f6" fill-opacity="0.6" y="-12" height="36"/>
+      <rect x="150" width="20" rx="3" fill="#3b82f6" fill-opacity="0.6" y="-16" height="40"/>
+      <text x="160" y="38" text-anchor="middle" fill="#64748b" font-size="7">...</text>
+      <rect x="300" width="20" rx="3" fill="#f59e0b" fill-opacity="0.6" y="-26" height="50"/>
+      <text x="310" y="38" text-anchor="middle" fill="#64748b" font-size="7">10</text>
+      <rect x="500" width="20" rx="3" fill="#ef4444" fill-opacity="0.6" y="-36" height="60"/>
+      <text x="510" y="38" text-anchor="middle" fill="#64748b" font-size="7">50</text>
+      <text x="560" y="0" fill="#ef4444" font-size="9">← 50-turn total ≈ 1,200× turn 1</text>
+    </g>
+  </g>
+
+  <!-- Key insight -->
+  <g transform="translate(20, 265)">
+    <rect width="740" height="44" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="0.8" opacity="0.8"/>
+    <text x="370" y="18" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">Core insight</text>
+    <text x="370" y="34" text-anchor="middle" fill="#94a3b8" font-size="10">The model has no "memory of the previous turn" — it "remembers" only because past messages are still in the window; once they're pushed out, they're gone</text>
+  </g>
+
+  <!-- Bottom: HTTP analogy -->
+  <g transform="translate(20, 322)">
+    <rect width="740" height="44" rx="8" fill="#1e293b" opacity="0.5"/>
+    <text x="370" y="18" text-anchor="middle" fill="#64748b" font-size="10">Engineering analogy: stateless HTTP — each request is independent; "sessions" are emulated by the client carrying the full cookie every time</text>
+    <text x="370" y="34" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">Multi-turn "memory" is the same trick: not that the model remembered anything, but that the client carries the full history along on every call</text>
+  </g>
+</svg>

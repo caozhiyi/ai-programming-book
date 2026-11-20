@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0e7490"/>
+    </linearGradient>
+    <linearGradient id="linearGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#94a3b8"/>
+      <stop offset="100%" style="stop-color:#64748b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="420" rx="14" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">多轮对话的 Token 成本：二次增长</text>
+  <text x="400" y="52" text-anchor="middle" fill="#64748b" font-size="11">每一轮都要重新传输所有历史 — 累积成本不是线性增长，而是 N(N+1)/2</text>
+
+  <!-- Chart area: height 240, max value 1825K, scale: 240/1825 ≈ 0.1315 px per K -->
+  <g transform="translate(90, 75)">
+    <!-- Y axis -->
+    <line x1="0" y1="0" x2="0" y2="240" stroke="#334155" stroke-width="1"/>
+    <!-- X axis -->
+    <line x1="0" y1="240" x2="630" y2="240" stroke="#334155" stroke-width="1"/>
+
+    <!-- Y axis labels: 0, 500K, 1000K, 1500K, 2000K -->
+    <text x="-8" y="244" text-anchor="end" fill="#64748b" font-size="9">0</text>
+    <text x="-8" y="178" text-anchor="end" fill="#64748b" font-size="9">500K</text>
+    <text x="-8" y="112" text-anchor="end" fill="#64748b" font-size="9">1000K</text>
+    <text x="-8" y="46" text-anchor="end" fill="#64748b" font-size="9">1500K</text>
+
+    <!-- Grid lines -->
+    <line x1="0" y1="174" x2="630" y2="174" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="0" y1="108" x2="630" y2="108" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="3,3"/>
+    <line x1="0" y1="42" x2="630" y2="42" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+    <!-- Y axis title -->
+    <text x="-58" y="120" text-anchor="middle" fill="#94a3b8" font-size="10" transform="rotate(-90, -58, 120)">累积总输入 Token</text>
+
+    <!-- Bars: cumulative total input tokens (including 11K fixed per round) -->
+    <!-- Each round input = round_num * 1K + 11K fixed -->
+    <!-- Cumulative at round N = sum(i=1..N) of (i*1K + 11K) = N(N+1)/2 * 1K + N * 11K -->
+    <!-- Scale: 240px = 2000K → 1K = 0.12px -->
+
+    <!-- R1: cum = 1*1 + 11 = 12K → h = 12*0.12 = 1.4 → min 4 -->
+    <g transform="translate(20, 0)">
+      <rect x="0" y="238" width="40" height="2" rx="1" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="228" text-anchor="middle" fill="#67e8f9" font-size="8">12K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R1</text>
+    </g>
+
+    <!-- R5: cum = 5*6/2 + 5*11 = 15+55 = 70K → h = 70*0.12 = 8.4 -->
+    <g transform="translate(100, 0)">
+      <rect x="0" y="232" width="40" height="8" rx="2" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="222" text-anchor="middle" fill="#67e8f9" font-size="8">70K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R5</text>
+    </g>
+
+    <!-- R10: cum = 10*11/2 + 10*11 = 55+110 = 165K → h = 165*0.12 = 19.8 -->
+    <g transform="translate(180, 0)">
+      <rect x="0" y="220" width="40" height="20" rx="2" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="210" text-anchor="middle" fill="#67e8f9" font-size="8">165K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R10</text>
+    </g>
+
+    <!-- R20: cum = 20*21/2 + 20*11 = 210+220 = 430K → h = 430*0.12 = 51.6 -->
+    <g transform="translate(280, 0)">
+      <rect x="0" y="188" width="40" height="52" rx="3" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="178" text-anchor="middle" fill="#67e8f9" font-size="8">430K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R20</text>
+    </g>
+
+    <!-- R30: cum = 30*31/2 + 30*11 = 465+330 = 795K → h = 795*0.12 = 95.4 -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="145" width="40" height="95" rx="3" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="135" text-anchor="middle" fill="#67e8f9" font-size="8">795K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R30</text>
+    </g>
+
+    <!-- R40: cum = 40*41/2 + 40*11 = 820+440 = 1260K → h = 1260*0.12 = 151.2 -->
+    <g transform="translate(480, 0)">
+      <rect x="0" y="89" width="40" height="151" rx="3" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="79" text-anchor="middle" fill="#67e8f9" font-size="8">1260K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R40</text>
+    </g>
+
+    <!-- R50: cum = 50*51/2 + 50*11 = 1275+550 = 1825K → h = 1825*0.12 = 219 -->
+    <g transform="translate(570, 0)">
+      <rect x="0" y="21" width="40" height="219" rx="3" fill="url(#barGrad)" opacity="0.9"/>
+      <text x="20" y="11" text-anchor="middle" fill="#67e8f9" font-size="8">1825K</text>
+      <text x="20" y="258" text-anchor="middle" fill="#94a3b8" font-size="9">R50</text>
+    </g>
+
+    <!-- Linear reference line: if cost were linear (each round only 12K), cum = N*12K -->
+    <!-- R1:12K R5:60K R10:120K R20:240K R30:360K R40:480K R50:600K -->
+    <!-- Scale: y = 240 - val*0.12 -->
+    <!-- R1: 240-1.4=238.6  R5: 240-7.2=232.8  R10: 240-14.4=225.6  R20: 240-28.8=211.2  R30: 240-43.2=196.8  R40: 240-57.6=182.4  R50: 240-72=168 -->
+    <line x1="40" y1="239" x2="590" y2="168" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5"/>
+    <text x="598" y="164" fill="#94a3b8" font-size="8" font-style="italic">线性增长</text>
+    <text x="598" y="174" fill="#94a3b8" font-size="7" font-style="italic">（假设每轮固定 12K）</text>
+
+    <!-- X axis title -->
+    <text x="315" y="278" text-anchor="middle" fill="#94a3b8" font-size="10">对话轮次</text>
+  </g>
+
+  <!-- Cost annotation -->
+  <g transform="translate(90, 330)">
+    <rect width="630" height="30" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="0.5" opacity="0.7"/>
+    <text x="315" y="12" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600">💰 费用估算（GPT-4o, $2.5/1M input tokens）</text>
+    <text x="50" y="25" fill="#64748b" font-size="8">R1: $0.03</text>
+    <text x="140" y="25" fill="#64748b" font-size="8">R5: $0.18</text>
+    <text x="230" y="25" fill="#64748b" font-size="8">R10: $0.41</text>
+    <text x="320" y="25" fill="#64748b" font-size="8">R20: $1.08</text>
+    <text x="410" y="25" fill="#f59e0b" font-size="8">R30: $1.99</text>
+    <text x="500" y="25" fill="#ef4444" font-size="8">R40: $3.15</text>
+    <text x="580" y="25" fill="#ef4444" font-size="8" font-weight="600">R50: $4.56</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(80, 370)">
+    <rect width="640" height="40" rx="8" fill="#1e293b" opacity="0.6"/>
+    <rect x="16" y="14" width="12" height="12" rx="2" fill="url(#barGrad)"/>
+    <text x="34" y="24" fill="#94a3b8" font-size="10">实际累积 Token 消耗（二次增长）</text>
+    <line x1="310" y1="20" x2="340" y2="20" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5"/>
+    <text x="348" y="24" fill="#94a3b8" font-size="10">线性增长参考线</text>
+    <text x="500" y="24" fill="#64748b" font-size="9">公式: 累积 = N(N+1)/2 × 1K + N × 11K</text>
+  </g>
+</svg>

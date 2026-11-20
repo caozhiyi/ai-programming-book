@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowFlow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowBlock" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowPass" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">信任边界的四层拦截</text>
+  <text x="450" y="56" text-anchor="middle" fill="#64748b" font-size="12">一次工具调用从 Agent 发起到真实执行，依次穿过四层；任一层不通过即被阻断</text>
+
+  <!-- Agent (left) -->
+  <g filter="url(#cardShadow)" transform="translate(28, 200)">
+    <rect width="96" height="80" rx="10" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="48" y="32" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="700">Agent</text>
+    <text x="48" y="52" text-anchor="middle" fill="#64748b" font-size="9">发起工具调用</text>
+    <text x="48" y="68" text-anchor="middle" fill="#475569" font-size="8">参数已就绪</text>
+  </g>
+
+  <!-- Flow arrow into layer 1 -->
+  <line x1="128" y1="240" x2="158" y2="240" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrowFlow)"/>
+
+  <!-- ===== Layer 1: 身份 ===== -->
+  <g filter="url(#cardShadow)" transform="translate(162, 88)">
+    <rect width="170" height="304" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" opacity="0.95"/>
+    <rect width="170" height="3" rx="1.5" fill="#f59e0b" y="0"/>
+    <text x="85" y="28" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="700">❶ 身份层</text>
+    <text x="85" y="44" text-anchor="middle" fill="#d97706" font-size="10">Identity</text>
+    <line x1="14" y1="56" x2="156" y2="56" stroke="#334155" stroke-width="0.8"/>
+
+    <text x="85" y="78" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">这次调用以谁的名义</text>
+
+    <rect x="14" y="92" width="142" height="62" rx="6" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-width="0.4"/>
+    <text x="22" y="110" fill="#fbbf24" font-size="9" font-weight="600">应当是</text>
+    <text x="22" y="124" fill="#94a3b8" font-size="9">service account</text>
+    <text x="22" y="138" fill="#94a3b8" font-size="9">短期 STS / OAuth</text>
+    <text x="22" y="150" fill="#94a3b8" font-size="9">作用域按任务收窄</text>
+
+    <rect x="14" y="162" width="142" height="62" rx="6" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="0.4"/>
+    <text x="22" y="180" fill="#fca5a5" font-size="9" font-weight="600">而不是</text>
+    <text x="22" y="194" fill="#94a3b8" font-size="9">开发者长期 PAT</text>
+    <text x="22" y="208" fill="#94a3b8" font-size="9">.env 里的 AWS key</text>
+    <text x="22" y="220" fill="#94a3b8" font-size="9">数据库 root 账号</text>
+
+    <line x1="14" y1="240" x2="156" y2="240" stroke="#334155" stroke-width="0.6" stroke-dasharray="3,2"/>
+    <text x="85" y="258" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">拦截方式</text>
+    <text x="85" y="274" text-anchor="middle" fill="#64748b" font-size="8.5">身份失效 / 权限不足</text>
+    <text x="85" y="288" text-anchor="middle" fill="#64748b" font-size="8.5">→ 直接拒绝</text>
+  </g>
+
+  <!-- arrow 1→2 -->
+  <line x1="334" y1="240" x2="364" y2="240" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrowFlow)"/>
+
+  <!-- ===== Layer 2: 工具风险 ===== -->
+  <g filter="url(#cardShadow)" transform="translate(368, 88)">
+    <rect width="170" height="304" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="170" height="3" rx="1.5" fill="#3b82f6" y="0"/>
+    <text x="85" y="28" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="700">❷ 工具风险层</text>
+    <text x="85" y="44" text-anchor="middle" fill="#60a5fa" font-size="10">Policy Engine</text>
+    <line x1="14" y1="56" x2="156" y2="56" stroke="#334155" stroke-width="0.8"/>
+
+    <text x="85" y="78" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">动作要不要被拦下</text>
+
+    <rect x="14" y="92" width="142" height="132" rx="6" fill="#3b82f6" fill-opacity="0.06" stroke="#3b82f6" stroke-width="0.4"/>
+    <text x="22" y="110" fill="#93c5fd" font-size="9" font-weight="600">查 schema 字段</text>
+    <text x="22" y="126" fill="#94a3b8" font-size="9">risk_level</text>
+    <text x="22" y="140" fill="#64748b" font-size="8">readonly / reversible</text>
+    <text x="22" y="152" fill="#64748b" font-size="8">irreversible</text>
+    <text x="22" y="170" fill="#94a3b8" font-size="9">requires_confirmation</text>
+    <text x="22" y="184" fill="#64748b" font-size="8">none / human</text>
+    <text x="22" y="202" fill="#94a3b8" font-size="9">audit_required</text>
+    <text x="22" y="216" fill="#64748b" font-size="8">true / false</text>
+
+    <line x1="14" y1="240" x2="156" y2="240" stroke="#334155" stroke-width="0.6" stroke-dasharray="3,2"/>
+    <text x="85" y="258" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">拦截方式</text>
+    <text x="85" y="274" text-anchor="middle" fill="#64748b" font-size="8.5">irreversible → 人类确认</text>
+    <text x="85" y="288" text-anchor="middle" fill="#64748b" font-size="8.5">禁用动作 → 拒绝</text>
+  </g>
+
+  <!-- arrow 2→3 -->
+  <line x1="540" y1="240" x2="570" y2="240" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrowFlow)"/>
+
+  <!-- ===== Layer 3: 数据信任 ===== -->
+  <g filter="url(#cardShadow)" transform="translate(574, 88)">
+    <rect width="170" height="304" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5" opacity="0.95"/>
+    <rect width="170" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="85" y="28" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700">❸ 数据信任层</text>
+    <text x="85" y="44" text-anchor="middle" fill="#34d399" font-size="10">Data Gateway</text>
+    <line x1="14" y1="56" x2="156" y2="56" stroke="#334155" stroke-width="0.8"/>
+
+    <text x="85" y="78" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="600">参数能不能流到这里</text>
+
+    <rect x="14" y="92" width="142" height="132" rx="6" fill="#10b981" fill-opacity="0.06" stroke="#10b981" stroke-width="0.4"/>
+    <text x="22" y="110" fill="#6ee7b7" font-size="9" font-weight="600">比对信任级别</text>
+    <text x="22" y="126" fill="#94a3b8" font-size="9">数据源 trust_level</text>
+    <text x="22" y="140" fill="#64748b" font-size="8">high · medium · low</text>
+    <text x="22" y="152" fill="#64748b" font-size="8">untrusted</text>
+    <text x="22" y="170" fill="#94a3b8" font-size="9">工具 accepts</text>
+    <text x="22" y="184" fill="#64748b" font-size="8">高级数据不可流向</text>
+    <text x="22" y="198" fill="#64748b" font-size="8">低级出口</text>
+
+    <line x1="14" y1="240" x2="156" y2="240" stroke="#334155" stroke-width="0.6" stroke-dasharray="3,2"/>
+    <text x="85" y="258" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">拦截方式</text>
+    <text x="85" y="274" text-anchor="middle" fill="#64748b" font-size="8.5">跨级别 → 阻断</text>
+    <text x="85" y="288" text-anchor="middle" fill="#64748b" font-size="8.5">或脱敏 / 提示确认</text>
+  </g>
+
+  <!-- arrow 3→4 -->
+  <line x1="746" y1="240" x2="776" y2="240" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrowFlow)"/>
+
+  <!-- ===== Layer 4: 沙箱 ===== -->
+  <g filter="url(#cardShadow)" transform="translate(780, 88)">
+    <rect width="92" height="304" rx="12" fill="#0f172a" stroke="#a855f7" stroke-width="1.5" opacity="0.95"/>
+    <rect width="92" height="3" rx="1.5" fill="#a855f7" y="0"/>
+    <text x="46" y="28" text-anchor="middle" fill="#c084fc" font-size="12" font-weight="700">❹ 沙箱</text>
+    <text x="46" y="44" text-anchor="middle" fill="#a78bfa" font-size="9">Sandbox</text>
+    <line x1="10" y1="56" x2="82" y2="56" stroke="#334155" stroke-width="0.8"/>
+
+    <text x="46" y="76" text-anchor="middle" fill="#c4b5fd" font-size="9" font-weight="600">出口默认关</text>
+
+    <rect x="10" y="88" width="72" height="20" rx="4" fill="#a855f7" fill-opacity="0.08"/>
+    <text x="46" y="102" text-anchor="middle" fill="#c084fc" font-size="9">fs</text>
+
+    <rect x="10" y="114" width="72" height="20" rx="4" fill="#a855f7" fill-opacity="0.08"/>
+    <text x="46" y="128" text-anchor="middle" fill="#c084fc" font-size="9">net</text>
+
+    <rect x="10" y="140" width="72" height="20" rx="4" fill="#a855f7" fill-opacity="0.08"/>
+    <text x="46" y="154" text-anchor="middle" fill="#c084fc" font-size="9">proc</text>
+
+    <rect x="10" y="166" width="72" height="20" rx="4" fill="#a855f7" fill-opacity="0.08"/>
+    <text x="46" y="180" text-anchor="middle" fill="#c084fc" font-size="9">cred</text>
+
+    <text x="46" y="206" text-anchor="middle" fill="#94a3b8" font-size="8">按 profile</text>
+    <text x="46" y="218" text-anchor="middle" fill="#94a3b8" font-size="8">逐项放行</text>
+
+    <line x1="10" y1="240" x2="82" y2="240" stroke="#334155" stroke-width="0.6" stroke-dasharray="3,2"/>
+    <text x="46" y="258" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">拦截方式</text>
+    <text x="46" y="274" text-anchor="middle" fill="#64748b" font-size="8">破坏面</text>
+    <text x="46" y="286" text-anchor="middle" fill="#64748b" font-size="8">物理收窄</text>
+  </g>
+
+  <!-- ===== Bottom: 横切的审计 + 总结 ===== -->
+  <g transform="translate(28, 410)">
+    <rect width="844" height="48" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.85"/>
+    <text x="20" y="22" fill="#cbd5e1" font-size="11" font-weight="600">审计</text>
+    <text x="20" y="38" fill="#64748b" font-size="9">贴在每一层上的横切面：拦截记录、跨级别数据流、沙箱命令、凭据发放回收</text>
+    <line x1="280" y1="14" x2="280" y2="42" stroke="#334155" stroke-width="0.8"/>
+    <text x="300" y="22" fill="#cbd5e1" font-size="11" font-weight="600">四层叠加</text>
+    <text x="300" y="38" fill="#64748b" font-size="9">主体合法 → 动作允许 → 参数合规 → 破坏面受限，缺一层都谈不上信任边界</text>
+  </g>
+</svg>

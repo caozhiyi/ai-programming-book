@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="instrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="resGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" rx="16" fill="url(#bgGrad)"/>
+  <g opacity="0.03">
+    <line x1="100" y1="0" x2="100" y2="520" stroke="#fff"/>
+    <line x1="225" y1="0" x2="225" y2="520" stroke="#fff"/>
+    <line x1="450" y1="0" x2="450" y2="520" stroke="#fff"/>
+    <line x1="675" y1="0" x2="675" y2="520" stroke="#fff"/>
+    <line x1="800" y1="0" x2="800" y2="520" stroke="#fff"/>
+  </g>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#e2e8f0" font-size="22" font-weight="700" letter-spacing="1">Skill 的组成结构</text>
+  <text x="450" y="64" text-anchor="middle" fill="#64748b" font-size="13">一个能力包的四个核心要素</text>
+
+  <!-- Central Skill Package -->
+  <g filter="url(#cardShadow)" transform="translate(330, 85)">
+    <rect width="240" height="70" rx="14" fill="#0a2018" stroke="#10b981" stroke-width="2" opacity="0.95"/>
+    <rect width="240" height="4" rx="2" fill="url(#skillGrad)" y="0"/>
+    <text x="120" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">📦 Skill</text>
+    <text x="120" y="52" text-anchor="middle" fill="#34d399" font-size="11">可复用的指令与资源集合</text>
+  </g>
+
+  <!-- Connecting lines from center to four elements -->
+  <line x1="370" y1="155" x2="200" y2="200" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+  <line x1="430" y1="155" x2="430" y2="200" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+  <line x1="530" y1="155" x2="700" y2="200" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+
+  <!-- Relationship arrows between elements -->
+  <!-- Instructions → Workflow: instructions define what each step checks -->
+  <path d="M 230 330 Q 230 350, 230 360" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.5"/>
+  <text x="140" y="350" fill="#f59e0b" font-size="7" opacity="0.7">指令定义每步的质量标准</text>
+  <!-- Workflow → Tools: workflow specifies tool sequence -->
+  <path d="M 420 490 L 480 490" fill="none" stroke="#8b5cf6" stroke-width="1.2" opacity="0.5"/>
+  <text x="430" y="484" fill="#8b5cf6" font-size="7" opacity="0.7">流程编排工具顺序</text>
+  <!-- Resources → Instructions: resources provide context for instructions -->
+  <path d="M 480 310 Q 440 320, 420 330" fill="none" stroke="#3b82f6" stroke-width="1.2" opacity="0.5" stroke-dasharray="3 2"/>
+  <text x="460" y="345" fill="#3b82f6" font-size="7" opacity="0.7">资源为指令提供上下文</text>
+
+  <!-- ===== Element 1: 行为指令 (Left Top) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(40, 200)">
+    <rect width="380" height="130" rx="12" fill="#1a1508" stroke="#f59e0b" stroke-width="1.5" opacity="0.95"/>
+    <rect width="380" height="4" rx="2" fill="url(#instrGrad)" y="0"/>
+    <g transform="translate(14, 14)">
+      <circle cx="12" cy="12" r="12" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+      <text x="12" y="16" text-anchor="middle" fill="#f59e0b" font-size="12">📋</text>
+    </g>
+    <text x="44" y="24" fill="#e2e8f0" font-size="14" font-weight="700">行为指令</text>
+    <text x="130" y="24" fill="#64748b" font-size="10">Instructions</text>
+    <line x1="14" y1="36" x2="366" y2="36" stroke="#2a1a08" stroke-width="0.8"/>
+    <text x="14" y="54" fill="#94a3b8" font-size="10">告诉 Agent "你应该怎么做"的规则集合</text>
+    <g transform="translate(14, 64)">
+      <rect width="350" height="18" rx="4" fill="#f59e0b" fill-opacity="0.06"/>
+      <text x="8" y="13" fill="#fbbf24" font-size="9" font-family="monospace">"错误处理必须使用 fmt.Errorf("ctx: %w", err)"</text>
+    </g>
+    <g transform="translate(14, 86)">
+      <rect width="350" height="18" rx="4" fill="#f59e0b" fill-opacity="0.06"/>
+      <text x="8" y="13" fill="#fbbf24" font-size="9" font-family="monospace">"日志使用结构化日志库，不使用 fmt.Println"</text>
+    </g>
+    <g transform="translate(14, 108)">
+      <rect width="350" height="18" rx="4" fill="#f59e0b" fill-opacity="0.06"/>
+      <text x="8" y="13" fill="#fbbf24" font-size="9" font-family="monospace">"公开函数必须有注释，注释以函数名开头"</text>
+    </g>
+  </g>
+
+  <!-- ===== Element 2: 参考资源 (Right Top) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(480, 200)">
+    <rect width="380" height="130" rx="12" fill="#0a1528" stroke="#3b82f6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="380" height="4" rx="2" fill="url(#resGrad)" y="0"/>
+    <g transform="translate(14, 14)">
+      <circle cx="12" cy="12" r="12" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+      <text x="12" y="16" text-anchor="middle" fill="#3b82f6" font-size="12">📚</text>
+    </g>
+    <text x="44" y="24" fill="#e2e8f0" font-size="14" font-weight="700">参考资源</text>
+    <text x="130" y="24" fill="#64748b" font-size="10">Resources</text>
+    <line x1="14" y1="36" x2="366" y2="36" stroke="#0a1a3a" stroke-width="0.8"/>
+    <text x="14" y="54" fill="#94a3b8" font-size="10">Skill 加载时一起注入上下文的外部知识</text>
+    <g transform="translate(14, 64)">
+      <rect width="110" height="52" rx="6" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="55" y="20" text-anchor="middle" fill="#60a5fa" font-size="9">📄 架构设计文档</text>
+      <text x="55" y="38" text-anchor="middle" fill="#475569" font-size="8">design.md</text>
+    </g>
+    <g transform="translate(134, 64)">
+      <rect width="110" height="52" rx="6" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="55" y="20" text-anchor="middle" fill="#60a5fa" font-size="9">💻 代码模板</text>
+      <text x="55" y="38" text-anchor="middle" fill="#475569" font-size="8">template.go</text>
+    </g>
+    <g transform="translate(254, 64)">
+      <rect width="110" height="52" rx="6" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="55" y="20" text-anchor="middle" fill="#60a5fa" font-size="9">📐 API 规范</text>
+      <text x="55" y="38" text-anchor="middle" fill="#475569" font-size="8">api-spec.yaml</text>
+    </g>
+  </g>
+
+  <!-- ===== Element 3: 工作流定义 (Left Bottom) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(40, 360)">
+    <rect width="380" height="130" rx="12" fill="#150f28" stroke="#8b5cf6" stroke-width="1.5" opacity="0.95"/>
+    <rect width="380" height="4" rx="2" fill="url(#flowGrad)" y="0"/>
+    <g transform="translate(14, 14)">
+      <circle cx="12" cy="12" r="12" fill="#8b5cf6" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="12" y="16" text-anchor="middle" fill="#8b5cf6" font-size="12">🔄</text>
+    </g>
+    <text x="44" y="24" fill="#e2e8f0" font-size="14" font-weight="700">工作流定义</text>
+    <text x="140" y="24" fill="#64748b" font-size="10">Workflow</text>
+    <line x1="14" y1="36" x2="366" y2="36" stroke="#1a0f3a" stroke-width="0.8"/>
+    <text x="14" y="54" fill="#94a3b8" font-size="10">预定义的多步骤执行流程</text>
+    <!-- Flow steps -->
+    <g transform="translate(14, 66)">
+      <rect width="66" height="28" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8"/>
+      <text x="33" y="18" text-anchor="middle" fill="#a78bfa" font-size="9">检查风格</text>
+    </g>
+    <text x="86" y="84" fill="#8b5cf6" font-size="12">→</text>
+    <g transform="translate(98, 66)">
+      <rect width="66" height="28" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8"/>
+      <text x="33" y="18" text-anchor="middle" fill="#a78bfa" font-size="9">检查错误</text>
+    </g>
+    <text x="170" y="84" fill="#8b5cf6" font-size="12">→</text>
+    <g transform="translate(182, 66)">
+      <rect width="66" height="28" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8"/>
+      <text x="33" y="18" text-anchor="middle" fill="#a78bfa" font-size="9">检查安全</text>
+    </g>
+    <text x="254" y="84" fill="#8b5cf6" font-size="12">→</text>
+    <g transform="translate(266, 66)">
+      <rect width="66" height="28" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8"/>
+      <text x="33" y="18" text-anchor="middle" fill="#a78bfa" font-size="9">生成报告</text>
+    </g>
+    <text x="14" y="114" fill="#64748b" font-size="9" font-style="italic">Agent 不需要自己规划流程，按照预定义步骤逐步执行</text>
+  </g>
+
+  <!-- ===== Element 4: 工具编排 (Right Bottom) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(480, 360)">
+    <rect width="380" height="130" rx="12" fill="#1a0a18" stroke="#ec4899" stroke-width="1.5" opacity="0.95"/>
+    <rect width="380" height="4" rx="2" fill="url(#toolGrad)" y="0"/>
+    <g transform="translate(14, 14)">
+      <circle cx="12" cy="12" r="12" fill="#ec4899" fill-opacity="0.2" stroke="#ec4899" stroke-width="1"/>
+      <text x="12" y="16" text-anchor="middle" fill="#ec4899" font-size="12">🔧</text>
+    </g>
+    <text x="44" y="24" fill="#e2e8f0" font-size="14" font-weight="700">工具编排</text>
+    <text x="130" y="24" fill="#64748b" font-size="10">Tool Orchestration</text>
+    <line x1="14" y1="36" x2="366" y2="36" stroke="#2a0a1a" stroke-width="0.8"/>
+    <text x="14" y="54" fill="#94a3b8" font-size="10">指定使用哪些工具、以什么顺序调用</text>
+    <!-- Tool chain -->
+    <g transform="translate(14, 64)">
+      <rect width="80" height="24" rx="5" fill="#ec4899" fill-opacity="0.1" stroke="#ec4899" stroke-width="0.6"/>
+      <text x="40" y="16" text-anchor="middle" fill="#f472b6" font-size="8">run_tests ✓</text>
+    </g>
+    <text x="100" y="80" fill="#ec4899" font-size="12">→</text>
+    <g transform="translate(110, 64)">
+      <rect width="80" height="24" rx="5" fill="#ec4899" fill-opacity="0.1" stroke="#ec4899" stroke-width="0.6"/>
+      <text x="40" y="16" text-anchor="middle" fill="#f472b6" font-size="8">write_code</text>
+    </g>
+    <text x="196" y="80" fill="#ec4899" font-size="12">→</text>
+    <g transform="translate(206, 64)">
+      <rect width="80" height="24" rx="5" fill="#ec4899" fill-opacity="0.1" stroke="#ec4899" stroke-width="0.6"/>
+      <text x="40" y="16" text-anchor="middle" fill="#f472b6" font-size="8">run_tests ✓</text>
+    </g>
+    <text x="292" y="80" fill="#ec4899" font-size="12">→</text>
+    <g transform="translate(302, 64)">
+      <rect width="60" height="24" rx="5" fill="#ec4899" fill-opacity="0.1" stroke="#ec4899" stroke-width="0.6"/>
+      <text x="30" y="16" text-anchor="middle" fill="#f472b6" font-size="8">lint ✓</text>
+    </g>
+    <text x="14" y="108" fill="#64748b" font-size="9" font-style="italic">TDD Skill 示例：先测试 → 写代码 → 再测试 → 检查</text>
+  </g>
+
+  <!-- Bottom summary -->
+  <g transform="translate(40, 500)">
+    <rect width="820" height="3" rx="1.5" fill="url(#skillGrad)" opacity="0.3"/>
+  </g>
+</svg>

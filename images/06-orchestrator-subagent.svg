@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="420" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="430" y="36" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">主从分工：多 Agent 的基本协作模式</text>
+  <text x="430" y="56" text-anchor="middle" fill="#64748b" font-size="12">一个主 Agent 负责拆分和协调，多个 SubAgent 各自在独立上下文中执行</text>
+
+  <!-- ===== Phase 1: User Request ===== -->
+  <g transform="translate(30, 80)">
+    <rect width="100" height="50" rx="10" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <text x="50" y="28" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="600">用户</text>
+    <text x="50" y="42" text-anchor="middle" fill="#64748b" font-size="9">复杂任务</text>
+  </g>
+
+  <!-- Arrow: User -> Orchestrator -->
+  <line x1="135" y1="105" x2="175" y2="105" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- ===== Phase 2: Orchestrator ===== -->
+  <g filter="url(#cardShadow)" transform="translate(180, 72)">
+    <rect width="180" height="260" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" opacity="0.95"/>
+    <rect width="180" height="3" rx="1.5" fill="#f59e0b" y="0"/>
+    <text x="90" y="26" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="700">主 Agent</text>
+    <text x="90" y="42" text-anchor="middle" fill="#d97706" font-size="10">Orchestrator</text>
+
+    <!-- Three responsibilities -->
+    <line x1="16" y1="52" x2="164" y2="52" stroke="#334155" stroke-width="0.8"/>
+
+    <rect x="16" y="60" width="148" height="50" rx="6" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-width="0.5"/>
+    <text x="90" y="78" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">❶ 任务分解</text>
+    <text x="90" y="94" text-anchor="middle" fill="#64748b" font-size="8">拆成可独立执行的子任务</text>
+
+    <rect x="16" y="118" width="148" height="50" rx="6" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-width="0.5"/>
+    <text x="90" y="136" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">❷ 信息分发</text>
+    <text x="90" y="152" text-anchor="middle" fill="#64748b" font-size="8">精确给每个 SubAgent 所需信息</text>
+
+    <rect x="16" y="176" width="148" height="50" rx="6" fill="#f59e0b" fill-opacity="0.06" stroke="#f59e0b" stroke-width="0.5"/>
+    <text x="90" y="194" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">❸ 结果汇总</text>
+    <text x="90" y="210" text-anchor="middle" fill="#64748b" font-size="8">检查冲突，整合最终结果</text>
+
+    <text x="90" y="244" text-anchor="middle" fill="#475569" font-size="8" font-style="italic">不亲自执行，只协调</text>
+  </g>
+
+  <!-- ===== Arrows: Orchestrator -> SubAgents ===== -->
+  <!-- Task distribution arrows -->
+  <line x1="365" y1="140" x2="430" y2="110" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrowBlue)"/>
+  <line x1="365" y1="200" x2="430" y2="200" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrowBlue)"/>
+  <line x1="365" y1="260" x2="430" y2="290" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrowBlue)"/>
+
+  <!-- Labels on arrows -->
+  <text x="395" y="118" text-anchor="middle" fill="#475569" font-size="7">子任务+上下文</text>
+  <text x="395" y="192" text-anchor="middle" fill="#475569" font-size="7">子任务+上下文</text>
+  <text x="395" y="282" text-anchor="middle" fill="#475569" font-size="7">子任务+上下文</text>
+
+  <!-- ===== Phase 3: SubAgents ===== -->
+  <!-- SubAgent A -->
+  <g filter="url(#cardShadow)" transform="translate(435, 72)">
+    <rect width="170" height="72" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2" opacity="0.95"/>
+    <rect width="170" height="3" rx="1.5" fill="#3b82f6" y="0"/>
+    <text x="85" y="22" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="600">SubAgent A</text>
+    <text x="85" y="38" text-anchor="middle" fill="#64748b" font-size="8">重构订单模块</text>
+    <rect x="12" y="46" width="146" height="16" rx="4" fill="#3b82f6" fill-opacity="0.06"/>
+    <text x="85" y="58" text-anchor="middle" fill="#475569" font-size="7">独立上下文 · 编码 Skill</text>
+  </g>
+
+  <!-- SubAgent B -->
+  <g filter="url(#cardShadow)" transform="translate(435, 164)">
+    <rect width="170" height="72" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2" opacity="0.95"/>
+    <rect width="170" height="3" rx="1.5" fill="#3b82f6" y="0"/>
+    <text x="85" y="22" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="600">SubAgent B</text>
+    <text x="85" y="38" text-anchor="middle" fill="#64748b" font-size="8">重构支付网关</text>
+    <rect x="12" y="46" width="146" height="16" rx="4" fill="#3b82f6" fill-opacity="0.06"/>
+    <text x="85" y="58" text-anchor="middle" fill="#475569" font-size="7">独立上下文 · 编码 Skill</text>
+  </g>
+
+  <!-- SubAgent C -->
+  <g filter="url(#cardShadow)" transform="translate(435, 256)">
+    <rect width="170" height="72" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.2" opacity="0.95"/>
+    <rect width="170" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="85" y="22" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">SubAgent C</text>
+    <text x="85" y="38" text-anchor="middle" fill="#64748b" font-size="8">更新所有测试</text>
+    <rect x="12" y="46" width="146" height="16" rx="4" fill="#10b981" fill-opacity="0.06"/>
+    <text x="85" y="58" text-anchor="middle" fill="#475569" font-size="7">独立上下文 · 测试 Skill</text>
+  </g>
+
+  <!-- ===== Result arrows: SubAgents -> Orchestrator ===== -->
+  <line x1="610" y1="110" x2="660" y2="110" stroke="#10b981" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+  <line x1="610" y1="200" x2="660" y2="200" stroke="#10b981" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+  <line x1="610" y1="290" x2="660" y2="290" stroke="#10b981" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== Phase 4: Result Reports ===== -->
+  <g filter="url(#cardShadow)" transform="translate(665, 72)">
+    <rect width="160" height="250" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.2" opacity="0.95"/>
+    <rect width="160" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="80" y="24" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">结构化报告</text>
+    <line x1="12" y1="34" x2="148" y2="34" stroke="#334155" stroke-width="0.8"/>
+
+    <!-- Report fields -->
+    <text x="16" y="54" fill="#6ee7b7" font-size="9" font-weight="600">执行状态</text>
+    <text x="16" y="68" fill="#64748b" font-size="8">成功 / 部分成功 / 失败</text>
+
+    <text x="16" y="90" fill="#6ee7b7" font-size="9" font-weight="600">变更摘要</text>
+    <text x="16" y="104" fill="#64748b" font-size="8">修改了哪些文件、做了什么</text>
+
+    <text x="16" y="126" fill="#6ee7b7" font-size="9" font-weight="600">关键发现</text>
+    <text x="16" y="140" fill="#64748b" font-size="8">重要问题、风险、建议</text>
+
+    <text x="16" y="162" fill="#6ee7b7" font-size="9" font-weight="600">依赖声明</text>
+    <text x="16" y="176" fill="#64748b" font-size="8">影响了哪些其他模块</text>
+
+    <text x="16" y="198" fill="#6ee7b7" font-size="9" font-weight="600">遗留问题</text>
+    <text x="16" y="212" fill="#64748b" font-size="8">需要其他 Agent 处理的</text>
+
+    <line x1="12" y1="224" x2="148" y2="224" stroke="#334155" stroke-width="0.8"/>
+    <text x="80" y="242" text-anchor="middle" fill="#475569" font-size="8" font-style="italic">信息压缩 vs 信息完整性</text>
+  </g>
+
+  <!-- ===== Bottom: Key Insight ===== -->
+  <g transform="translate(30, 360)">
+    <rect width="800" height="46" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.7"/>
+    <text x="400" y="20" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">核心优势：上下文隔离</text>
+    <text x="400" y="36" text-anchor="middle" fill="#94a3b8" font-size="10">每个 SubAgent 的上下文都是"干净的" — 只包含与当前子任务相关的信息，不同角色在不同上下文中运行，互不干扰</text>
+  </g>
+</svg>

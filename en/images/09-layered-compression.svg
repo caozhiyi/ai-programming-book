@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="sysGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="histGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="memGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="480" rx="14" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Layered compression: different information, different treatment</text>
+  <text x="400" y="52" text-anchor="middle" fill="#64748b" font-size="11">Apply different compression to different kinds of context, rather than treating them all the same</text>
+
+  <!-- Column headers -->
+  <g transform="translate(30, 72)">
+    <text x="120" y="14" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Information type</text>
+    <text x="310" y="14" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Compression strategy</text>
+    <text x="560" y="14" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Reason</text>
+    <line x1="0" y1="22" x2="740" y2="22" stroke="#334155" stroke-width="0.8"/>
+  </g>
+
+  <!-- Row 1: System Prompt -->
+  <g filter="url(#cardShadow)" transform="translate(30, 100)">
+    <rect width="740" height="60" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.9"/>
+    <rect width="4" height="60" rx="2" fill="url(#sysGrad)"/>
+    <!-- Type -->
+    <text x="16" y="24" fill="#fca5a5" font-size="12" font-weight="700">System Prompt</text>
+    <text x="16" y="44" fill="#64748b" font-size="10">Behavior rules · role · core constraints</text>
+    <!-- Strategy -->
+    <rect x="260" y="10" width="100" height="40" rx="6" fill="#ef4444" fill-opacity="0.12"/>
+    <text x="310" y="27" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="700">🔒 No compress</text>
+    <text x="310" y="42" text-anchor="middle" fill="#fca5a5" font-size="8">ratio 1:1</text>
+    <!-- Reason -->
+    <text x="380" y="30" fill="#94a3b8" font-size="10">Every word affects the model's behavior</text>
+    <text x="380" y="46" fill="#64748b" font-size="9">Compression can change a constraint's meaning</text>
+  </g>
+
+  <!-- Row 2: Tool Descriptions -->
+  <g filter="url(#cardShadow)" transform="translate(30, 170)">
+    <rect width="740" height="60" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1" opacity="0.9"/>
+    <rect width="4" height="60" rx="2" fill="url(#toolGrad)"/>
+    <text x="16" y="24" fill="#fbbf24" font-size="12" font-weight="700">Tool descriptions</text>
+    <text x="16" y="44" fill="#64748b" font-size="10">Schema · parameter constraints · usage notes</text>
+    <rect x="260" y="10" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.12"/>
+    <text x="310" y="27" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">✂️ Selective</text>
+    <text x="310" y="42" text-anchor="middle" fill="#fbbf24" font-size="8">ratio ~3:1</text>
+    <text x="380" y="30" fill="#94a3b8" font-size="10">Inject only the tools the task may need</text>
+    <text x="380" y="46" fill="#64748b" font-size="9">Inject 10 of 30 tools relevant to the task</text>
+  </g>
+
+  <!-- Row 3: Dialog History -->
+  <g filter="url(#cardShadow)" transform="translate(30, 240)">
+    <rect width="740" height="60" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1" opacity="0.9"/>
+    <rect width="4" height="60" rx="2" fill="url(#histGrad)"/>
+    <text x="16" y="24" fill="#a78bfa" font-size="12" font-weight="700">Conversation history</text>
+    <text x="16" y="44" fill="#64748b" font-size="10">Multi-turn discussion · decision records</text>
+    <rect x="260" y="10" width="100" height="40" rx="6" fill="#8b5cf6" fill-opacity="0.12"/>
+    <text x="310" y="27" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="700">📝 Summarize</text>
+    <text x="310" y="42" text-anchor="middle" fill="#a78bfa" font-size="8">ratio ~5:1</text>
+    <text x="380" y="30" fill="#94a3b8" font-size="10">Keep decisions; drop discussion details</text>
+    <text x="380" y="46" fill="#64748b" font-size="9">Recent verbatim → mid summary (3:1) → far summary (10:1)</text>
+  </g>
+
+  <!-- Row 4: Tool Results -->
+  <g filter="url(#cardShadow)" transform="translate(30, 310)">
+    <rect width="740" height="60" rx="10" fill="#1e293b" stroke="#06b6d4" stroke-width="1" opacity="0.9"/>
+    <rect width="4" height="60" rx="2" fill="url(#resultGrad)"/>
+    <text x="16" y="24" fill="#67e8f9" font-size="12" font-weight="700">Tool-call result</text>
+    <text x="16" y="44" fill="#64748b" font-size="10">File contents · search results · command output</text>
+    <rect x="260" y="10" width="100" height="40" rx="6" fill="#06b6d4" fill-opacity="0.12"/>
+    <text x="310" y="27" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="700">🗜️ Aggressive</text>
+    <text x="310" y="42" text-anchor="middle" fill="#67e8f9" font-size="8">ratio ~20:1</text>
+    <text x="380" y="30" fill="#94a3b8" font-size="10">Keep only what relates to the current task</text>
+    <text x="380" y="46" fill="#64748b" font-size="9">5,000-line file → keep only the 50 relevant lines</text>
+  </g>
+
+  <!-- Row 5: Memory Injection -->
+  <g filter="url(#cardShadow)" transform="translate(30, 380)">
+    <rect width="740" height="60" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1" opacity="0.9"/>
+    <rect width="4" height="60" rx="2" fill="url(#memGrad)"/>
+    <text x="16" y="24" fill="#6ee7b7" font-size="12" font-weight="700">Memory injection</text>
+    <text x="16" y="44" fill="#64748b" font-size="10">User prefs · project knowledge · decisions</text>
+    <rect x="260" y="10" width="100" height="40" rx="6" fill="#10b981" fill-opacity="0.12"/>
+    <text x="310" y="27" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="700">📊 Cap count</text>
+    <text x="310" y="42" text-anchor="middle" fill="#6ee7b7" font-size="8">ratio ~8:1</text>
+    <text x="380" y="30" fill="#94a3b8" font-size="10">Compress on write; cap count on read</text>
+    <text x="380" y="46" fill="#64748b" font-size="9">Top-5 relevant memories × ~200 tokens ≈ 1,000 tokens</text>
+  </g>
+
+  <!-- Bottom note -->
+  <g transform="translate(30, 452)">
+    <text x="370" y="14" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">Core idea: compression strength is inversely proportional to required precision — the more precise the information needs to be, the less you can compress</text>
+  </g>
+</svg>

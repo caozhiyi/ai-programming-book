@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="extractGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="storeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#0369a1"/>
+    </linearGradient>
+    <linearGradient id="retrieveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0e7490"/>
+    </linearGradient>
+    <linearGradient id="maintainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="injectGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M 0 0 L 9 3.5 L 0 7 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M 0 0 L 9 3.5 L 0 7 Z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M 0 0 L 9 3.5 L 0 7 Z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="460" rx="14" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">The Three-Stage Memory Pipeline</text>
+  <text x="450" y="56" text-anchor="middle" fill="#64748b" font-size="11">Extract · Retrieve · Maintain — every product is just different trade-offs across these three stages</text>
+
+  <!-- ==================== MAIN FLOW (left to right) ==================== -->
+
+  <!-- Conversation (source) -->
+  <g transform="translate(40, 150)">
+    <rect width="130" height="70" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="65" y="28" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="600">💬 Conversation</text>
+    <text x="65" y="48" text-anchor="middle" fill="#94a3b8" font-size="9">every turn between</text>
+    <text x="65" y="60" text-anchor="middle" fill="#94a3b8" font-size="9">user and AI</text>
+  </g>
+
+  <!-- arrow: Conversation → Extract -->
+  <line x1="172" y1="185" x2="208" y2="185" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Extract -->
+  <g filter="url(#cardShadow)" transform="translate(212, 130)">
+    <rect width="150" height="110" rx="12" fill="url(#extractGrad)" opacity="0.92"/>
+    <rect width="150" height="3" rx="1.5" y="0" fill="#a78bfa"/>
+    <text x="75" y="30" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">① Extract</text>
+    <text x="75" y="46" text-anchor="middle" fill="#e9d5ff" font-size="9">from the conversation</text>
+    <line x1="20" y1="56" x2="130" y2="56" stroke="#fff" stroke-opacity="0.2" stroke-width="0.5"/>
+    <text x="75" y="74" text-anchor="middle" fill="#f3e8ff" font-size="10">pick out the one</text>
+    <text x="75" y="88" text-anchor="middle" fill="#f3e8ff" font-size="10">or two pieces worth</text>
+    <text x="75" y="102" text-anchor="middle" fill="#f3e8ff" font-size="10">keeping long-term</text>
+  </g>
+
+  <!-- arrow: Extract → Memory Store -->
+  <line x1="364" y1="185" x2="400" y2="185" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Memory Store (center) -->
+  <g filter="url(#cardShadow)" transform="translate(404, 120)">
+    <rect width="130" height="130" rx="12" fill="url(#storeGrad)" opacity="0.92"/>
+    <rect width="130" height="3" rx="1.5" y="0" fill="#7dd3fc"/>
+    <text x="65" y="32" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">🗂️ Memory Store</text>
+    <text x="65" y="48" text-anchor="middle" fill="#e0f2fe" font-size="9">long-term notes</text>
+    <line x1="16" y1="58" x2="114" y2="58" stroke="#fff" stroke-opacity="0.2" stroke-width="0.5"/>
+    <!-- mini notes -->
+    <rect x="18" y="68" width="94" height="11" rx="2" fill="#fff" fill-opacity="0.15"/>
+    <rect x="18" y="83" width="78" height="11" rx="2" fill="#fff" fill-opacity="0.15"/>
+    <rect x="18" y="98" width="86" height="11" rx="2" fill="#fff" fill-opacity="0.15"/>
+    <rect x="18" y="113" width="70" height="11" rx="2" fill="#fff" fill-opacity="0.15"/>
+  </g>
+
+  <!-- arrow: Memory Store → Retrieve -->
+  <line x1="536" y1="185" x2="572" y2="185" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Retrieve -->
+  <g filter="url(#cardShadow)" transform="translate(576, 130)">
+    <rect width="150" height="110" rx="12" fill="url(#retrieveGrad)" opacity="0.92"/>
+    <rect width="150" height="3" rx="1.5" y="0" fill="#67e8f9"/>
+    <text x="75" y="30" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">② Retrieve</text>
+    <text x="75" y="46" text-anchor="middle" fill="#cffafe" font-size="9">from hundreds of notes</text>
+    <line x1="20" y1="56" x2="130" y2="56" stroke="#fff" stroke-opacity="0.2" stroke-width="0.5"/>
+    <text x="75" y="74" text-anchor="middle" fill="#ecfeff" font-size="10">pull only the few</text>
+    <text x="75" y="88" text-anchor="middle" fill="#ecfeff" font-size="10">that are actually</text>
+    <text x="75" y="102" text-anchor="middle" fill="#ecfeff" font-size="10">relevant right now</text>
+  </g>
+
+  <!-- arrow: Retrieve → Inject -->
+  <line x1="728" y1="185" x2="762" y2="185" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Inject Context -->
+  <g transform="translate(766, 150)">
+    <rect width="100" height="70" rx="10" fill="url(#injectGrad)" opacity="0.92"/>
+    <text x="50" y="28" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Inject Context</text>
+    <text x="50" y="48" text-anchor="middle" fill="#d1fae5" font-size="9">stitch into the turn</text>
+    <text x="50" y="60" text-anchor="middle" fill="#d1fae5" font-size="9">hand to the model</text>
+  </g>
+
+  <!-- ==================== MAINTAIN (loop below) ==================== -->
+
+  <!-- Maintain (below the store) -->
+  <g filter="url(#cardShadow)" transform="translate(384, 320)">
+    <rect width="170" height="80" rx="12" fill="#1f1a0a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="170" height="3" rx="1.5" y="0" fill="url(#maintainGrad)"/>
+    <text x="85" y="28" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="700">③ Maintain</text>
+    <text x="85" y="44" text-anchor="middle" fill="#fde68a" font-size="9">keep the store honest</text>
+    <text x="85" y="62" text-anchor="middle" fill="#fcd34d" font-size="10">resolve conflicts · flag stale</text>
+    <text x="85" y="74" text-anchor="middle" fill="#fcd34d" font-size="10">so old notes don't drag you down</text>
+  </g>
+
+  <!-- Feedback source -->
+  <g transform="translate(620, 335)">
+    <rect width="170" height="50" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="85" y="22" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600">👤 User / 🤖 Agent feedback</text>
+    <text x="85" y="38" text-anchor="middle" fill="#64748b" font-size="9">confirm · edit · undo · review</text>
+  </g>
+
+  <!-- Feedback → Maintain -->
+  <line x1="618" y1="360" x2="558" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arrowGray)"/>
+
+  <!-- Maintain → Memory Store (correction loop) -->
+  <path d="M 469 320 C 469 290, 469 270, 469 250" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowAmber)"/>
+  <text x="478" y="288" fill="#f59e0b" font-size="9" opacity="0.9">correct</text>
+
+  <!-- Extract / Retrieve also feed into Maintain (light dashed) -->
+  <path d="M 287 240 C 287 280, 360 320, 384 340" stroke="#f59e0b" stroke-width="1" fill="none" stroke-dasharray="2,3" opacity="0.45"/>
+  <path d="M 651 240 C 651 280, 580 320, 554 340" stroke="#f59e0b" stroke-width="1" fill="none" stroke-dasharray="2,3" opacity="0.45"/>
+
+  <!-- ==================== BOTTOM NOTE ==================== -->
+  <g transform="translate(40, 410)">
+    <rect width="820" height="38" rx="8" fill="#1e293b" opacity="0.6"/>
+    <text x="20" y="23" fill="#f59e0b" font-size="10" font-weight="600">💡</text>
+    <text x="40" y="23" fill="#cbd5e1" font-size="10">Extract decides <tspan fill="#a78bfa" font-weight="600">"what to remember"</tspan>; Retrieve decides <tspan fill="#67e8f9" font-weight="600">"when to use it"</tspan>; Maintain decides <tspan fill="#fbbf24" font-weight="600">"how not to get dragged down by stale notes"</tspan> — none of the three is optional.</text>
+  </g>
+</svg>

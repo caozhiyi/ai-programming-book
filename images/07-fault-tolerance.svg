@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <linearGradient id="axisGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="50%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="460" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="440" y="34" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">按可逆性给 Agent 划自治权</text>
+  <text x="440" y="54" text-anchor="middle" fill="#64748b" font-size="11">出错本身不是终点，出错的代价分布才是。同样犯错一次，撤回成本可能差好几个数量级</text>
+
+  <!-- Reversibility axis -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="760" height="6" rx="3" fill="url(#axisGrad)" opacity="0.6"/>
+    <text x="0" y="-6" fill="#10b981" font-size="10" font-weight="600">撤回成本 ≈ 0</text>
+    <text x="380" y="-6" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">撤回有代价</text>
+    <text x="760" y="-6" text-anchor="end" fill="#ef4444" font-size="10" font-weight="600">撤不回 / 代价极高</text>
+  </g>
+
+  <!-- ===== Zone 1: Reversible (Green) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(60, 110)">
+    <rect width="240" height="280" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="240" height="4" rx="2" fill="#10b981" y="0"/>
+
+    <!-- Header -->
+    <text x="120" y="28" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">可逆区</text>
+    <text x="120" y="46" text-anchor="middle" fill="#6ee7b7" font-size="10">Reversible</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#1f3b32" stroke-width="0.6"/>
+
+    <!-- Examples -->
+    <text x="20" y="76" fill="#94a3b8" font-size="9" font-weight="600">典型操作</text>
+    <text x="20" y="94" fill="#cbd5e1" font-size="9">• 写代码、改代码</text>
+    <text x="20" y="110" fill="#cbd5e1" font-size="9">• 读文件、grep 搜索</text>
+    <text x="20" y="126" fill="#cbd5e1" font-size="9">• 跑本地测试 / 本地编译</text>
+    <text x="20" y="142" fill="#cbd5e1" font-size="9">• 在沙箱里跑脚本</text>
+    <text x="20" y="158" fill="#cbd5e1" font-size="9">• 本地分支提 commit</text>
+
+    <line x1="20" y1="176" x2="220" y2="176" stroke="#1f3b32" stroke-width="0.4"/>
+
+    <!-- Property -->
+    <text x="20" y="196" fill="#94a3b8" font-size="9" font-weight="600">特征</text>
+    <text x="20" y="214" fill="#94a3b8" font-size="8">无外部副作用，或副作用</text>
+    <text x="20" y="226" fill="#94a3b8" font-size="8">被装在可一键还原的容器里</text>
+    <text x="20" y="240" fill="#64748b" font-size="8" font-style="italic">git / 文件系统 / 容器镜像</text>
+
+    <!-- Strategy box -->
+    <rect x="14" y="252" width="212" height="22" rx="6" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="0.6"/>
+    <text x="120" y="267" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="700">让它放手跑 · 完全自治</text>
+  </g>
+
+  <!-- ===== Zone 2: Gray (Amber) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(320, 110)">
+    <rect width="240" height="280" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="240" height="4" rx="2" fill="#f59e0b" y="0"/>
+
+    <!-- Header -->
+    <text x="120" y="28" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">灰区</text>
+    <text x="120" y="46" text-anchor="middle" fill="#fbbf24" font-size="10">Gray Zone</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#3f2e10" stroke-width="0.6"/>
+
+    <!-- Examples -->
+    <text x="20" y="76" fill="#94a3b8" font-size="9" font-weight="600">典型操作</text>
+    <text x="20" y="94" fill="#cbd5e1" font-size="9">• 跨多文件的本地修改</text>
+    <text x="20" y="110" fill="#cbd5e1" font-size="9">• 改了配置但还没提交</text>
+    <text x="20" y="126" fill="#cbd5e1" font-size="9">• 跑了沙箱但还没合并</text>
+    <text x="20" y="142" fill="#cbd5e1" font-size="9">• 改了基础库可能影响下游</text>
+    <text x="20" y="158" fill="#cbd5e1" font-size="9">• 尚未推到远端的 rebase</text>
+
+    <line x1="20" y1="176" x2="220" y2="176" stroke="#3f2e10" stroke-width="0.4"/>
+
+    <!-- Property -->
+    <text x="20" y="196" fill="#94a3b8" font-size="9" font-weight="600">特征</text>
+    <text x="20" y="214" fill="#94a3b8" font-size="8">理论上能撤回，但撤回有成本</text>
+    <text x="20" y="226" fill="#94a3b8" font-size="8">返工时间随改动范围放大</text>
+    <text x="20" y="240" fill="#64748b" font-size="8" font-style="italic">取决于团队对返工的容忍度</text>
+
+    <!-- Strategy box -->
+    <rect x="14" y="252" width="212" height="22" rx="6" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="0.6"/>
+    <text x="120" y="267" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700">看返工成本 · 项目而定</text>
+  </g>
+
+  <!-- ===== Zone 3: Irreversible (Red) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(580, 110)">
+    <rect width="240" height="280" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect width="240" height="4" rx="2" fill="#ef4444" y="0"/>
+
+    <!-- Header -->
+    <text x="120" y="28" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="700">不可逆区</text>
+    <text x="120" y="46" text-anchor="middle" fill="#fca5a5" font-size="10">Irreversible</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#3f1414" stroke-width="0.6"/>
+
+    <!-- Examples -->
+    <text x="20" y="76" fill="#94a3b8" font-size="9" font-weight="600">典型操作</text>
+    <text x="20" y="94" fill="#cbd5e1" font-size="9">• 数据库迁移 / 数据修改</text>
+    <text x="20" y="110" fill="#cbd5e1" font-size="9">• 生产环境部署</text>
+    <text x="20" y="126" fill="#cbd5e1" font-size="9">• 删除文件（rm -rf）</text>
+    <text x="20" y="142" fill="#cbd5e1" font-size="9">• 对外有副作用的 API</text>
+    <text x="20" y="158" fill="#cbd5e1" font-size="9">  支付 / 邮件 / 推送</text>
+    <text x="20" y="172" fill="#cbd5e1" font-size="9">• npm publish / 合并主干</text>
+
+    <line x1="20" y1="184" x2="220" y2="184" stroke="#3f1414" stroke-width="0.4"/>
+
+    <!-- Property -->
+    <text x="20" y="204" fill="#94a3b8" font-size="9" font-weight="600">特征</text>
+    <text x="20" y="220" fill="#94a3b8" font-size="8">副作用一旦发出撤不回来</text>
+    <text x="20" y="232" fill="#94a3b8" font-size="8">或撤回代价远高于不做</text>
+    <text x="20" y="246" fill="#64748b" font-size="8" font-style="italic">划出去的钱、发出去的消息</text>
+
+    <!-- Strategy box -->
+    <rect x="14" y="256" width="212" height="22" rx="6" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="0.6"/>
+    <text x="120" y="271" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="700">必须人审 · 一道确认闸</text>
+  </g>
+
+  <!-- ===== Bottom insight ===== -->
+  <g transform="translate(60, 410)">
+    <rect width="760" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.8"/>
+    <text x="380" y="22" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">
+      可逆区里弹一次确认就是损失自动化价值；不可逆区不弹一次就是赌一次生产事故。两类操作不能用同一套标准
+    </text>
+  </g>
+</svg>

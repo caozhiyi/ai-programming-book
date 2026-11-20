@@ -1,0 +1,51 @@
+# AI编程的第一性原理
+
+> 从问答到执行的系统化推导
+
+## 基本信息
+
+- 在线阅读: https://caozhiyi.cc/ai-programming-book/
+- GitHub 源码: https://github.com/caozhiyi/ai-programming-book
+- Language: 简体中文
+
+## 全书目录
+- [前言](https://caozhiyi.cc/ai-programming-book/): 一本系统性讲透 AI 编程的开源书：大模型如何思考、Agent 如何执行任务、MCP 与 Skill 如何扩展能力、记忆与上下文如何设计，附 30 天实践路径。
+
+### 卷一: 大模型的运行真相
+- [大模型的运行真相：为什么你的 Prompt 总像在打补丁](https://caozhiyi.cc/ai-programming-book/00a.%E5%8D%B7%E4%B8%80%E5%AF%BC%E8%AF%BB%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%BF%90%E8%A1%8C%E7%9C%9F%E7%9B%B8/): AI 编程场景最常见的几句 Prompt，本质上是在为模型补约束、纠偏航。卷一导读：从 Token、注意力到生成机制，看清大模型的真实工作方式。
+- [大模型是怎么思考的：Token、注意力与逐 Token 生成的原理](https://caozhiyi.cc/ai-programming-book/01.%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%98%AF%E6%80%8E%E4%B9%88%E6%80%9D%E8%80%83%E7%9A%84/): 大模型眼中的代码不是代码。拆解 Token 化、注意力机制、温度采样与自回归生成，看清 LLM 能力的形状——它天生擅长什么、注定做不好什么。
+- [与大模型交互的本质：上下文窗口、System Prompt 与多轮对话的真相](https://caozhiyi.cc/ai-programming-book/02.%E4%B8%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%A4%E4%BA%92%E7%9A%84%E6%9C%AC%E8%B4%A8/): 上下文窗口不是记忆而是输入框，System Prompt 是人设不是命令，每一轮对话都从零开始。Few-shot 与思维链为何有效、Lost in the Middle 的机制根源。
+
+### 卷二: 从对话到自主
+- [从对话到自主：AI Agent 从会说话到能做事的系统设计](https://caozhiyi.cc/ai-programming-book/00b.%E5%8D%B7%E4%BA%8C%E5%AF%BC%E8%AF%BB%E4%BB%8E%E5%AF%B9%E8%AF%9D%E5%88%B0%E8%87%AA%E4%B8%BB/): 一个只会说话的 AI 和一个能动手做事的 AI，中间隔着一整套系统设计。卷二导读：Agent 原理、MCP、Skill、多 Agent 协作与能力边界。
+- [AI Agent 是怎么工作的：ReAct 循环、Function Calling 与任务规划](https://caozhiyi.cc/ai-programming-book/03.%E4%BB%8E%E9%97%AE%E7%AD%94%E5%88%B0%E6%89%A7%E8%A1%8CAgentic%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/): 从 Chat 到 Agent 不是更强的对话，而是新维度：ReAct 推理与行动交替、模型如何“请求”调用函数、任务分解与自我纠错——Agentic 系统完整运行链路。
+- [MCP 是什么：协议原理、三层架构与 Function Calling 的区别](https://caozhiyi.cc/ai-programming-book/04.%E5%B7%A5%E5%85%B7%E7%9A%84%E6%A0%87%E5%87%86%E5%8C%96MCP%E4%BA%A4%E4%BA%92%E5%8E%9F%E7%90%86/): 工具集成的碎片化如何被 MCP 解决：动态发现、Server/Client/Transport 架构、工具描述为何决定模型的理解，以及 MCP 与 Function Calling 的本质区别。
+- [Agent Skill 是什么：能力包的组成、渐进式披露与编排设计](https://caozhiyi.cc/ai-programming-book/05.%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84%E8%83%BD%E5%8A%9B%E5%8C%85Skill%E4%BA%A4%E4%BA%92%E5%8E%9F%E7%90%86/): 不是所有能力都是工具。Skill 用指令、资源与工作流封装团队经验，靠渐进式披露按需加载——Claude Skills 的设计哲学、边界与多能力包编排。
+- [多 Agent 协作原理：SubAgent 分工、A2A 协议与任务依赖编排](https://caozhiyi.cc/ai-programming-book/06.%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%9F%E7%94%A8%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C%E5%8E%9F%E7%90%86/): 单 Agent 的天花板在哪里：SubAgent 主从分工、Agent 间通信的信息压缩博弈、A2A 协议化尝试与“Agent 间互联网”，以及并行串行任务的依赖图设计。
+- [AI Agent 的能力边界与失败模式：哪些任务不该交给 Agent](https://caozhiyi.cc/ai-programming-book/07.Agent%E7%9A%84%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8E%E5%A4%B1%E8%B4%A5%E6%A8%A1%E5%BC%8F/): AI Agent 并不万能：长任务规划失控、工具调用出错、上下文窗口维护不力——剖析大模型 Agent 的典型失败模式，给出哪些任务适合委托、哪些必须人工兜底的判断框架。
+
+### 卷三: 记忆与上下文工程
+- [AI 的记忆与上下文：为什么 Agent 记不住你说过的话](https://caozhiyi.cc/ai-programming-book/00c.%E5%8D%B7%E4%B8%89%E5%AF%BC%E8%AF%BB%E8%AE%B0%E5%BF%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/): 它不记得。卷三导读：记忆体系如何设计、Token 经济学怎么算、知识注入从 RAG 到代码库检索——把信息高效送到模型面前。
+- [AI Agent 记忆系统设计：什么值得记、怎么检索、如何运营](https://caozhiyi.cc/ai-programming-book/08.%E8%AE%A9AI%E8%AE%B0%E4%BD%8F%E4%BD%A0%EF%BC%9A%E8%AE%B0%E5%BF%86%E4%BD%93%E7%B3%BB%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/): 为什么不能让模型自己记？把记忆拆成流水线：什么值得记、挑得对信得过不过时、记忆是需要持续运营的产品——Agent 记忆体系的完整设计框架。
+- [上下文工程：Token 成本分析、分层压缩与 Prompt Caching](https://caozhiyi.cc/ai-programming-book/09.Token%E7%BB%8F%E6%B5%8E%E5%AD%A6%EF%BC%9A%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B%E7%9A%84%E8%89%BA%E6%9C%AF/): 记忆塞得越多，推理越慢越贵。Token 账单花在哪、少读少写少算三个方向、注意力如何分配，以及 Prompt Caching 的经济学与工程美学。
+- [知识注入：RAG 的局限与代码库原生检索的兴起](https://caozhiyi.cc/ai-programming-book/10.%E7%9F%A5%E8%AF%86%E6%B3%A8%E5%85%A5%EF%BC%9A%E4%BB%8E%20RAG%20%E5%88%B0%E4%BB%A3%E7%A0%81%E5%BA%93%E5%8E%9F%E7%94%9F%E6%A3%80%E7%B4%A2/): 经典 RAG 为何在代码场景被打回原形？代码库本身就是最大的知识库，检索与工具调用的边界正在消失，决定权从系统侧搬到模型侧。
+
+### 卷四: 工程化与组织化
+- [AI 编程的工程化与组织化：零件如何组装成系统](https://caozhiyi.cc/ai-programming-book/00d.%E5%8D%B7%E5%9B%9B%E5%AF%BC%E8%AF%BB%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B8%8E%E7%BB%84%E7%BB%87%E5%8C%96/): 单个零件讲得通，组装成系统是另一回事。卷四导读：规范驱动、安全对齐、代码判定权、团队协同与组织能力底座。
+- [规范驱动编程：从提示词到 OpenSpec，当需求变成工程产物](https://caozhiyi.cc/ai-programming-book/11.%E8%A7%84%E8%8C%83%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%B0OpenSpec/): PRD 不够用的根源：你是在和一个概率云签合同。规范驱动编程如何把没说出口的需求变成工程产物，从 Prompt 对话走向 Spec 驱动开发。
+- [Prompt 注入与 Agent 安全：AI 系统的信任边界](https://caozhiyi.cc/ai-programming-book/12.%E5%AE%89%E5%85%A8%E4%B8%8E%E5%AF%B9%E9%BD%90%EF%BC%9AAI%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BF%A1%E4%BB%BB%E8%BE%B9%E7%95%8C/): 一个无法根治的漏洞：从说错话到做错事，为什么不信任你的 Agent、安全是回归问题不是验收问题——AI 编程系统的安全四层模型。
+- [AI 写的代码该怎么审：判定权从人工评审到运行时防线](https://caozhiyi.cc/ai-programming-book/13.%E5%88%A4%E5%AE%9A%E6%9D%83%E9%87%8D%E5%BB%BA/): 判定成本与生产成本的剪刀差正在拉开：把判定权交给运行时、可维护性成为新的判定维度、防线永远在追赶——AI 时代代码评审的重建。
+- [当 AI 进入团队：个人提效不等于团队提效的协同重排](https://caozhiyi.cc/ai-programming-book/14.%E5%BD%93AI%E8%BF%9B%E5%85%A5%E5%9B%A2%E9%98%9F%EF%BC%9A%E5%8D%8F%E5%90%8C%E9%87%8D%E6%8E%92/): 全员 Cursor 之后整体效率为何没有翻倍：个人闭环与团队闭环的区别、康威定律从长期规律变成当下瓶颈、一群 Agent 之间的对齐问题。
+- [当 AI 进入组织：从工具堆砌到能力底座的演化](https://caozhiyi.cc/ai-programming-book/15.%E5%BD%93AI%E8%BF%9B%E5%85%A5%E7%BB%84%E7%BB%87%EF%BC%9A%E4%BB%8E%E5%B7%A5%E5%85%B7%E5%88%B0%E8%83%BD%E5%8A%9B%E5%BA%95%E5%BA%A7/): 几百个 Skill 没人记得哪些还在工作：静默腐烂如何发生、中层管理为何被压薄、追责重心从找人挪到兜底——组织作为会学习的系统。
+
+### 附录
+
+#### 文章附录
+- [大模型真的在“思考”吗？LLM 智能的机制与边界](https://caozhiyi.cc/ai-programming-book/llm-intelligence-blackbox/): 压缩到极致会逼出像智能的东西：不是仿生而是趋同演化、智能是地形不是东西、它没有我但会演一个我——关于 LLM 智能本身的几个判断。
+- [“软件吞噬世界”为什么只对了一半：从规则化到 Token 化](https://caozhiyi.cc/ai-programming-book/software-second-half/): 软件至今只吞噬了世界的一半。规则化只能盖到人类需求的一半，Token 让思考与研判第一次变成可调度的资源——产业轨迹的完整推演。
+- [AI 网关是什么？当 Token 流量撑开传统 API 网关](https://caozhiyi.cc/ai-programming-book/ai-gateway-as-infra/): LLM 调用不再是调用一个 API 那么简单：流量形态变化、旧基础设施假设失效、网络层开始承载思考——AI 网关成为 Token 流量统一入口。
+- [被重新定价的工程师：AI 时代哪些能力在贬值，哪些在升值](https://caozhiyi.cc/ai-programming-book/engineer-repricing/): 技术实现的稀缺性正在结构性滑落，判断力资产被推向台前。规则化时代到 Token 化时代，工程师能力的重新分类与资深角色的重整。
+
+#### 工具附录
+- [AI 编程速查表：全书核心判断框架参考卡片](https://caozhiyi.cc/ai-programming-book/appendix-quick-reference/): 上下文组织三原则、分层压缩策略、规范设计三原则、安全四层模型、多 Agent 使用判断——15 章核心框架浓缩为速查表，随查随用。
+- [AI 编程 30 天实践路径：从理解原理到落地行动](https://caozhiyi.cc/ai-programming-book/appendix-30-day-path/): 理解和能用之间还有距离。四周行动计划：理解你的工具、建立规范、错误处理与日志、代码风格——把本书认知转化为日常实践。

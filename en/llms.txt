@@ -1,0 +1,52 @@
+# First Principles of AI Coding
+
+> Deriving AI coding systems from the ground up
+
+## Overview
+
+- Read online: https://caozhiyi.cc/ai-programming-book/en/
+- GitHub repository: https://github.com/caozhiyi/ai-programming-book
+- Language: English
+
+## Table of Contents
+- [Preface](https://caozhiyi.cc/ai-programming-book/en/): An open-source book on the first principles of AI programming: how LLMs think, how agents execute, MCP and skills, memory and context design, with a 30-day path.
+
+### Part I — How LLMs actually work
+- [How LLMs Actually Work: Why Prompts Feel Like Patches](https://caozhiyi.cc/ai-programming-book/en/00a.Part%20I%20%E2%80%94%20How%20LLMs%20actually%20work/): Those recurring prompts—stay on track, follow the context—are constraints you keep adding. Part I: tokens, attention, and generation, explained.
+- [How LLMs Think: Tokens, Attention, and Generation](https://caozhiyi.cc/ai-programming-book/en/01.How%20Large%20Language%20Models%20Actually%20Work/): Code does not enter the model as code. Tokens, attention, sampling, and autoregressive generation—what LLMs do well, and what they never will.
+- [LLM Context Window, System Prompts, and Multi-Turn Truth](https://caozhiyi.cc/ai-programming-book/en/02.What%20Interaction%20with%20an%20LLM%20Really%20Is/): The context window is not memory, a system prompt is not a command, and every turn starts from scratch. Why few-shot and CoT work; lost-in-the-middle.
+
+### Part II — From answering to acting
+- [From Answering to Acting: What Makes an AI Agent Work](https://caozhiyi.cc/ai-programming-book/en/00b.Part%20II%20%E2%80%94%20From%20answering%20to%20acting/): A talking AI and a doing AI differ by a whole system design, not a toggle. Part II intro: agents, MCP, skills, multi-agent teamwork, limits.
+- [How AI Agents Work: ReAct, Function Calling, and Planning](https://caozhiyi.cc/ai-programming-book/en/03.From%20Answering%20to%20Acting%20How%20Agentic%20Systems%20Work/): An agent is not better chat—it adds a new dimension. ReAct's reasoning-action loop, how the model requests tool calls, task decomposition, and self-correction.
+- [MCP Explained: Three-Layer Architecture vs Function Calling](https://caozhiyi.cc/ai-programming-book/en/04.Standardizing%20Tool%20Use%20How%20MCP%20Works/): How MCP solves fragmented tool integration: dynamic discovery, server/client/transport layers, why tool descriptions decide what the model understands.
+- [Agent Skills Explained: Packaging and Progressive Disclosure](https://caozhiyi.cc/ai-programming-book/en/05.Skill%20as%20a%20Packaged%20Capability/): Not every capability is a tool. Skills package instructions, resources, and workflows; progressive disclosure loads them on demand—design philosophy included.
+- [Multi-Agent Systems: Sub-agents, A2A, and Task Dependencies](https://caozhiyi.cc/ai-programming-book/en/06.When%20One%20Agent%20Is%20Not%20Enough/): The ceiling of a single agent: sub-agent division of labor, compression-vs-completeness in inter-agent messaging, the A2A protocol, and dependency graphs.
+- [AI Agent Limits and Failure Modes: Which Tasks You Shouldn't Delegate](https://caozhiyi.cc/ai-programming-book/en/07.Agent%20Limits%20and%20Failure%20Modes/): AI agents are not omnipotent: planning drift, tool-calling errors, and context breakdowns explained, with a framework for which tasks to delegate and which need a human fallback.
+
+### Part III — Memory and context engineering
+- [Memory and Context: Why Your AI Agent Keeps Forgetting](https://caozhiyi.cc/ai-programming-book/en/00c.Part%20III%20%E2%80%94%20Memory%20and%20context%20engineering/): It doesn't remember you. Part III intro: designing agent memory, token economics, and knowledge injection from RAG to code-native retrieval.
+- [AI Agent Memory: What to Remember, Retrieve, and Maintain](https://caozhiyi.cc/ai-programming-book/en/08.Building%20Memory%20for%20AI%20Systems/): Why the model can't just remember: memory as a pipeline—what's worth storing, picking right and staying fresh, and running memory as an ongoing product.
+- [Context Engineering: Token Cost and Prompt Caching](https://caozhiyi.cc/ai-programming-book/en/09.Token%20Economics%20and%20the%20Art%20of%20Context%20Engineering/): More memory means slower, costlier inference. Where the token bill goes, read/write/compute less, attention allocation, and the economics of prompt caching.
+- [RAG's Limits and the Rise of Code-Native Retrieval](https://caozhiyi.cc/ai-programming-book/en/10.From%20RAG%20to%20Code-Native%20Retrieval/): Why classic RAG breaks in code scenarios: the codebase is the biggest knowledge base, and the line between retrieval and tool calling is disappearing.
+
+### Part IV — Engineering and Organization
+- [AI Engineering: Assembling the Parts into a System](https://caozhiyi.cc/ai-programming-book/en/00d.Part%20IV%20%E2%80%94%20Engineering%20and%20Organization/): Each part makes sense alone; assembly is another matter. Part IV intro: spec-driven dev, security, code judgment, teams, and organizations.
+- [Spec-Driven Development: From Prompts to OpenSpec](https://caozhiyi.cc/ai-programming-book/en/11.From%20Prompts%20to%20OpenSpec/): The PRD fails because you're signing a contract with a probability cloud. How spec-driven development turns unstated requirements into engineering artifacts.
+- [Prompt Injection and Agent Security: The Trust Boundary](https://caozhiyi.cc/ai-programming-book/en/12.Security%20and%20Alignment/): A vulnerability that cannot be patched: from saying wrong things to doing wrong things, why you shouldn't trust your agent—safety as a regression problem.
+- [How to Review AI-Written Code: Judgment Moves to Runtime](https://caozhiyi.cc/ai-programming-book/en/13.Rebuilding%20Judgment/): The scissors between production cost and judgment cost: hand judgment to the runtime, maintainability as the new dimension, defenses that always catch up.
+- [When AI Joins the Team: Personal Loops vs Team Loops](https://caozhiyi.cc/ai-programming-book/en/14.When%20AI%20Enters%20the%20Team/): Everyone got faster with Cursor, so why didn't the team double? Individual vs team loops, Conway's law as today's bottleneck, aligning groups of agents.
+- [AI in the Organization: From Tools to Capability Foundation](https://caozhiyi.cc/ai-programming-book/en/15.When%20AI%20Enters%20the%20Organization/): Hundreds of skills, no one remembers which still work: silent rot, thinning middle management, accountability shifting from blame to backstop.
+
+### Appendix
+
+#### Essay Appendices
+- [Is an LLM Really Thinking? Notes on Machine Intelligence](https://caozhiyi.cc/ai-programming-book/en/appendix-llm-intelligence-blackbox/): Push compression hard enough and something intelligence-shaped falls out: convergent evolution, intelligence as terrain, an 'I' it doesn't have but can perform.
+- [Software Ate Only Half the World: Rule-Based to Token-Based](https://caozhiyi.cc/ai-programming-book/en/appendix-software-second-half/): Rule-codification covers only half of human demand; tokens make thinking a schedulable resource for the first time—the industry's full trajectory.
+- [From API Gateway to AI Gateway: When Tokens Stretch Infra](https://caozhiyi.cc/ai-programming-book/en/appendix-ai-gateway-as-infra/): LLM calls aren't just an API anymore: traffic shapes change, old infrastructure assumptions break, the network layer starts carrying reasoning.
+- [The Repriced Engineer in the AI Era: Falling and Rising Skills](https://caozhiyi.cc/ai-programming-book/en/appendix-engineer-repricing/): The scarcity of implementation is structurally falling; judgment assets are pushed to the front. How engineering capabilities get reclassified in the token era.
+
+#### Reference Appendices
+- [Quick Reference: Core Frameworks of AI Programming](https://caozhiyi.cc/ai-programming-book/en/appendix-quick-reference/): Three rules for organizing context, layered compression, spec design principles, the four-layer security model—15 chapters as cheat sheets.
+- [A 30-Day Practice Path for AI-Assisted Programming](https://caozhiyi.cc/ai-programming-book/en/appendix-30-day-path/): Understanding and doing are different skills. A four-week plan: know your tools, establish a spec, error handling and logging, code style.
+- [AI Programming Glossary: English Terminology and Usage](https://caozhiyi.cc/ai-programming-book/en/TERMINOLOGY/): A working glossary for AI-era programming: book-level framing, model and interaction fundamentals, agent concepts, and the style principles behind terms.

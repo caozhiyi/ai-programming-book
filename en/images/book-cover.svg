@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2400" width="1600" height="2400" font-family="'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="42%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="26%" cy="18%" r="56%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="48%" stop-color="#0ea5e9" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amberGlow" cx="78%" cy="78%" r="56%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#f97316" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="48%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="18%" stop-color="#22d3ee" stop-opacity="0.7"/>
+      <stop offset="55%" stop-color="#a78bfa" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="thinkingFlow" x1="0%" y1="42%" x2="100%" y2="55%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.92"/>
+      <stop offset="38%" stop-color="#a78bfa" stop-opacity="0.94"/>
+      <stop offset="72%" stop-color="#f59e0b" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="quietThinking" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#a78bfa" stop-opacity="0.36"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M 72 0 L 0 0 0 72" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.08"/>
+    </pattern>
+    <pattern id="microGrid" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M 18 0 L 0 0 0 18" fill="none" stroke="#64748b" stroke-width="0.7" opacity="0.07"/>
+    </pattern>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+    <filter id="flowBlur" x="-20%" y="-35%" width="140%" height="170%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="2400" fill="url(#coverBg)"/>
+  <rect width="1600" height="2400" fill="url(#cyanGlow)"/>
+  <rect width="1600" height="2400" fill="url(#amberGlow)"/>
+  <rect width="1600" height="2400" fill="url(#grid)"/>
+  <rect width="1600" height="2400" fill="url(#microGrid)" opacity="0.55"/>
+
+  <g opacity="0.38">
+    <path d="M80 1840 C380 1690, 560 1790, 830 1600 C1050 1445, 1220 1430, 1520 1280" fill="none" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.26"/>
+    <path d="M120 1950 C410 1780, 625 1880, 920 1660 C1140 1496, 1310 1510, 1530 1400" fill="none" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.20"/>
+    <path d="M90 2060 C390 1900, 650 1990, 960 1740 C1190 1555, 1380 1590, 1540 1480" fill="none" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.16"/>
+  </g>
+
+  <g transform="translate(140 132)">
+    <text x="0" y="0" fill="#67e8f9" font-family="'SFMono-Regular', 'Cascadia Code', 'Menlo', monospace" font-size="30" font-weight="700" letter-spacing="5">AI PROGRAMMING</text>
+    <line x1="0" y1="48" x2="1320" y2="48" stroke="url(#lineGrad)" stroke-width="3"/>
+    <text x="1320" y="0" text-anchor="end" fill="#94a3b8" font-family="'SFMono-Regular', 'Cascadia Code', 'Menlo', monospace" font-size="24" letter-spacing="3">QUESTION → EXECUTION</text>
+  </g>
+
+  <g transform="translate(140 384)">
+    <text x="0" y="0" fill="url(#titleGrad)" font-size="128" font-weight="850" letter-spacing="-6">First Principles</text>
+    <text x="0" y="154" fill="url(#titleGrad)" font-size="150" font-weight="900" letter-spacing="-7">of AI Coding</text>
+    <rect x="4" y="218" width="840" height="8" rx="4" fill="url(#lineGrad)"/>
+    <text x="0" y="322" fill="#cbd5e1" font-size="48" font-weight="500" letter-spacing="1.2">Deriving AI coding systems from the ground up</text>
+  </g>
+
+  <g transform="translate(86 808)" filter="url(#softShadow)">
+    <ellipse cx="710" cy="438" rx="660" ry="340" fill="#0ea5e9" fill-opacity="0.050"/>
+    <ellipse cx="948" cy="452" rx="520" ry="286" fill="#f59e0b" fill-opacity="0.044"/>
+    <ellipse cx="560" cy="540" rx="460" ry="208" fill="#a78bfa" fill-opacity="0.034"/>
+
+    <g opacity="0.24" fill="none" stroke="#94a3b8" stroke-width="1.1">
+      <path d="M116 176 L332 122 L586 156 L870 114 L1180 156 L1430 244"/>
+      <path d="M118 686 L374 616 L650 654 L944 582 L1226 610 L1440 548"/>
+      <path d="M240 106 L240 704"/>
+      <path d="M468 96 L468 728"/>
+      <path d="M696 96 L696 720"/>
+      <path d="M924 106 L924 690"/>
+      <path d="M1152 124 L1152 666"/>
+      <path d="M1380 166 L1380 624"/>
+    </g>
+
+    <g opacity="0.54" filter="url(#glow)">
+      <rect x="72" y="214" width="74" height="52" rx="12" transform="rotate(-18 109 240)" fill="#082f49" fill-opacity="0.58" stroke="#67e8f9" stroke-width="1.5" stroke-opacity="0.72"/>
+      <rect x="102" y="392" width="62" height="46" rx="11" transform="rotate(15 133 415)" fill="#172554" fill-opacity="0.54" stroke="#60a5fa" stroke-width="1.4" stroke-opacity="0.62"/>
+      <rect x="132" y="556" width="92" height="58" rx="13" transform="rotate(-10 178 585)" fill="#312e81" fill-opacity="0.44" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.62"/>
+      <rect x="188" y="156" width="104" height="66" rx="15" transform="rotate(11 240 189)" fill="#0f172a" fill-opacity="0.50" stroke="#22d3ee" stroke-width="1.5" stroke-opacity="0.58"/>
+      <rect x="218" y="318" width="88" height="58" rx="13" transform="rotate(-14 262 347)" fill="#4c1d95" fill-opacity="0.38" stroke="#c4b5fd" stroke-width="1.5" stroke-opacity="0.58"/>
+      <rect x="270" y="468" width="122" height="72" rx="16" transform="rotate(8 331 504)" fill="#451a03" fill-opacity="0.36" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.50"/>
+      <rect x="326" y="232" width="70" height="70" rx="15" transform="rotate(18 361 267)" fill="#064e3b" fill-opacity="0.36" stroke="#34d399" stroke-width="1.5" stroke-opacity="0.52"/>
+      <rect x="374" y="612" width="78" height="48" rx="12" transform="rotate(-9 413 636)" fill="#082f49" fill-opacity="0.44" stroke="#67e8f9" stroke-width="1.4" stroke-opacity="0.52"/>
+      <rect x="430" y="142" width="58" height="58" rx="13" transform="rotate(-7 459 171)" fill="#312e81" fill-opacity="0.34" stroke="#a78bfa" stroke-width="1.4" stroke-opacity="0.48"/>
+      <rect x="480" y="384" width="72" height="52" rx="12" transform="rotate(6 516 410)" fill="#0ea5e9" fill-opacity="0.26" stroke="#67e8f9" stroke-width="1.4" stroke-opacity="0.50"/>
+    </g>
+
+    <g opacity="0.45" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M146 240 C286 242, 372 286, 512 342" stroke="#67e8f9" stroke-width="2" stroke-dasharray="7 13"/>
+      <path d="M164 416 C302 382, 410 398, 562 424" stroke="#60a5fa" stroke-width="2" stroke-dasharray="7 13"/>
+      <path d="M224 586 C352 554, 460 548, 618 532" stroke="#a78bfa" stroke-width="2" stroke-dasharray="7 13"/>
+      <path d="M292 190 C430 240, 544 248, 672 252" stroke="#fbbf24" stroke-width="2" stroke-dasharray="7 13"/>
+      <path d="M392 504 C518 482, 600 474, 704 470" stroke="#86efac" stroke-width="2" stroke-dasharray="7 13"/>
+    </g>
+
+    <g opacity="0.58" filter="url(#glow)">
+      <rect x="548" y="230" width="92" height="54" rx="12" transform="rotate(-5 594 257)" fill="#082f49" fill-opacity="0.54" stroke="#67e8f9" stroke-width="1.5"/>
+      <rect x="640" y="238" width="104" height="54" rx="12" transform="rotate(2 692 265)" fill="#172554" fill-opacity="0.50" stroke="#60a5fa" stroke-width="1.5"/>
+      <rect x="522" y="350" width="112" height="58" rx="13" transform="rotate(3 578 379)" fill="#312e81" fill-opacity="0.46" stroke="#a78bfa" stroke-width="1.5"/>
+      <rect x="650" y="352" width="122" height="58" rx="13" transform="rotate(-2 711 381)" fill="#4c1d95" fill-opacity="0.42" stroke="#c4b5fd" stroke-width="1.5"/>
+      <rect x="562" y="480" width="126" height="62" rx="14" transform="rotate(-1 625 511)" fill="#451a03" fill-opacity="0.40" stroke="#fbbf24" stroke-width="1.5"/>
+      <rect x="706" y="478" width="112" height="62" rx="14" transform="rotate(1 762 509)" fill="#064e3b" fill-opacity="0.38" stroke="#86efac" stroke-width="1.5"/>
+      <rect x="612" y="610" width="94" height="48" rx="12" fill="#082f49" fill-opacity="0.38" stroke="#67e8f9" stroke-width="1.4"/>
+      <rect x="722" y="610" width="116" height="48" rx="12" fill="#172554" fill-opacity="0.34" stroke="#60a5fa" stroke-width="1.4"/>
+    </g>
+
+    <g transform="translate(820 118)" filter="url(#glow)">
+      <g opacity="0.30" fill="none" stroke="#94a3b8" stroke-width="1.1">
+        <rect x="-18" y="58" width="610" height="468" rx="30"/>
+        <path d="M-18 136 L592 136"/>
+        <path d="M-18 214 L592 214"/>
+        <path d="M-18 292 L592 292"/>
+        <path d="M-18 370 L592 370"/>
+        <path d="M-18 448 L592 448"/>
+        <path d="M100 58 L100 526"/>
+        <path d="M218 58 L218 526"/>
+        <path d="M336 58 L336 526"/>
+        <path d="M454 58 L454 526"/>
+      </g>
+
+      <g opacity="0.88">
+        <rect x="0" y="76" width="112" height="64" rx="15" fill="#082f49" fill-opacity="0.66" stroke="#67e8f9" stroke-width="2" stroke-opacity="0.70"/>
+        <rect x="128" y="76" width="104" height="64" rx="15" fill="#172554" fill-opacity="0.64" stroke="#60a5fa" stroke-width="2" stroke-opacity="0.68"/>
+        <rect x="248" y="76" width="132" height="64" rx="15" fill="#312e81" fill-opacity="0.60" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.68"/>
+        <rect x="396" y="76" width="168" height="64" rx="15" fill="#4c1d95" fill-opacity="0.52" stroke="#c4b5fd" stroke-width="2" stroke-opacity="0.64"/>
+
+        <rect x="0" y="154" width="156" height="64" rx="15" fill="#172554" fill-opacity="0.62" stroke="#60a5fa" stroke-width="2" stroke-opacity="0.66"/>
+        <rect x="172" y="154" width="118" height="64" rx="15" fill="#312e81" fill-opacity="0.58" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.66"/>
+        <rect x="306" y="154" width="112" height="64" rx="15" fill="#451a03" fill-opacity="0.50" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.66"/>
+        <rect x="434" y="154" width="130" height="64" rx="15" fill="#064e3b" fill-opacity="0.48" stroke="#34d399" stroke-width="2" stroke-opacity="0.62"/>
+
+        <rect x="0" y="232" width="104" height="64" rx="15" fill="#312e81" fill-opacity="0.56" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.66"/>
+        <rect x="120" y="232" width="168" height="64" rx="15" fill="#4c1d95" fill-opacity="0.52" stroke="#c4b5fd" stroke-width="2" stroke-opacity="0.64"/>
+        <rect x="304" y="232" width="144" height="64" rx="15" fill="#451a03" fill-opacity="0.50" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.64"/>
+        <rect x="464" y="232" width="100" height="64" rx="15" fill="#064e3b" fill-opacity="0.46" stroke="#34d399" stroke-width="2" stroke-opacity="0.60"/>
+
+        <rect x="0" y="310" width="138" height="64" rx="15" fill="#082f49" fill-opacity="0.60" stroke="#67e8f9" stroke-width="2" stroke-opacity="0.64"/>
+        <rect x="154" y="310" width="104" height="64" rx="15" fill="#172554" fill-opacity="0.56" stroke="#60a5fa" stroke-width="2" stroke-opacity="0.62"/>
+        <rect x="274" y="310" width="172" height="64" rx="15" fill="#312e81" fill-opacity="0.52" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.62"/>
+        <rect x="462" y="310" width="102" height="64" rx="15" fill="#451a03" fill-opacity="0.48" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.60"/>
+
+        <rect x="0" y="388" width="188" height="64" rx="15" fill="#172554" fill-opacity="0.54" stroke="#60a5fa" stroke-width="2" stroke-opacity="0.58"/>
+        <rect x="204" y="388" width="120" height="64" rx="15" fill="#4c1d95" fill-opacity="0.48" stroke="#c4b5fd" stroke-width="2" stroke-opacity="0.58"/>
+        <rect x="340" y="388" width="112" height="64" rx="15" fill="#451a03" fill-opacity="0.46" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.58"/>
+        <rect x="468" y="388" width="96" height="64" rx="15" fill="#064e3b" fill-opacity="0.44" stroke="#34d399" stroke-width="2" stroke-opacity="0.56"/>
+
+        <rect x="0" y="466" width="132" height="56" rx="14" fill="#082f49" fill-opacity="0.52" stroke="#67e8f9" stroke-width="1.8" stroke-opacity="0.56"/>
+        <rect x="148" y="466" width="164" height="56" rx="14" fill="#312e81" fill-opacity="0.46" stroke="#a78bfa" stroke-width="1.8" stroke-opacity="0.56"/>
+        <rect x="328" y="466" width="236" height="56" rx="14" fill="#064e3b" fill-opacity="0.42" stroke="#34d399" stroke-width="1.8" stroke-opacity="0.54"/>
+      </g>
+
+      <g opacity="0.70">
+        <rect x="30" y="100" width="52" height="10" rx="5" fill="#67e8f9" fill-opacity="0.60"/>
+        <rect x="158" y="100" width="46" height="10" rx="5" fill="#93c5fd" fill-opacity="0.48"/>
+        <rect x="278" y="100" width="70" height="10" rx="5" fill="#c4b5fd" fill-opacity="0.46"/>
+        <rect x="430" y="100" width="86" height="10" rx="5" fill="#ddd6fe" fill-opacity="0.36"/>
+        <rect x="34" y="178" width="82" height="10" rx="5" fill="#93c5fd" fill-opacity="0.46"/>
+        <rect x="206" y="178" width="48" height="10" rx="5" fill="#c4b5fd" fill-opacity="0.42"/>
+        <rect x="336" y="178" width="52" height="10" rx="5" fill="#fbbf24" fill-opacity="0.44"/>
+        <rect x="466" y="178" width="58" height="10" rx="5" fill="#86efac" fill-opacity="0.42"/>
+        <rect x="38" y="256" width="44" height="10" rx="5" fill="#c4b5fd" fill-opacity="0.48"/>
+        <rect x="156" y="256" width="88" height="10" rx="5" fill="#ddd6fe" fill-opacity="0.36"/>
+        <rect x="338" y="256" width="72" height="10" rx="5" fill="#fbbf24" fill-opacity="0.38"/>
+        <rect x="492" y="256" width="40" height="10" rx="5" fill="#86efac" fill-opacity="0.38"/>
+      </g>
+    </g>
+
+    <g opacity="0.38" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M716 258 L820 224" stroke="#67e8f9" stroke-width="2" stroke-dasharray="8 12"/>
+      <path d="M772 382 L820 350" stroke="#c4b5fd" stroke-width="2" stroke-dasharray="8 12"/>
+      <path d="M816 510 L820 428" stroke="#fbbf24" stroke-width="2" stroke-dasharray="8 12"/>
+      <path d="M838 634 L820 584" stroke="#86efac" stroke-width="2" stroke-dasharray="8 12"/>
+    </g>
+  </g>
+
+  <g transform="translate(140 1852)">
+    <text x="0" y="0" fill="#e2e8f0" font-size="34" font-weight="800" letter-spacing="1.3">From model behavior to engineering loops</text>
+    <text x="0" y="62" fill="#94a3b8" font-size="28" letter-spacing="1.1">Turning generation into verifiable delivery</text>
+  </g>
+
+  <g transform="translate(140 2200)">
+    <line x1="0" y1="0" x2="1320" y2="0" stroke="url(#lineGrad)" stroke-width="3"/>
+    <text x="0" y="78" fill="#f8fafc" font-size="42" font-weight="800" letter-spacing="1.5">caozhiyi</text>
+    <text x="1320" y="78" text-anchor="end" fill="#94a3b8" font-family="'SFMono-Regular', 'Cascadia Code', 'Menlo', monospace" font-size="24" letter-spacing="3">MODEL · LOOP · CONTROL · DELIVERY</text>
+  </g>
+
+  <g opacity="0.40" filter="url(#glow)">
+    <circle cx="1314" cy="360" r="5" fill="#67e8f9"/>
+    <circle cx="1370" cy="430" r="4" fill="#a78bfa"/>
+    <circle cx="1240" cy="520" r="4" fill="#fbbf24"/>
+    <circle cx="1150" cy="350" r="3" fill="#34d399"/>
+    <path d="M1150 350 L1314 360 L1370 430 L1240 520 Z" fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-opacity="0.42"/>
+  </g>
+</svg>

@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <linearGradient id="axisGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="50%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="460" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="440" y="34" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">Partition agent autonomy by reversibility</text>
+  <text x="440" y="54" text-anchor="middle" fill="#64748b" font-size="11">A mistake isn't the end. The cost distribution of mistakes is. One slip can cost orders of magnitude more than another.</text>
+
+  <!-- Reversibility axis -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="760" height="6" rx="3" fill="url(#axisGrad)" opacity="0.6"/>
+    <text x="0" y="-6" fill="#10b981" font-size="10" font-weight="600">Undo cost ≈ 0</text>
+    <text x="380" y="-6" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">Undo has a cost</text>
+    <text x="760" y="-6" text-anchor="end" fill="#ef4444" font-size="10" font-weight="600">Can't undo / cost too high</text>
+  </g>
+
+  <!-- ===== Zone 1: Reversible (Green) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(60, 110)">
+    <rect width="240" height="280" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="240" height="4" rx="2" fill="#10b981" y="0"/>
+
+    <!-- Header -->
+    <text x="120" y="28" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Reversible Zone</text>
+    <text x="120" y="46" text-anchor="middle" fill="#6ee7b7" font-size="10">Reversible</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#1f3b32" stroke-width="0.6"/>
+
+    <!-- Examples -->
+    <text x="20" y="76" fill="#94a3b8" font-size="9" font-weight="600">Typical operations</text>
+    <text x="20" y="94" fill="#cbd5e1" font-size="9">• Write / edit code</text>
+    <text x="20" y="110" fill="#cbd5e1" font-size="9">• Read files, grep search</text>
+    <text x="20" y="126" fill="#cbd5e1" font-size="9">• Run local tests / build</text>
+    <text x="20" y="142" fill="#cbd5e1" font-size="9">• Run scripts in a sandbox</text>
+    <text x="20" y="158" fill="#cbd5e1" font-size="9">• Commit on a local branch</text>
+
+    <line x1="20" y1="176" x2="220" y2="176" stroke="#1f3b32" stroke-width="0.4"/>
+
+    <!-- Property -->
+    <text x="20" y="196" fill="#94a3b8" font-size="9" font-weight="600">Property</text>
+    <text x="20" y="214" fill="#94a3b8" font-size="8">No external side effects, or all</text>
+    <text x="20" y="226" fill="#94a3b8" font-size="8">side effects sit inside a one-click</text>
+    <text x="20" y="238" fill="#94a3b8" font-size="8">resettable container</text>
+    <text x="20" y="252" fill="#64748b" font-size="8" font-style="italic">git / filesystem / containers</text>
+
+    <!-- Strategy box -->
+    <rect x="14" y="258" width="212" height="22" rx="6" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="0.6"/>
+    <text x="120" y="273" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="700">Let it run free · full autonomy</text>
+  </g>
+
+  <!-- ===== Zone 2: Gray (Amber) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(320, 110)">
+    <rect width="240" height="280" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect width="240" height="4" rx="2" fill="#f59e0b" y="0"/>
+
+    <!-- Header -->
+    <text x="120" y="28" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Gray Zone</text>
+    <text x="120" y="46" text-anchor="middle" fill="#fbbf24" font-size="10">Reversible with cost</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#3f2e10" stroke-width="0.6"/>
+
+    <!-- Examples -->
+    <text x="20" y="76" fill="#94a3b8" font-size="9" font-weight="600">Typical operations</text>
+    <text x="20" y="94" fill="#cbd5e1" font-size="9">• Local edits across many files</text>
+    <text x="20" y="110" fill="#cbd5e1" font-size="9">• Config changed, not committed</text>
+    <text x="20" y="126" fill="#cbd5e1" font-size="9">• Sandbox runs, not yet merged</text>
+    <text x="20" y="142" fill="#cbd5e1" font-size="9">• Base-lib change, downstream</text>
+    <text x="20" y="154" fill="#cbd5e1" font-size="9">  hasn't pulled it</text>
+    <text x="20" y="170" fill="#cbd5e1" font-size="9">• Rebase not pushed to remote</text>
+
+    <line x1="20" y1="184" x2="220" y2="184" stroke="#3f2e10" stroke-width="0.4"/>
+
+    <!-- Property -->
+    <text x="20" y="204" fill="#94a3b8" font-size="9" font-weight="600">Property</text>
+    <text x="20" y="220" fill="#94a3b8" font-size="8">Technically reversible, but the</text>
+    <text x="20" y="232" fill="#94a3b8" font-size="8">rollback has a real cost; rework</text>
+    <text x="20" y="244" fill="#94a3b8" font-size="8">scales with change radius</text>
+    <text x="20" y="258" fill="#64748b" font-size="8" font-style="italic">Depends on team rework tolerance</text>
+
+    <!-- Strategy box -->
+    <rect x="14" y="264" width="212" height="22" rx="6" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="0.6"/>
+    <text x="120" y="279" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700">Calibrate by rework cost · per project</text>
+  </g>
+
+  <!-- ===== Zone 3: Irreversible (Red) ===== -->
+  <g filter="url(#cardShadow)" transform="translate(580, 110)">
+    <rect width="240" height="280" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect width="240" height="4" rx="2" fill="#ef4444" y="0"/>
+
+    <!-- Header -->
+    <text x="120" y="28" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="700">Irreversible Zone</text>
+    <text x="120" y="46" text-anchor="middle" fill="#fca5a5" font-size="10">Irreversible</text>
+    <line x1="20" y1="56" x2="220" y2="56" stroke="#3f1414" stroke-width="0.6"/>
+
+    <!-- Examples -->
+    <text x="20" y="76" fill="#94a3b8" font-size="9" font-weight="600">Typical operations</text>
+    <text x="20" y="94" fill="#cbd5e1" font-size="9">• DB migration / data mutation</text>
+    <text x="20" y="110" fill="#cbd5e1" font-size="9">• Production deploys</text>
+    <text x="20" y="126" fill="#cbd5e1" font-size="9">• File deletion (rm -rf)</text>
+    <text x="20" y="142" fill="#cbd5e1" font-size="9">• External-side-effect APIs</text>
+    <text x="20" y="154" fill="#cbd5e1" font-size="9">  payment / email / push</text>
+    <text x="20" y="170" fill="#cbd5e1" font-size="9">• npm publish / merge to main</text>
+
+    <line x1="20" y1="184" x2="220" y2="184" stroke="#3f1414" stroke-width="0.4"/>
+
+    <!-- Property -->
+    <text x="20" y="204" fill="#94a3b8" font-size="9" font-weight="600">Property</text>
+    <text x="20" y="220" fill="#94a3b8" font-size="8">Side effects, once shipped, can't</text>
+    <text x="20" y="232" fill="#94a3b8" font-size="8">be recalled — or recall costs</text>
+    <text x="20" y="244" fill="#94a3b8" font-size="8">far more than not doing it</text>
+    <text x="20" y="258" fill="#64748b" font-size="8" font-style="italic">Money wired, messages delivered</text>
+
+    <!-- Strategy box -->
+    <rect x="14" y="264" width="212" height="22" rx="6" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="0.6"/>
+    <text x="120" y="279" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="700">Human checkpoint · always</text>
+  </g>
+
+  <!-- ===== Bottom insight ===== -->
+  <g transform="translate(60, 410)">
+    <rect width="760" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.8" opacity="0.8"/>
+    <text x="380" y="22" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">
+      A confirm modal in the reversible zone is pure productivity tax. Skipping one in the irreversible zone is gambling on a production incident.
+    </text>
+  </g>
+</svg>

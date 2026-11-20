@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" font-family="'SF Pro Display', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="480" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="430" y="38" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700" letter-spacing="1">The four structural bottlenecks of a single Agent</text>
+  <text x="430" y="58" text-anchor="middle" fill="#64748b" font-size="12">These bottlenecks don't disappear as models get smarter — they amplify each other into a vicious cycle</text>
+
+  <!-- ===== Bottleneck 1: Context Window ===== -->
+  <g filter="url(#cardShadow)" transform="translate(40, 85)">
+    <rect width="370" height="130" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2" opacity="0.95"/>
+    <rect width="370" height="3" rx="1.5" fill="#f59e0b" y="0"/>
+    <text x="20" y="28" fill="#f59e0b" font-size="14" font-weight="700">① Physical limit of the context window</text>
+    <!-- Visual: a progress bar filling up -->
+    <rect x="20" y="44" width="330" height="16" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+    <rect x="20" y="44" width="250" height="16" rx="8" fill="#f59e0b" fill-opacity="0.3"/>
+    <text x="140" y="56" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600">System Prompt + tools + Skill + history + results</text>
+    <text x="335" y="56" text-anchor="middle" fill="#64748b" font-size="8">75%</text>
+    <!-- Description -->
+    <text x="20" y="80" fill="#94a3b8" font-size="10">Every ReAct iteration eats space</text>
+    <text x="20" y="96" fill="#94a3b8" font-size="10">Information in the middle is easily "forgotten"</text>
+    <text x="20" y="112" fill="#94a3b8" font-size="10">By the second half of a 30-step task, key information is buried</text>
+  </g>
+
+  <!-- ===== Bottleneck 2: Role Confusion ===== -->
+  <g filter="url(#cardShadow)" transform="translate(450, 85)">
+    <rect width="370" height="130" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2" opacity="0.95"/>
+    <rect width="370" height="3" rx="1.5" fill="#8b5cf6" y="0"/>
+    <text x="20" y="28" fill="#8b5cf6" font-size="14" font-weight="700">② Role confusion</text>
+    <!-- Visual: two overlapping circles -->
+    <circle cx="130" cy="80" r="30" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="1"/>
+    <text x="115" y="76" fill="#93c5fd" font-size="9">Create</text>
+    <text x="115" y="90" fill="#93c5fd" font-size="9">Pattern</text>
+    <circle cx="180" cy="80" r="30" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1"/>
+    <text x="195" y="76" fill="#fca5a5" font-size="9">Critic</text>
+    <text x="195" y="90" fill="#fca5a5" font-size="9">Pattern</text>
+    <!-- Overlap zone -->
+    <text x="155" y="82" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700">?</text>
+    <!-- Description -->
+    <text x="230" y="68" fill="#94a3b8" font-size="10">Writing vs reviewing</text>
+    <text x="230" y="84" fill="#94a3b8" font-size="10">In the same context</text>
+    <text x="230" y="100" fill="#94a3b8" font-size="10">Roles interfere</text>
+    <text x="20" y="120" fill="#64748b" font-size="9" font-style="italic">Grading your own essay — the brain quietly fills in the gaps</text>
+  </g>
+
+  <!-- ===== Bottleneck 3: Skill Conflict ===== -->
+  <g filter="url(#cardShadow)" transform="translate(40, 240)">
+    <rect width="370" height="130" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.2" opacity="0.95"/>
+    <rect width="370" height="3" rx="1.5" fill="#10b981" y="0"/>
+    <text x="20" y="28" fill="#10b981" font-size="14" font-weight="700">③ Capability conflict</text>
+    <!-- Visual: two conflicting skill cards -->
+    <rect x="20" y="42" width="150" height="40" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="0.8"/>
+    <text x="95" y="58" text-anchor="middle" fill="#6ee7b7" font-size="9" font-weight="600">Rapid-prototyping Skill</text>
+    <text x="95" y="72" text-anchor="middle" fill="#64748b" font-size="8">"Speed first, tech debt allowed"</text>
+    <text x="185" y="62" text-anchor="middle" fill="#ef4444" font-size="16" font-weight="700">⚡</text>
+    <rect x="200" y="42" width="150" height="40" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="0.8"/>
+    <text x="275" y="58" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="600">Production-grade-code Skill</text>
+    <text x="275" y="72" text-anchor="middle" fill="#64748b" font-size="8">"Quality first, thorough tests"</text>
+    <!-- Description -->
+    <text x="20" y="100" fill="#94a3b8" font-size="10">All Skills crammed into the same context</text>
+    <text x="20" y="116" fill="#94a3b8" font-size="10">Contradictory instructions make model behavior unpredictable</text>
+  </g>
+
+  <!-- ===== Bottleneck 4: No Parallelism ===== -->
+  <g filter="url(#cardShadow)" transform="translate(450, 240)">
+    <rect width="370" height="130" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2" opacity="0.95"/>
+    <rect width="370" height="3" rx="1.5" fill="#3b82f6" y="0"/>
+    <text x="20" y="28" fill="#3b82f6" font-size="14" font-weight="700">④ Can't parallelize</text>
+    <!-- Visual: serial execution blocks -->
+    <g transform="translate(20, 42)">
+      <rect width="32" height="22" rx="4" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="16" y="16" text-anchor="middle" fill="#93c5fd" font-size="7">T1</text>
+      <rect x="36" width="32" height="22" rx="4" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="52" y="16" text-anchor="middle" fill="#93c5fd" font-size="7">T2</text>
+      <rect x="72" width="32" height="22" rx="4" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="88" y="16" text-anchor="middle" fill="#93c5fd" font-size="7">T3</text>
+      <rect x="108" width="32" height="22" rx="4" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="124" y="16" text-anchor="middle" fill="#93c5fd" font-size="7">T4</text>
+      <text x="150" y="16" fill="#64748b" font-size="8">...</text>
+      <rect x="168" width="32" height="22" rx="4" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.6"/>
+      <text x="184" y="16" text-anchor="middle" fill="#93c5fd" font-size="7">T10</text>
+      <text x="220" y="16" fill="#ef4444" font-size="9" font-weight="600">= 20 min</text>
+    </g>
+    <!-- Parallel (desired) -->
+    <g transform="translate(20, 74)">
+      <rect width="32" height="18" rx="4" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.6"/>
+      <text x="16" y="13" text-anchor="middle" fill="#6ee7b7" font-size="6">T1</text>
+      <rect width="32" height="18" rx="4" y="20" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.6"/>
+      <text x="16" y="33" text-anchor="middle" fill="#6ee7b7" font-size="6">T2</text>
+      <rect x="36" width="32" height="18" rx="4" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.6"/>
+      <text x="52" y="13" text-anchor="middle" fill="#6ee7b7" font-size="6">T3</text>
+      <rect x="36" width="32" height="18" rx="4" y="20" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.6"/>
+      <text x="52" y="33" text-anchor="middle" fill="#6ee7b7" font-size="6">T4</text>
+      <text x="78" y="22" fill="#64748b" font-size="8">...</text>
+      <text x="110" y="22" fill="#10b981" font-size="9" font-weight="600">= 3 min ✓</text>
+      <text x="170" y="14" fill="#64748b" font-size="8">but a single Agent</text>
+      <text x="170" y="28" fill="#64748b" font-size="8">Can't run in parallel</text>
+    </g>
+    <text x="20" y="120" fill="#94a3b8" font-size="10">The ReAct loop is sequential — one thing at a time</text>
+  </g>
+
+  <!-- ===== Vicious Cycle Arrows ===== -->
+  <g transform="translate(0, 395)">
+    <rect x="40" width="780" height="70" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="0.8" opacity="0.6"/>
+    <text x="430" y="22" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="700">Vicious cycle: the four bottlenecks amplify one another</text>
+    <!-- Cycle description -->
+    <text x="60" y="48" fill="#f59e0b" font-size="10">Context fills up</text>
+    <text x="170" y="48" fill="#ef4444" font-size="12">→</text>
+    <text x="195" y="48" fill="#8b5cf6" font-size="10">Roles muddle</text>
+    <text x="290" y="48" fill="#ef4444" font-size="12">→</text>
+    <text x="315" y="48" fill="#10b981" font-size="10">Skills clash</text>
+    <text x="410" y="48" fill="#ef4444" font-size="12">→</text>
+    <text x="435" y="48" fill="#3b82f6" font-size="10">More steps, slower</text>
+    <text x="555" y="48" fill="#ef4444" font-size="12">→</text>
+    <text x="580" y="48" fill="#f59e0b" font-size="10">Context grows faster</text>
+    <text x="710" y="48" fill="#ef4444" font-size="12">→</text>
+    <text x="735" y="48" fill="#ef4444" font-size="10" font-weight="700">Cliff drop</text>
+  </g>
+</svg>
