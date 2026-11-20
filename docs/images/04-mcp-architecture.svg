@@ -83,7 +83,7 @@
     </g>
     <text x="52" y="28" fill="#e2e8f0" font-size="16" font-weight="700">MCP Client</text>
     <text x="160" y="28" fill="#64748b" font-size="10">(工具管理器)</text>
-    <text x="16" y="50" fill="#94a3b8" font-size="10">① 连接 Server，获取工具列表</text>
+    <text x="16" y="50" fill="#94a3b8" font-size="10">① 连接 Server，获取并刷新工具列表</text>
     <text x="16" y="66" fill="#94a3b8" font-size="10">② 将工具描述注入 Agent 上下文</text>
     <text x="16" y="82" fill="#94a3b8" font-size="10">③ 路由调用请求到对应 Server，返回结果</text>
   </g>
@@ -140,7 +140,7 @@
       <text x="32" y="14" text-anchor="middle" fill="#a78bfa" font-size="8">list_dir</text>
     </g>
     <text x="14" y="84" fill="#64748b" font-size="9">📁 Resources: 项目文件树</text>
-    <text x="14" y="98" fill="#64748b" font-size="9">📝 Prompts: 文件操作最佳实践</text>
+    <text x="14" y="98" fill="#64748b" font-size="9">📝 Prompts: 整理目录结构模板</text>
   </g>
 
   <!-- Server 2: Code Search -->
@@ -162,7 +162,7 @@
       <text x="36" y="14" text-anchor="middle" fill="#a78bfa" font-size="8">grep_search</text>
     </g>
     <text x="14" y="84" fill="#64748b" font-size="9">📁 Resources: 代码索引</text>
-    <text x="14" y="98" fill="#64748b" font-size="9">📝 Prompts: 搜索策略指南</text>
+    <text x="14" y="98" fill="#64748b" font-size="9">📝 Prompts: 查找调用方模板</text>
   </g>
 
   <!-- Server 3: GitHub -->
@@ -190,24 +190,24 @@
   <!-- ==================== RIGHT SIDE: Three Primitives Legend ==================== -->
   <g transform="translate(690, 90)">
     <rect width="180" height="120" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" opacity="0.85"/>
-    <text x="90" y="20" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">Server 侧三原语</text>
+    <text x="90" y="20" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">三原语：谁来决定用</text>
     <line x1="12" y1="28" x2="168" y2="28" stroke="#334155" stroke-width="0.8"/>
     <g transform="translate(12, 36)">
       <rect width="12" height="12" rx="3" fill="#f59e0b" fill-opacity="0.3" stroke="#f59e0b" stroke-width="0.8"/>
       <text x="20" y="10" fill="#f59e0b" font-size="10" font-weight="600">Tools</text>
-      <text x="60" y="10" fill="#64748b" font-size="9">可执行的操作</text>
+      <text x="60" y="10" fill="#64748b" font-size="9">模型决定调用</text>
     </g>
     <g transform="translate(12, 58)">
       <rect width="12" height="12" rx="3" fill="#3b82f6" fill-opacity="0.3" stroke="#3b82f6" stroke-width="0.8"/>
       <text x="20" y="10" fill="#3b82f6" font-size="10" font-weight="600">Resources</text>
-      <text x="80" y="10" fill="#64748b" font-size="9">可读取的数据</text>
+      <text x="80" y="10" fill="#64748b" font-size="9">应用决定带入</text>
     </g>
     <g transform="translate(12, 80)">
       <rect width="12" height="12" rx="3" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="0.8"/>
       <text x="20" y="10" fill="#10b981" font-size="10" font-weight="600">Prompts</text>
-      <text x="72" y="10" fill="#64748b" font-size="9">预定义交互模式</text>
+      <text x="72" y="10" fill="#64748b" font-size="9">用户显式选用</text>
     </g>
-    <text x="12" y="108" fill="#475569" font-size="8" font-style="italic">能力 = 工具 + 上下文 + 使用方式</text>
+    <text x="12" y="108" fill="#475569" font-size="8" font-style="italic">进入上下文的路径各不相同</text>
   </g>
 
   <!-- ==================== LEFT SIDE: vs Function Calling ==================== -->
